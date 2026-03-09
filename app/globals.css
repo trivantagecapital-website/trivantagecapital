@@ -23,3 +23,42 @@ body {
 h1, h2, h4 {
   font-family: var(--font-playfair);
 }
+
+.blog-content {
+  font-size: 16px;
+}
+
+.blog-content h2,h3,h4 {
+  color: var(--color-primary);
+  font-family: var(--font-manrope);
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.blog-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.blog-content h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.blog-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.blog-content p {
+  margin-bottom: 1.5em;
+  color:black;
+}
+
+.blog-content strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
