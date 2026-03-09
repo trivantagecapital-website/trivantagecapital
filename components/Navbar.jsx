@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 h-[76px] flex items-center justify-between">
         
         {/* Logo */}
-        <a href="index.html" className="block" aria-label="Trivantage Capital Home">
+        <a href="/" className="block" aria-label="Trivantage Capital Home">
           <img
             src="/TrivantageLogo.png"
             alt="Trivantage Capital Logo"
@@ -22,7 +22,7 @@ const Navbar = () => {
 
             <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="index.html"
+              href="/"
             >
               Home
             </a>
@@ -72,28 +72,28 @@ const Navbar = () => {
 
             <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="offerings.html"
+              href="/our-offering"
             >
               Our Offering
             </a>
 
             <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="insights.html"
+              href="/insights"
             >
               Insights
             </a>
 
             <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="careers.html"
+              href="/careers"
             >
               Careers
             </a>
 
             <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="contact.html"
+              href="/contact"
             >
               Contact
             </a>
@@ -104,14 +104,14 @@ const Navbar = () => {
           <div className="hidden xl:flex items-center gap-3">
 
             <a
-              href="login.html"
+              href="/login"
               className="text-primary text-[11px] font-semibold uppercase tracking-widest border border-primary/20 px-5 py-2.5 rounded-md hover:bg-primary/5 transition-all"
             >
               Client Login
             </a>
 
             <a
-              href="invest.html"
+              href="/invest"
               className="bg-primary text-white px-5 py-2.5 rounded-md hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest"
             >
               Invest With Us
@@ -141,6 +141,7 @@ const Navbar = () => {
         <div className="p-6">
 
           <div className="flex items-center justify-between mb-10">
+            <a href="/" className="block" aria-label="Trivantage Capital Home"/>
             <img src="/TrivantageLogo.png" className="h-10 w-auto" />
 
             <button className="p-2 text-primary">
@@ -152,7 +153,7 @@ const Navbar = () => {
 
           <nav className="flex flex-col gap-7 text-primary">
 
-            <a className="text-xl font-semibold">Home</a>
+            <a href="/" className="text-xl font-semibold">Home</a>
 
             <div className="space-y-5">
               <p className="text-xs uppercase tracking-widest text-primary/40">
@@ -161,17 +162,17 @@ const Navbar = () => {
 
               <div className="pl-4 flex flex-col gap-5 border-l border-primary/10">
                
-                <a className="text-lg text-primary/80">Our Team</a>
-                <a className="text-lg text-primary/80">Our Advisors</a>
+                <a href="/about/our-team" className="text-lg text-primary/80">Our Team</a>
+                <a href="/about/our-advisors" className="text-lg text-primary/80">Our Advisors</a>
                
-                <a className="text-lg text-primary/80">Awards</a>
+                <a href="/about/awards" className="text-lg text-primary/80">Awards</a>
               </div>
             </div>
 
-            <a className="text-xl font-semibold">Our Offering</a>
-            <a className="text-xl font-semibold">Insights</a>
-            <a className="text-xl font-semibold">Careers</a>
-            <a className="text-xl font-semibold">Contact</a>
+            <a href="/our-offering" className="text-xl font-semibold">Our Offering</a>
+            <a href="/insights" className="text-xl font-semibold">Insights</a>
+            <a href="/careers" className="text-xl font-semibold">Careers</a>
+            <a href="/contact" className="text-xl font-semibold">Contact</a>
 
           </nav>
 
