@@ -39,7 +39,7 @@ const BlogCard = ({
 
                 {/* Title */}
                 <Link href={href} className="block group-hover:opacity-80 transition-opacity">
-                    <h3 className="text-2xl md:text-[1.75rem] font-serif text-primary leading-[1.15] tracking-tight">
+                    <h3 className="text-2xl md:text-[1.5rem] font-semibold font-serif text-primary leading-[1.15]">
                         {title}
                     </h3>
                 </Link>
@@ -54,7 +54,7 @@ const BlogCard = ({
                     href={href}
                     className="mt-2 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display decoration-2 underline-offset-4 transition-all w-fit"
                 >
-                    READ MORE
+                    KNOW MORE
                     <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
             </div>
