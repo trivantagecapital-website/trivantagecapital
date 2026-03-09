@@ -17,8 +17,8 @@ const Hero = () => {
             class="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
             Focused. Aligned. Disciplined.
           </h1>
-          <p class="text-primary/70 text-lg md:text-xl mb-8 font-medium italic">
-            Built on learning, growth, alignment, and quality — turning conviction into long-term wealth.
+          <p class="text-primary/70 text-lg md:text-xl mb-8 font-medium">
+            Built on learning, growth, alignment, and quality - turning conviction into long-term wealth.
           </p>
           <div class="h-[1px] w-24 bg-primary/20 mb-8"></div>
           <div

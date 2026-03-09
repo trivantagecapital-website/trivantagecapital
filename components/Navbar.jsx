@@ -41,36 +41,26 @@ const Navbar = () => {
                 
                 <div className="py-3 flex flex-col">
 
-                  <a
-                    href="index.html#philosophy"
-                    className="px-6 py-3 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors"
-                  >
-                    Investment Philosophy
-                  </a>
+                  
 
                   <a
-                    href="team.html"
+                    href="/about/our-team"
                     className="px-6 py-3 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors"
                   >
                     Our Team
                   </a>
 
                   <a
-                    href="advisors.html"
+                    href="/about/our-advisors"
                     className="px-6 py-3 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors"
                   >
                     Our Advisors
                   </a>
 
-                  <a
-                    href="#"
-                    className="px-6 py-3 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors"
-                  >
-                    Giving Back
-                  </a>
+                 
 
                   <a
-                    href="awards.html"
+                    href="/about/awards"
                     className="px-6 py-3 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors"
                   >
                     Awards
@@ -170,10 +160,10 @@ const Navbar = () => {
               </p>
 
               <div className="pl-4 flex flex-col gap-5 border-l border-primary/10">
-                <a className="text-lg text-primary/80">Investment Philosophy</a>
+               
                 <a className="text-lg text-primary/80">Our Team</a>
                 <a className="text-lg text-primary/80">Our Advisors</a>
-                <a className="text-lg text-primary/80">Giving Back</a>
+               
                 <a className="text-lg text-primary/80">Awards</a>
               </div>
             </div>
