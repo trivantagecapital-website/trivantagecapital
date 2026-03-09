@@ -42,9 +42,9 @@ const Footer = () => {
 
           {/* Logo Section */}
           <div className="col-span-1">
-            <a href="index.html" className="block mb-6">
+            <a href="/" className="block mb-6">
               <img
-                src="TrivantageLogo.png"
+                src="/TrivantageLogo.png"
                 alt="Trivantage Capital"
                 className="h-10 w-auto"
               />
@@ -64,7 +64,7 @@ const Footer = () => {
                 Navigation
               </p>
 
-              <a className="text-sm hover:text-primary/60" href="index.html#philosophy">
+              <a className="text-sm hover:text-primary/60" href="/">
                 Philosophy
               </a>
 

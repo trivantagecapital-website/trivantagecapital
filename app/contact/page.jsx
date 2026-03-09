@@ -1,0 +1,190 @@
+import React from "react";
+
+const Page = () => {
+  return (
+    <main id="main-content" className="flex-1">
+
+      {/* Hero Section */}
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
+
+        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+          Contact Us
+        </h1>
+
+        <div className="h-[1px] w-24 bg-primary/20 mb-8"></div>
+
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+
+          <div className="flex-1">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-2">
+              Find Us
+            </p>
+
+            <address className="not-italic text-lg text-primary font-medium mb-4">
+              508, Arcadia, NCPA Marg,<br />
+              Nariman Point,<br />
+              Mumbai - 400 021
+            </address>
+
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              className="text-sm font-bold uppercase tracking-widest text-primary hover:underline flex items-center gap-1"
+            >
+              Get Directions
+              <span className="material-symbols-outlined text-sm">
+                open_in_new
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Contact Sections */}
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+
+          {/* Invest */}
+          <div className="bg-white p-8 border border-primary/5 rounded">
+
+            <h3 className="serif-heading text-2xl text-primary mb-4">
+              Invest With Us
+            </h3>
+
+            <p className="text-primary/70 text-sm leading-relaxed mb-6">
+              Leverage our experience and expertise to grow and protect your
+              wealth. To know more about how we can partner with you on your
+              investment journey:
+            </p>
+
+            <a
+              href="mailto:monalisa.shilov@trivantagecapital.com"
+              className="text-primary font-bold hover:underline block mb-4"
+            >
+              monalisa.shilov@trivantagecapital.com
+            </a>
+
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary/60">
+                call
+              </span>
+
+              <a
+                href="tel:+912249034409"
+                className="text-primary font-bold hover:underline"
+              >
+                +91-22-4903 4409
+              </a>
+            </div>
+
+          </div>
+
+          {/* Partner */}
+          <div className="bg-white p-8 border border-primary/5 rounded">
+
+            <h3 className="serif-heading text-2xl text-primary mb-4">
+              Partner With Us
+            </h3>
+
+            <p className="text-primary/70 text-sm leading-relaxed mb-6">
+              At Trivantage Capital, we collaborate with partners who aim to
+              meet their client's evolving and sophisticated financial needs.
+              To explore partnership opportunities:
+            </p>
+
+            <a
+              href="mailto:monalisa.shilov@trivantagecapital.com"
+              className="text-primary font-bold hover:underline block"
+            >
+              monalisa.shilov@trivantagecapital.com
+            </a>
+
+          </div>
+
+          {/* Existing Clients */}
+          <div className="bg-white p-8 border border-primary/5 rounded">
+
+            <h3 className="serif-heading text-2xl text-primary mb-4">
+              Existing Clients
+            </h3>
+
+            <p className="text-primary/70 text-sm leading-relaxed mb-6">
+              For queries or clarifications, you may write to us at:
+            </p>
+
+            <a
+              href="mailto:ops@trivantagecapital.com"
+              className="text-primary font-bold hover:underline block"
+            >
+              ops@trivantagecapital.com
+            </a>
+
+          </div>
+
+        </div>
+
+        {/* Call Back Form */}
+        <div className="bg-background-light p-10 lg:p-16 rounded border border-primary/10">
+
+          <h3 className="serif-heading text-3xl text-primary mb-8 text-center">
+            Request a call back
+          </h3>
+
+          <form className="max-w-3xl mx-auto space-y-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <div>
+                <label
+                  htmlFor="cb_name"
+                  className="block text-xs font-bold uppercase tracking-widest text-primary/60 mb-2"
+                >
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  id="cb_name"
+                  className="w-full bg-white border border-primary/10 rounded px-4 py-3 focus:ring-1 focus:ring-primary/20 text-primary"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="cb_phone"
+                  className="block text-xs font-bold uppercase tracking-widest text-primary/60 mb-2"
+                >
+                  Phone No.
+                </label>
+
+                <input
+                  type="tel"
+                  id="cb_phone"
+                  className="w-full bg-white border border-primary/10 rounded px-4 py-3 focus:ring-1 focus:ring-primary/20 text-primary"
+                />
+              </div>
+
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-primary text-white px-6 py-3.5 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
+            >
+              Submit Request
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+};
+
+export default Page;
