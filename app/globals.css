@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --color-primary: #141e57;
   --font-display: var(--font-manrope), sans-serif;
-  --font-serif: var(--font-playfair), serif;
+  --font-serif: var(--font-libre-baskerville), serif;
 }
 
 
@@ -20,15 +20,19 @@ body {
   font-family: var(--font-manrope);
 }
 
-h1, h2, h4 {
-  font-family: var(--font-playfair);
+h1,
+h2,
+h4 { 
+  font-family: var(--font-libre-baskerville);
 }
 
 .blog-content {
   font-size: 16px;
 }
 
-.blog-content h2,h3,h4 {
+.blog-content h2,
+h3,
+h4 {
   color: var(--color-primary);
   font-family: var(--font-manrope);
 }
@@ -55,7 +59,7 @@ h1, h2, h4 {
 
 .blog-content p {
   margin-bottom: 1.5em;
-  color:black;
+  color: black;
 }
 
 .blog-content strong {

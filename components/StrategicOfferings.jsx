@@ -2,7 +2,7 @@ import React from "react";
 
 const StrategicOfferings = () => {
   return (
-    <section className="py-32">
+    <section className="bg-primary/5 py-32">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         
         <div className="border-b border-primary/10 pb-4 mb-16">

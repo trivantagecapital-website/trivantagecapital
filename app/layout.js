@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Manrope, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Manrope, Playfair_Display, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 
@@ -19,6 +19,12 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+const libre_baskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -33,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-    <head>
+      <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
@@ -41,11 +47,11 @@ export default function RootLayout({ children }) {
       </head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${playfair.variable} antialiased`}
+        className={`${manrope.variable} ${libre_baskerville.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
