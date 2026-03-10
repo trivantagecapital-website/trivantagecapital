@@ -3,9 +3,13 @@
 import React, { useState, useEffect } from "react";
 
 const STORAGE_KEY = "disclaimerAccepted";
+const RESIDENCY_KEY = "disclaimerResidency";
+
+const CAUTION_TEXT = `Trivantage Capital hereby cautions all users against fraudulent websites, applications, and communications falsely claiming association with the company. Neither Trivantage Capital nor its employees will ever solicit participation through WhatsApp groups, social media accounts, or any mobile application for trading in securities. Further, the company does not publish advertisements promoting investments in specific stocks or inviting cash transactions. Any person encountering such activity is advised to report the matter to the appropriate law enforcement authorities and notify us immediately at info @trivantagecapital.com`;
 
 const DisclaimerModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [step, setStep] = useState(1);
   const [selectedValue, setSelectedValue] = useState(null);
 
   useEffect(() => {
@@ -14,21 +18,23 @@ const DisclaimerModal = () => {
     }
   }, []);
 
-  const handleSubmit = () => {
-    if (selectedValue === "non-us") {
-      setIsOpen(false);
-      if (typeof window !== "undefined") {
-        localStorage.setItem(STORAGE_KEY, "true");
-      }
-    } else if (selectedValue === "us") {
-      alert(
-        "Based on your selection, you are not permitted to access the content of this website in compliance with applicable laws."
-      );
-      setSelectedValue(null);
+  const handleProceed = () => {
+    if (selectedValue) {
+      setStep(2);
+    }
+  };
+
+  const handleCautionOk = () => {
+    setIsOpen(false);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, "true");
+      localStorage.setItem(RESIDENCY_KEY, selectedValue);
     }
   };
 
   if (!isOpen) return null;
+
+  const isStep2 = step === 2;
 
   return (
     <div
@@ -36,7 +42,7 @@ const DisclaimerModal = () => {
       className="fixed inset-0 z-[100]"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="disclaimer-title"
+      aria-labelledby={isStep2 ? "caution-title" : "disclaimer-title"}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-background-dark/90 backdrop-blur-sm transition-opacity" />
@@ -44,18 +50,42 @@ const DisclaimerModal = () => {
       {/* Modal */}
       <div className="relative min-h-screen flex items-center justify-center px-3 sm:px-4 py-4 sm:py-6 overflow-y-auto">
         <div className="bg-white w-full max-w-2xl rounded shadow-2xl border border-primary/10 p-5 sm:p-6 md:p-8 lg:p-12 my-auto max-h-[90vh] sm:max-h-[88vh] md:max-h-[85vh] overflow-y-auto relative">
-          <h2
-            id="disclaimer-title"
-            className="serif-heading text-xl sm:text-2xl md:text-3xl text-primary mb-5 sm:mb-6 md:mb-8 text-center"
-          >
-            Disclaimers & Declarations
-          </h2>
+          {isStep2 ? (
+            /* Step 2: Caution Against Fraudulent Activities */
+            <>
+              <h2
+                id="caution-title"
+                className="serif-heading text-xl sm:text-2xl md:text-3xl text-primary mb-5 sm:mb-6 md:mb-8 text-center"
+              >
+                Caution Against Fraudulent Activities
+              </h2>
+              <p className="text-primary/80 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
+                {CAUTION_TEXT}
+              </p>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleCautionOk}
+                  className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
+                >
+                  OK
+                </button>
+              </div>
+            </>
+          ) : (
+            /* Step 1: Residency Declaration */
+            <>
+              <h2
+                id="disclaimer-title"
+                className="serif-heading text-xl sm:text-2xl md:text-3xl text-primary mb-5 sm:mb-6 md:mb-8 text-center"
+              >
+                Disclaimers & Declarations
+              </h2>
 
-          <p className="text-primary/80 mb-5 sm:mb-6 md:mb-8 text-center text-base sm:text-lg">
-            Please select the option that applies to you:
-          </p>
+              <p className="text-primary/80 mb-5 sm:mb-6 md:mb-8 text-center text-base sm:text-lg">
+                Please select the option that applies to you:
+              </p>
 
-          <div className="space-y-3 sm:space-y-4 mb-5 sm:mb-6 md:mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-5 sm:mb-6 md:mb-8">
             <label className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded border border-primary/10 hover:bg-background-light cursor-pointer transition-colors group">
               <input
                 type="radio"
@@ -96,7 +126,7 @@ const DisclaimerModal = () => {
 
           <div className="flex justify-center mb-5 sm:mb-6 md:mb-8">
             <button
-              onClick={handleSubmit}
+              onClick={handleProceed}
               disabled={!selectedValue}
               className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               id="submitDisclaimer"
@@ -113,9 +143,9 @@ const DisclaimerModal = () => {
               responsible for any legal and financial consequences arising from
               the use of information contained herein.
             </p>
-
           </div>
-
+            </>
+          )}
         </div>
       </div>
     </div>
