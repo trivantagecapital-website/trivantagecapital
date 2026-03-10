@@ -13,7 +13,7 @@ const BlogCard = ({
     href = "#"
 }) => {
     return (
-        <div className="group flex flex-col w-full max-w-sm mx-auto sm:mx-0">
+        <div className="group flex flex-col w-full h-full max-w-sm mx-auto sm:mx-0">
 
             {/* Image Container */}
             <Link href={href} className="block overflow-hidden mb-5">
@@ -29,26 +29,27 @@ const BlogCard = ({
             </Link>
 
             {/* Text Container */}
-            <div className="flex flex-col gap-3">
-                {/* Metadata: Category | Date */}
-                <div className="flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display">
-                    <span>{category}</span>
-                    <span className="mx-2 text-primary/60">|</span>
-                    <span>{date}</span>
+            <div className='flex flex-col justify-between flex-1'>
+                <div className="flex flex-col gap-3">
+                    {/* Metadata: Category | Date */}
+                    <div className="flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display">
+                        <span>{category}</span>
+                        <span className="mx-2 text-primary/60">|</span>
+                        <span>{date}</span>
+                    </div>
+
+                    {/* Title */}
+                    <Link href={href} className="block group-hover:opacity-80 transition-opacity">
+                        <h3 className="text-2xl md:text-[1.3rem] font-semibold font-serif text-primary leading-[1.15]">
+                            {title}
+                        </h3>
+                    </Link>
+
+                    {/* Excerpt */}
+                    <p className="text-base text-primary/80 font-display leading-relaxed line-clamp-3">
+                        {excerpt}
+                    </p>
                 </div>
-
-                {/* Title */}
-                <Link href={href} className="block group-hover:opacity-80 transition-opacity">
-                    <h3 className="text-2xl md:text-[1.5rem] font-semibold font-serif text-primary leading-[1.15]">
-                        {title}
-                    </h3>
-                </Link>
-
-                {/* Excerpt */}
-                <p className="text-base text-primary/80 font-display leading-relaxed line-clamp-3">
-                    {excerpt}
-                </p>
-
                 {/* Read More Button */}
                 <Link
                     href={href}
