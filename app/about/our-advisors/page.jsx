@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -25,12 +26,15 @@ const Page = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
             <div className="lg:col-span-4">
-              <div className="aspect-[3/4] bg-background-light rounded-lg overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
-                  <span className="material-symbols-outlined text-9xl text-primary/20">
-                    person
-                  </span>
-                </div>
+              <div className="aspect-[4/5] bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
+                <Image
+                  src="/team/brijesh_mehra.jpg"
+                  alt="Brijesh Mehra - Senior Advisor"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 420px"
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
             </div>
 

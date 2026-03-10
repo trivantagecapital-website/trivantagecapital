@@ -104,15 +104,15 @@ const Navbar = () => {
           <div className="hidden xl:flex items-center gap-3">
 
             <a
-              href="/login"
-              className="text-primary text-[11px] font-semibold uppercase tracking-widest border border-primary/20 px-5 py-2.5 rounded-md hover:bg-primary/5 transition-all"
+              href="https://trivantage.in/webfincrm/login.jsp" target="_blank"
+              className="text-primary text-[11px] font-semibold uppercase tracking-widest border border-primary/20 px-5 py-2.5  hover:bg-primary/5 transition-all"
             >
               Client Login
             </a>
 
             <a
               href="/invest"
-              className="bg-primary text-white px-5 py-2.5 rounded-md hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest"
+              className="bg-primary text-white px-5 py-2.5  hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest"
             >
               Invest With Us
             </a>
