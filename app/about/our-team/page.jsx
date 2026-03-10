@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -23,14 +24,15 @@ const Page = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
             <div className="lg:col-span-4">
-              <div className="aspect-[3/4] bg-background-light rounded-lg overflow-hidden relative">
-
-                <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
-                  <span className="material-symbols-outlined text-9xl text-primary/20">
-                    person
-                  </span>
-                </div>
-
+              <div className="aspect-[4/5] bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
+                <Image
+                  src="/team/nikhil_johri.jpg"
+                  alt="Nikhil Johri - Founder & Chief Investment Officer"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 420px"
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
             </div>
 
@@ -85,10 +87,14 @@ const Page = () => {
 
           {/* Team Member */}
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20 text-4xl font-serif">
-                MS
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/monalisa_shilov.jpg"
+                alt="Monalisa Shilov - Chief Business Officer"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
@@ -101,10 +107,14 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20 text-4xl font-serif">
-                SI
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/shridhar_iyer.jpg"
+                alt="Shridhar Iyer - COO & Compliance Officer"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
@@ -117,10 +127,14 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20 text-4xl font-serif">
-                AT
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/aahan-tulshan.jpg"
+                alt="Aahan Tulshan - Equity Analyst"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
@@ -133,12 +147,14 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20">
-                <span className="material-symbols-outlined text-6xl">
-                  person
-                </span>
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/harsh-bhutda.jpg"
+                alt="Harsh Bhutda - Equity Analyst"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
@@ -151,10 +167,14 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20 text-4xl font-serif">
-                AA
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/ashish_agarwal.jpg"
+                alt="Ashish Agarwal - AVP Operations"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
@@ -167,12 +187,14 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative">
-              <div className="absolute inset-0 flex items-center justify-center text-primary/20">
-                <span className="material-symbols-outlined text-6xl">
-                  person
-                </span>
-              </div>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/avadhoot-joshi.jpg"
+                alt="Pushkar Joshi - Manager Operations"
+                fill
+                sizes="(max-width: 639px) 128px, (max-width: 767px) 160px, 192px"
+                className="object-cover object-top"
+              />
             </div>
 
             <h4 className="text-xl font-bold text-primary mb-2">
