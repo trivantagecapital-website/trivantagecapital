@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
           <div class="h-[1px] w-24 bg-white mb-8"></div>
           <div
-            class="space-y-6 text-base md:text-lg text-white leading-relaxed font-light max-w-[800px]">
+            class="space-y-6 text-base md:text-md text-white leading-relaxed font-light max-w-[800px]">
             <p>
               Trivantage Capital is a SEBI-registered boutique portfolio manager with a single mission: to
               help investors participate in India's long-term growth story.
