@@ -24,7 +24,7 @@ function getPostLink(post, category) {
         const objectMatch = post.content.match(/data="([^"]*wp-content\/uploads[^"]*)"/);
         if (objectMatch) return objectMatch[1];
     }
-    return `/vantagepoint/${post.slug}`;
+    return `/insights/${post.slug}`;
 }
 
 const BlogsSection = () => {
@@ -86,7 +86,7 @@ const BlogsSection = () => {
                         </div>
 
                         <Link
-                            href="/"
+                            href="/insights"
                             className="mx-auto bg-red- group mt-15 border border-primary px-5 py-4 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display decoration-2 underline-offset-4 transition-all w-fit"
                         >
                             Read More Insights

@@ -1,0 +1,123 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+
+const WP_API_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com/posts/slug:';
+const WP_RECENT_POSTS_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com/posts?number=5';
+
+async function getPost(slug) {
+    const res = await fetch(`${WP_API_URL}${slug}`, { next: { revalidate: 60 } });
+    if (!res.ok) return null;
+    return res.json();
+}
+
+async function getRecentPosts() {
+    const res = await fetch(WP_RECENT_POSTS_URL, { next: { revalidate: 60 } });
+    if (!res.ok) return { posts: [] };
+    return res.json();
+}
+
+function getPostLink(post) {
+    const category = Object.keys(post.categories || {})[0] || 'Article';
+    if (String(category).toLowerCase() === 'newsletter' && post.content) {
+        const match = post.content.match(/href="([^"]*wp-content\/uploads[^"]*)"/);
+        if (match) return match[1];
+
+        const objectMatch = post.content.match(/data="([^"]*wp-content\/uploads[^"]*)"/);
+        if (objectMatch) return objectMatch[1];
+    }
+    return `/vantagepoint/${post.slug}`;
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    const post = await getPost(slug);
+    return {
+        title: post?.title || 'VantagePoint',
+    };
+}
+
+export default async function BlogPost({ params }) {
+    const { slug } = await params;
+    const post = await getPost(slug);
+    const recentPostsData = await getRecentPosts();
+    const recentPosts = recentPostsData.posts || [];
+
+    if (!post || post.error) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center">
+                    <h1 className="text-4xl font-serif text-primary mb-4">Post Not Found</h1>
+                    <Link href="/#blogs" className="text-primary/70 underline">← Back to blogs</Link>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <article className="min-h-screen">
+            <div className="max-w-full bg-white mx-auto pb-20">
+                {/* Featured Image */}
+                {post.featured_image && (
+                    <div className="relative aspect-[1540/502] h-auto w-full overflow-hidden bg-gray-100">
+                        <Image
+                            src={post.featured_image}
+                            alt={post.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 800px) 100vw, 800px"
+                            priority
+                        />
+                    </div>
+                )}
+
+                <div className='bg-primary px-14 py-10'>
+                    {/* Category and Date */}
+                    <div className="text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-6 ">
+                        <span>{Object.keys(post.categories || {})[0] || 'Article'} | {formatDate(post.date)}</span>
+                    </div>
+
+                    <div>
+                        {/* Title */}
+                        <h1 className="text-4xl md:text-5xl font-semibold font-serif text-white leading-[1.15] tracking-tight mt-10 mb-20">
+                            {post.title}
+                        </h1>
+
+                        {/* Author */}
+                        <div className="flex items-center gap-4">
+                            {post.author && post.author.avatar_URL && (
+                                <div className="relative w-10 h-10 rounded-full overflow-hidden bg-gray-100">
+                                    <Image
+                                        src={post.author.avatar_URL}
+                                        alt={post.author.name}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                            )}
+                            <div>
+                                <p className="text-md font-bold text-white">{post.author?.name || 'Unknown Author'} <span className='font-normal'>, Senior Analyst</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Content Area */}
+                <div className='max-w-3xl mx-auto px-4 py-10'>
+                    {/* Post Content */}
+                    <div
+                        className="blog-content"
+                        dangerouslySetInnerHTML={{ __html: post.content }}
+                    />
+                </div>
+
+            </div>
+        </article>
+    );
+}
