@@ -4,16 +4,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DisclaimerModal from "../components/DisclaimerModal";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -22,12 +12,7 @@ const manrope = Manrope({
 const libre_baskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+  weight: ["400", "700"]
 });
 
 export const metadata = {

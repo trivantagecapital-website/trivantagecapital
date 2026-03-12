@@ -6,7 +6,7 @@ const StrategicOfferings = () => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         
         <div className="border-b border-primary/10 pb-4 mb-16">
-          <h2 className="text-primary text-3xl font-bold tracking-tight">
+          <h2 className="!font-display text-primary text-3xl font-bold tracking-tight">
             Our Strategic Offerings
           </h2>
         </div>
