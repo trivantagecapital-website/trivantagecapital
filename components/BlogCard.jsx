@@ -40,7 +40,7 @@ const BlogCard = ({
 
                     {/* Title */}
                     <Link href={href} className="block group-hover:opacity-80 transition-opacity">
-                        <h3 className="text-2xl md:text-[1.3rem] font-semibold font-serif text-primary leading-[1.15]">
+                        <h3 className="text-2xl md:text-[1.3rem] font-bold !font-serif text-primary leading-[1.15]">
                             {title}
                         </h3>
                     </Link>

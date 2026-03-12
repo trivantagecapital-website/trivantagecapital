@@ -23,7 +23,7 @@ body {
 h1,
 h2,
 h4 { 
-  font-family: var(--font-libre-baskerville);
+  font-family: var(--font-serif);
 }
 
 .blog-content {

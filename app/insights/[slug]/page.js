@@ -1,38 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { formatDate} from "@/lib/blogUtils";
 
 
-const WP_API_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com/posts/slug:';
-const WP_RECENT_POSTS_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com/posts?number=5';
+const WP_API_URL = process.env.WP_API_URL;
 
 async function getPost(slug) {
     const res = await fetch(`${WP_API_URL}${slug}`, { next: { revalidate: 60 } });
     if (!res.ok) return null;
     return res.json();
-}
-
-async function getRecentPosts() {
-    const res = await fetch(WP_RECENT_POSTS_URL, { next: { revalidate: 60 } });
-    if (!res.ok) return { posts: [] };
-    return res.json();
-}
-
-function getPostLink(post) {
-    const category = Object.keys(post.categories || {})[0] || 'Article';
-    if (String(category).toLowerCase() === 'newsletter' && post.content) {
-        const match = post.content.match(/href="([^"]*wp-content\/uploads[^"]*)"/);
-        if (match) return match[1];
-
-        const objectMatch = post.content.match(/data="([^"]*wp-content\/uploads[^"]*)"/);
-        if (objectMatch) return objectMatch[1];
-    }
-    return `/vantagepoint/${post.slug}`;
-}
-
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 export async function generateMetadata({ params }) {
@@ -46,8 +23,6 @@ export async function generateMetadata({ params }) {
 export default async function BlogPost({ params }) {
     const { slug } = await params;
     const post = await getPost(slug);
-    const recentPostsData = await getRecentPosts();
-    const recentPosts = recentPostsData.posts || [];
 
     if (!post || post.error) {
         return (
@@ -70,7 +45,7 @@ export default async function BlogPost({ params }) {
                             src={post.featured_image}
                             alt={post.title}
                             fill
-                            className="object-cover"
+                            className="object-cover object-bottom"
                             sizes="(max-width: 800px) 100vw, 800px"
                             priority
                         />
