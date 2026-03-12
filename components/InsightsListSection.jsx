@@ -46,7 +46,7 @@ const InsightsListSection = async () => {
     });
 
     return (
-        <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12 md:py-24">
+        <section className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
 
                 {/* Posts Column */}
@@ -54,11 +54,11 @@ const InsightsListSection = async () => {
                     {groupArray.length > 0 ? (
                         groupArray.map((group) => (
                             <div key={group.monthYear} className="mb-16 last:mb-0">
-                                <div className="border-t border-primary/10 pt-8">
-                                    <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-10 block font-sans">
+                                <div className="border-t border-primary/10 pt-6 sm:pt-8">
+                                    <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-7 sm:mb-10 block font-sans">
                                         {group.monthYear}
                                     </h2>
-                                    <div className="flex flex-col gap-12">
+                                    <div className="flex flex-col gap-10 sm:gap-12">
                                         {group.posts.map(post => (
                                             <PostItem key={post.ID} post={post} />
                                         ))}
@@ -129,7 +129,7 @@ const PostItem = ({ post }) => {
     return (
         <article className="group flex flex-col md:flex-row gap-6 md:gap-10 items-start">
            
-                <Link href={getPostLink(post, categoryName)} className="w-full md:w-[260px] aspect-[16/10] relative bg-gray-100 flex-shrink-0 overflow-hidden rounded-sm block">
+                <Link href={getPostLink(post, categoryName)} className="w-full md:w-65 aspect-16/10 relative bg-gray-100 shrink-0 overflow-hidden rounded-sm block">
                     <Image
                         src={imageUrl ? imageUrl : '/hero-skyscraper3.jpg'}
                         alt={post.title}
@@ -139,16 +139,16 @@ const PostItem = ({ post }) => {
                 </Link>
     
             <div className="flex-1 flex flex-col items-start">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block font-sans">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-2 sm:mb-3 block font-sans">
                     {categoryName}
                 </span>
                 <Link href={getPostLink(post, categoryName)} className="block mb-3">
-                    <h3 className="text-2xl md:text-[1.5rem] font-bold !font-serif text-primary leading-[1.2] group-hover:text-primary/80 transition-colors">
+                    <h3 className="text-xl sm:text-2xl md:text-[1.5rem] font-bold font-serif! text-primary leading-[1.2] group-hover:text-primary/80 transition-colors">
                         {post.title}
                     </h3>
                 </Link>
 
-                <p className="text-primary/60 text-base leading-relaxed mb-6 line-clamp-3 font-sans">
+                <p className="text-primary/60 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 line-clamp-3 font-sans">
                     {cleanExcerpt}
                 </p>
 
