@@ -40,7 +40,7 @@ export default async function BlogPost({ params }) {
             <div className="max-w-full bg-white mx-auto pb-20">
                 {/* Featured Image */}
                 {post.featured_image && (
-                    <div className="relative aspect-[1540/502] h-auto w-full overflow-hidden bg-gray-100">
+                    <div className="relative aspect-[16/10] md:aspect-[1540/502] h-auto w-full overflow-hidden bg-gray-100">
                         <Image
                             src={post.featured_image}
                             alt={post.title}
@@ -52,15 +52,15 @@ export default async function BlogPost({ params }) {
                     </div>
                 )}
 
-                <div className='bg-primary px-14 py-10'>
+                <div className='bg-primary px-6 md:px-14 py-5 md:py-10'>
                     {/* Category and Date */}
-                    <div className="text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-6 ">
+                    <div className="text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-5 md:pb-6 ">
                         <span>{Object.keys(post.categories || {})[0] || 'Article'} | {formatDate(post.date)}</span>
                     </div>
 
                     <div>
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl font-semibold font-serif text-white leading-[1.15] tracking-tight mt-10 mb-20">
+                        <h1 className="text-4xl md:text-5xl font-semibold font-serif text-white leading-[1.15] tracking-tight mt-5 md:mt-10 mb-10 md:mb-20">
                             {post.title}
                         </h1>
 
