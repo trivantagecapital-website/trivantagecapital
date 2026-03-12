@@ -55,7 +55,7 @@ const BlogsSection = async () => {
                                 return (
                                     <BlogCard
                                         key={post.ID}
-                                        imageSrc={post.featured_image || '/hero-skyscraper.png'}
+                                        imageSrc={post.featured_image || '/hero-skyscraper3.jpg'}
                                         category={category}
                                         date={formatDate(post.date)}
                                         title={post.title}

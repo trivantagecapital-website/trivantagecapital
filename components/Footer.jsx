@@ -46,7 +46,7 @@ const Footer = () => {
               <img
                 src="/TrivantageLogo.png"
                 alt="Trivantage Capital"
-                className="h-10 w-auto"
+                className="h-14 w-auto"
               />
             </a>
 
@@ -64,15 +64,15 @@ const Footer = () => {
                 Navigation
               </p>
 
-              <a className="text-sm hover:text-primary/60" href="/">
+              <a className="text-sm hover:text-primary/60" href="/#philosophy">
                 Philosophy
               </a>
 
-              <a className="text-sm hover:text-primary/60" href="team.html">
+              <a className="text-sm hover:text-primary/60" href="/about/our-team">
                 Investment Team
               </a>
 
-              <a className="text-sm hover:text-primary/60" href="contact.html">
+              <a className="text-sm hover:text-primary/60" href="https://trivantage.in/webfincrm/login.jsp">
                 Investor Portal
               </a>
             </div>
