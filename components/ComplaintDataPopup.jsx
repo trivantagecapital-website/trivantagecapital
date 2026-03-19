@@ -18,12 +18,20 @@ const COLUMNS = [
 ];
 
 export default function ComplaintDataPopup() {
-  const [isOpen, setIsOpen]     = useState(true);
+  const [isOpen, setIsOpen]     = useState(false);
   const [rows, setRows]         = useState([]);
   const [totalRow, setTotalRow] = useState(null);
   const [dateStr, setDateStr]   = useState('');
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState(false);
+
+  useEffect(() => {
+    // Open automatically only on first visit per session
+    if (!localStorage.getItem('complaintPopupSeen')) {
+      setIsOpen(true);
+      localStorage.setItem('complaintPopupSeen', 'true');
+    }
+  }, []);
 
   useEffect(() => {
     fetch(API_URL)
