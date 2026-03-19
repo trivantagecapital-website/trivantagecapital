@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useResidency } from "@/hooks/useResidency";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { isUS } = useResidency();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -70,43 +72,53 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a
-              className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="/our-offering"
-            >
-              Our Offering
-            </a>
+            {!isUS && (
+              <a
+                className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
+                href="/our-offering"
+              >
+                Our Offering
+              </a>
+            )}
 
-            <a
-              className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="/insights"
-            >
-              Insights
-            </a>
+            {!isUS && (
+              <a
+                className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
+                href="/insights"
+              >
+                Insights
+              </a>
+            )}
 
-            <a
-              className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="/careers"
-            >
-              Careers
-            </a>
+            {!isUS && (
+              <a
+                className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
+                href="/careers"
+              >
+                Careers
+              </a>
+            )}
 
-            <a
-              className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
-              href="/contact"
-            >
-              Contact
-            </a>
+            {!isUS && (
+              <a
+                className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
+                href="/contact"
+              >
+                Contact
+              </a>
+            )}
           </nav>
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="/invest"
-              className="bg-primary text-white px-5 py-2.5  hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest"
-            >
-              Invest With Us
-            </a>
+            {!isUS && (
+              <a
+                href="/invest"
+                className="bg-primary text-white px-5 py-2.5  hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest"
+              >
+                Invest With Us
+              </a>
+            )}
 
             <a
               // href="https://trivantage.in/webfincrm/login.jsp"
@@ -177,39 +189,49 @@ const Navbar = () => {
                 >
                   Our Advisors
                 </a>
-                <a
-                  href="/about/awards"
-                  className="text-primary/80 hover:text-primary font-medium"
-                >
-                  Awards
-                </a>
+                {!isUS && (
+                  <a
+                    href="/about/awards"
+                    className="text-primary/80 hover:text-primary font-medium"
+                  >
+                    Awards
+                  </a>
+                )}
               </div>
             </div>
 
-            <a
-              href="/our-offering"
-              className="text-primary/80 hover:text-primary font-semibold text-lg"
-            >
-              Our Offering
-            </a>
-            <a
-              href="/insights"
-              className="text-primary/80 hover:text-primary font-semibold text-lg"
-            >
-              Insights
-            </a>
-            <a
-              href="/careers"
-              className="text-primary/80 hover:text-primary font-semibold text-lg"
-            >
-              Careers
-            </a>
-            <a
-              href="/contact"
-              className="text-primary/80 hover:text-primary font-semibold text-lg"
-            >
-              Contact
-            </a>
+            {!isUS && (
+              <a
+                href="/our-offering"
+                className="text-primary/80 hover:text-primary font-semibold text-lg"
+              >
+                Our Offering
+              </a>
+            )}
+            {!isUS && (
+              <a
+                href="/insights"
+                className="text-primary/80 hover:text-primary font-semibold text-lg"
+              >
+                Insights
+              </a>
+            )}
+            {!isUS && (
+              <a
+                href="/careers"
+                className="text-primary/80 hover:text-primary font-semibold text-lg"
+              >
+                Careers
+              </a>
+            )}
+            {!isUS && (
+              <a
+                href="/contact"
+                className="text-primary/80 hover:text-primary font-semibold text-lg"
+              >
+                Contact
+              </a>
+            )}
 
             <div className="mt-6 flex flex-col gap-3 pt-6 border-t border-primary/10">
               <a
@@ -219,12 +241,14 @@ const Navbar = () => {
               >
                 Client Login
               </a>
-              <a
-                href="/invest"
-                className="text-center bg-primary text-white px-5 py-3 hover:opacity-90 transition-all font-semibold uppercase tracking-widest text-sm"
-              >
-                Invest With Us
-              </a>
+              {!isUS && (
+                <a
+                  href="/invest"
+                  className="text-center bg-primary text-white px-5 py-3 hover:opacity-90 transition-all font-semibold uppercase tracking-widest text-sm"
+                >
+                  Invest With Us
+                </a>
+              )}
             </div>
           </div>
         </div>

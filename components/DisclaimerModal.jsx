@@ -29,6 +29,7 @@ const DisclaimerModal = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem(STORAGE_KEY, "true");
       localStorage.setItem(RESIDENCY_KEY, selectedValue);
+      window.dispatchEvent(new Event("storage"));
     }
   };
 
