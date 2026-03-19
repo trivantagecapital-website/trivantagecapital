@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 
 const Page = () => {
   return (
@@ -7,13 +9,13 @@ const Page = () => {
       {/* Hero Section */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
 
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
           Invest With Us
         </h1>
 
         <div className="h-[1px] w-24 bg-primary/20 mb-8"></div>
 
-        <p className="text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-8 font-medium italic">
+        <p className="text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-8 font-medium ">
           Investing made effortless — open your account with ease.
         </p>
 
@@ -32,7 +34,7 @@ const Page = () => {
 
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
 
-          <h2 className="serif-heading text-3xl text-primary mb-12">
+          <h2 className="serif-heading text-3xl text-primary mb-12 !font-serif">
             Account Opening Process
           </h2>
 
@@ -48,7 +50,7 @@ const Page = () => {
                 1
               </div>
 
-              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left">
+              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left !font-serif">
                 Submit Documents
               </h3>
 
@@ -68,7 +70,7 @@ const Page = () => {
                 2
               </div>
 
-              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left">
+              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left !font-serif">
                 Choose Mode
               </h3>
 
@@ -110,7 +112,7 @@ const Page = () => {
                 3
               </div>
 
-              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left">
+              <h3 className="text-xl font-bold text-primary mb-4 text-center md:text-left !font-serif">
                 Processing
               </h3>
 
@@ -129,46 +131,132 @@ const Page = () => {
       {/* Resources & Contact */}
       <section className="py-24 max-w-[1200px] mx-auto px-6 lg:px-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
 
           {/* Important Links */}
-          <div>
+          <div className="lg:order-2 bg-background-light border border-primary/10 rounded p-8 lg:p-10 h-full">
 
             <h3 className="serif-heading text-2xl text-primary mb-8">
               Important Documents & Links
             </h3>
 
-            <ul className="space-y-4">
+            <ul className="space-y-3">
 
-              {[
-                "Account Opening Procedure",
-                "Disclosure Document",
-                "Investor Charter",
-                "Summary of Investor Complaints",
-                "Grievance Redressal Mechanism",
-              ].map((item, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-3 text-primary/70 hover:text-primary transition-colors group"
-                  >
+              <li>
+                <a
+                  href="/invest/Trivantage%20Capital%20-%20Disclosure%20Document%20-%20April%202025.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-3 text-primary/70 hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
+                >
+                  <span className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
                       description
                     </span>
 
                     <span className="border-b border-transparent group-hover:border-primary/20">
-                      {item}
+                      Disclosure Document
                     </span>
-                  </a>
-                </li>
-              ))}
+                  </span>
+
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                    open_in_new
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/invest/Fee-Calculation-Tool.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-3 text-primary/70 hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                      description
+                    </span>
+
+                    <span className="border-b border-transparent group-hover:border-primary/20">
+                      Fee Calculation Tool
+                    </span>
+                  </span>
+
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                    open_in_new
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/invest/Investor%20Charter.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-3 text-primary/70 hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                      description
+                    </span>
+
+                    <span className="border-b border-transparent group-hover:border-primary/20">
+                      Investor Charter
+                    </span>
+                  </span>
+
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                    open_in_new
+                  </span>
+                </a>
+              </li>
 
             </ul>
+
+            <div className="mt-10">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-primary/60 mb-4">
+                Invest Using QR Code
+              </h4>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary/50 mb-2">
+                    Kotak Mahindra Bank
+                  </p>
+
+                  <div className="relative w-full max-w-[240px] aspect-square border border-primary/10 rounded bg-white overflow-hidden shadow-sm">
+                    <Image
+                      src="/invest/QR%20-%20Kotak%20Mahindra%20Bank.jpg"
+                      alt="Kotak Mahindra Bank QR Code"
+                      fill
+                      sizes="220px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary/50 mb-2">
+                    IndusInd Bank
+                  </p>
+
+                  <div className="relative w-full max-w-[240px] aspect-square border border-primary/10 rounded bg-white overflow-hidden shadow-sm">
+                    <Image
+                      src="/invest/QR%20-%20IndusInd%20Bank.jpg"
+                      alt="IndusInd Bank QR Code"
+                      fill
+                      sizes="220px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
 
           {/* Contact Box */}
-          <div className="bg-primary text-white p-10 rounded">
+          <div className="bg-primary text-white p-10 rounded lg:order-1 h-full flex flex-col justify-between min-h-[320px]">
 
             <h3 className="serif-heading text-2xl mb-6">
               Have Queries?

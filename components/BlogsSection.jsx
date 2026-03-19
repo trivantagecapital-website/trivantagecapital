@@ -29,7 +29,7 @@ const BlogsSection = async () => {
                         INSIGHTS
                     </p>
 
-                    <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 italic">
+                    <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 !font-serif">
                         VantagePoint
                     </h2>
 

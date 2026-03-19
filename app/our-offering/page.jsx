@@ -6,13 +6,13 @@ const Page = () => {
       
       {/* Hero Section */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
           Curated Portfolios.<br />Disciplined Execution.
         </h1>
 
         <div className="h-[1px] w-24 bg-primary/20 mb-8"></div>
 
-        <p className="text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-8 font-medium italic">
+        <p className="text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-8 font-medium">
           Portfolios shaped by learning, guided by quality, and built for compounding.
         </p>
 
@@ -41,7 +41,7 @@ const Page = () => {
             </div>
 
             <div className="w-full md:w-1/2 pt-4">
-              <h2 className="serif-heading text-3xl font-bold text-primary mb-6">
+              <h2 className="serif-heading text-3xl font-bold text-primary mb-6 !font-serif">
                 Trivantage Capital Edge Portfolio
               </h2>
 
@@ -85,7 +85,7 @@ const Page = () => {
             </div>
 
             <div className="w-full md:w-1/2 pt-4">
-              <h2 className="serif-heading text-3xl font-bold text-primary mb-6">
+              <h2 className="serif-heading text-3xl font-bold text-primary mb-6 !font-serif">
                 Trivantage Capital Emerging Leaders Portfolio
               </h2>
 
@@ -110,8 +110,16 @@ const Page = () => {
               </div>
             </div>
 
+
           </div>
         </section>
+
+         <a
+              href="/invest"
+              className="bg-primary text-white px-5 py-2.5  hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest mt-[50px] flex items-center gap-2 w-fit justify-center mx-auto"
+            >
+              Invest With Us
+            </a>
 
       </div>
     </main>
