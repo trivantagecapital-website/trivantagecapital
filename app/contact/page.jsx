@@ -1,4 +1,5 @@
 import React from "react";
+import CallbackForm from "@/components/CallbackForm";
 
 const Page = () => {
   return (
@@ -144,50 +145,7 @@ const Page = () => {
             Request a call back
           </h3>
 
-          <form className="max-w-3xl mx-auto space-y-6">
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <div>
-                <label
-                  htmlFor="cb_name"
-                  className="block text-xs font-bold uppercase tracking-widest text-primary/60 mb-2"
-                >
-                  Name
-                </label>
-
-                <input
-                  type="text"
-                  id="cb_name"
-                  className="w-full bg-white border border-primary/10 rounded px-4 py-3 focus:ring-1 focus:ring-primary/20 text-primary"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="cb_phone"
-                  className="block text-xs font-bold uppercase tracking-widest text-primary/60 mb-2"
-                >
-                  Phone No.
-                </label>
-
-                <input
-                  type="tel"
-                  id="cb_phone"
-                  className="w-full bg-white border border-primary/10 rounded px-4 py-3 focus:ring-1 focus:ring-primary/20 text-primary"
-                />
-              </div>
-
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-primary text-white px-6 py-3.5 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
-            >
-              Submit Request
-            </button>
-
-          </form>
+          <CallbackForm />
 
         </div>
 
