@@ -11,7 +11,10 @@ async function getPosts() {
         });
 
         const data = await res.json();
-        return data.posts || [];
+        const posts = data.posts || [];
+        return posts.filter(post =>
+            !Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'careers')
+        );
     } catch (err) {
         console.error('Failed to fetch posts:', err);
         return [];

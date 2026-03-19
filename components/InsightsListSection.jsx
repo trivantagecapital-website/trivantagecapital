@@ -9,7 +9,10 @@ async function getPosts() {
     try {
         const res = await fetch(`${BASE_URL}/posts?number=40`, { next: { revalidate: 3600 } });
         const data = await res.json();
-        return data.posts || [];
+        const posts = data.posts || [];
+        return posts.filter(post =>
+            !Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'careers')
+        );
     } catch (error) {
         console.error("Error fetching posts:", error);
         return [];
@@ -27,9 +30,18 @@ async function getCategories() {
     }
 }
 
-const InsightsListSection = async () => {
-    const posts = await getPosts();
+const EXCLUDED_CATEGORY_SLUGS = ['careers', 'uncategorized'];
+
+const InsightsListSection = async ({ activeCategory = null }) => {
+    let posts = await getPosts();
     const categories = await getCategories();
+
+    // Filter posts by active category (match against slug in category value objects)
+    if (activeCategory) {
+        posts = posts.filter(post =>
+            Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === activeCategory.toLowerCase())
+        );
+    }
 
     // Group posts by Month Year
     const groupArray = [];
@@ -44,6 +56,10 @@ const InsightsListSection = async () => {
         }
         group.posts.push(post);
     });
+
+    const filteredCategories = categories.filter(
+        cat => !EXCLUDED_CATEGORY_SLUGS.includes(cat.slug?.toLowerCase())
+    );
 
     return (
         <section className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
@@ -78,9 +94,26 @@ const InsightsListSection = async () => {
                         <div className="mb-16">
                             <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80 mb-6 font-sans">Categories</h3>
                             <ul className="space-y-4">
-                                {categories.map(cat => (
+                                <li>
+                                    <Link
+                                        href="/insights"
+                                        className={`transition-colors text-base font-medium font-serif block ${
+                                            !activeCategory ? 'text-primary' : 'text-primary/60 hover:text-primary'
+                                        }`}
+                                    >
+                                        All
+                                    </Link>
+                                </li>
+                                {filteredCategories.map(cat => (
                                     <li key={cat.ID}>
-                                        <Link href={`/insights?category=${cat.slug}`} className="text-primary/60 hover:text-primary transition-colors text-base font-medium font-serif block">
+                                        <Link
+                                            href={`/insights?category=${cat.slug}`}
+                                            className={`transition-colors text-base font-medium font-serif block ${
+                                                activeCategory?.toLowerCase() === cat.slug?.toLowerCase()
+                                                    ? 'text-primary'
+                                                    : 'text-primary/60 hover:text-primary'
+                                            }`}
+                                        >
                                             {cat.name}
                                         </Link>
                                     </li>
