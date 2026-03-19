@@ -52,11 +52,11 @@ const Footer = () => {
 
           {/* Logo Section */}
           <div className="col-span-1">
-            <a href="/" className="block mb-6">
+            <a href="/" className="block mb-2">
               <img
                 src="/TrivantageLogo.png"
                 alt="Trivantage Capital"
-                className="h-14 w-auto"
+                className="h-25 w-auto"
               />
             </a>
 
@@ -114,16 +114,15 @@ const Footer = () => {
                 Legal
               </p>
 
-              <a className="text-sm hover:text-primary/60" href="/legal/Privacy Policy.pdf"
-              target="_blank">
+              <a className="text-sm hover:text-primary/60" href="/privacy-policy">
                 Privacy Policy
               </a>
 
-              <a className="text-sm hover:text-primary/60" href="/legal/Terms & Conditions.pdf" target="_blank">
+              <a className="text-sm hover:text-primary/60" href="/terms-of-service">
                 Terms of Service
               </a>
 
-              <a className="text-sm hover:text-primary/60" href="/legal/Disclaimer.pdf" target="_blank">
+              <a className="text-sm hover:text-primary/60" href="/regulatory">
                 Regulatory
               </a>
             </div>
