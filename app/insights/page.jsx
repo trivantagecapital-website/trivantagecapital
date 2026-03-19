@@ -125,7 +125,7 @@ const Page = async ({ searchParams }) => {
 
           </div>
         </div>
-        <img src="/AbstractLines.png" alt="" className="pointer-events-none absolute -bottom-14 sm:-bottom-16 lg:-bottom-20 right-0 opacity-30 w-[85%] sm:w-auto max-w-none" />
+        <img src="/AbstractLines.png" alt="decorative background image" className="pointer-events-none absolute bottom-0 md:-bottom-14 lg:-bottom-20 right-0 opacity-30 w-auto max-w-none" />
       </section>
 
       {/* Insights List Section */}
