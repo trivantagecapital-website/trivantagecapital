@@ -42,7 +42,7 @@ const Page = async () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary">
         <div className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-stretch lg:justify-between gap-10 lg:gap-14 py-14 sm:py-16 lg:py-20">
+          <div className="flex flex-col md:flex-row md:items-stretch md:justify-between gap-10 md:gap-14 py-14 sm:py-16 md:py-20">
             <div className="w-full lg:max-w-[58%]">
               <h1 className="serif-heading text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-5 sm:mb-6 font-normal">
                 Insights
