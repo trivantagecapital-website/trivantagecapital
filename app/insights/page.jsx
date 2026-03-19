@@ -13,7 +13,10 @@ async function getPosts() {
     });
 
     const data = await res.json();
-    return data.posts || [];
+    const posts = data.posts || [];
+    return posts.filter(post =>
+      !Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'careers')
+    );
   } catch (err) {
     console.error('Failed to fetch posts:', err);
     return [];
@@ -22,13 +25,13 @@ async function getPosts() {
 
 async function getFeaturedPost() {
   const posts = await getPosts();
-  return posts.find(post => {
-    const categories = Object.keys(post.categories || {}).map(cat => cat.toLowerCase());
-    return categories.includes('featured');
-  }) || null;
+  return posts.find(post =>
+    Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'featured')
+  ) || null;
 }
 
-const Page = async () => {
+const Page = async ({ searchParams }) => {
+  const activeCategory = (await searchParams)?.category || null;
   const featuredPost = await getFeaturedPost();
   const categories = Object.keys(featuredPost?.categories || {}).filter(
     (cat) => cat.toLowerCase() !== 'featured'
@@ -66,9 +69,9 @@ const Page = async () => {
             </div>
 
             {/* Featured section */}
-            <div className="w-full lg:max-w-105 bg-white/20 sm:bg-white/25 lg:bg-white/30 py-8 sm:py-10 lg:py-12 px-5 sm:px-6 lg:px-8 z-10 backdrop-blur-[1px]">
-              <p className="w-full text-xs sm:text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-2 mb-6 sm:mb-8">FEATURED</p>
-              {featuredPost && (
+            {featuredPost && (
+              <div className="w-full lg:max-w-105 bg-white/20 sm:bg-white/25 lg:bg-white/30 py-8 sm:py-10 lg:py-12 px-5 sm:px-6 lg:px-8 z-10 backdrop-blur-[1px]">
+                <p className="w-full text-xs sm:text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-2 mb-6 sm:mb-8">FEATURED</p>
                 <div className="flex flex-col w-full max-w-sm mx-auto lg:mx-0">
 
                   {/* Image Container */}
@@ -117,16 +120,16 @@ const Page = async () => {
                   </div>
                 </div>
 
-              )}
-            </div>
+              </div>
+            )}
 
           </div>
         </div>
-        <img src="/AbstractLines.png" alt="" className="pointer-events-none absolute -bottom-14 sm:-bottom-16 lg:-bottom-20 right-0 opacity-30 w-[85%] sm:w-auto max-w-none"/>
+        <img src="/AbstractLines.png" alt="" className="pointer-events-none absolute -bottom-14 sm:-bottom-16 lg:-bottom-20 right-0 opacity-30 w-[85%] sm:w-auto max-w-none" />
       </section>
 
       {/* Insights List Section */}
-      <InsightsListSection />
+      <InsightsListSection activeCategory={activeCategory} />
 
     </main>
   );
