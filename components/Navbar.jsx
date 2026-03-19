@@ -18,7 +18,7 @@ const Navbar = () => {
           <img
             src="/TrivantageLogo.png"
             alt="Trivantage Capital Logo"
-            className="h-9 md:h-13 w-auto"
+            className="h-14 md:h-13 w-auto"
           />
         </a>
 
@@ -28,12 +28,12 @@ const Navbar = () => {
             className="hidden lg:flex items-center gap-5 xl:gap-9"
             aria-label="Main Navigation"
           >
-            <a
+            {/* <a
               className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
               href="/"
             >
               Home
-            </a>
+            </a> */}
 
             {/* About Dropdown */}
             <div className="relative group flex items-center">
@@ -153,12 +153,12 @@ const Navbar = () => {
           </div>
 
           <div className="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
-            <a
+            {/* <a
               href="/"
               className="text-primary/80 hover:text-primary font-semibold text-lg"
             >
               Home
-            </a>
+            </a> */}
 
             <div className="flex flex-col gap-3">
               <div className="text-primary/50 text-sm font-semibold uppercase tracking-widest">
