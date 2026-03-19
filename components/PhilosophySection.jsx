@@ -14,7 +14,7 @@ const PhilosophySection = () => {
             Investment Philosophy
           </p>
 
-          <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 italic">
+          <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 !font-serif">
             Research. Conviction. Growth.
           </h2>
 
@@ -39,7 +39,7 @@ const PhilosophySection = () => {
               <div className="h-[1px] flex-1 bg-primary/10"></div>
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight text-primary">
+            <h3 className="text-2xl font-bold tracking-tight text-primary !font-serif">
               Intense Focus on Learning
             </h3>
 
@@ -64,7 +64,7 @@ const PhilosophySection = () => {
               <div className="h-[1px] flex-1 bg-primary/10"></div>
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight text-primary">
+            <h3 className="text-2xl font-bold tracking-tight text-primary !font-serif">
               Growth Mindset
             </h3>
 
@@ -89,7 +89,7 @@ const PhilosophySection = () => {
               <div className="h-[1px] flex-1 bg-primary/10"></div>
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight text-primary">
+            <h3 className="text-2xl font-bold tracking-tight text-primary !font-serif">
               Strong Alignment with Investors
             </h3>
 
@@ -115,7 +115,7 @@ const PhilosophySection = () => {
               <div className="h-[1px] flex-1 bg-primary/10"></div>
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight text-primary font-display">
+            <h3 className="text-2xl font-bold tracking-tight text-primary font-display !font-serif">
   Premium on Quality
 </h3>
 

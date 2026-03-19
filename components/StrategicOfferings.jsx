@@ -13,51 +13,9 @@ const StrategicOfferings = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
+          
+
           {/* Card 1 */}
-          <div className="group flex flex-col bg-white border border-primary/5 rounded p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            
-            <div className="h-64 w-full mb-8 overflow-hidden rounded bg-background-light">
-              
-              <div
-                className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                style={{
-                  backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB5jLObQATwX75ko7nV7epkkXPvDqX1GdKbaLWQZUtvtl7UyNGOGsPpQJPxAdH0qMxND9oyv_jtMjUfIQqDOBcuCmHHloDPM9PaEJaEBu2maOyVu9F9FKaMc55eAzrp0XFgAruWXZadeT89PpP0ML8Z6ai5PHBuTgZ4DxHadC1wspjemU4E7rycB7TZkDIJT-_pjZ7HewS14kZzKK69ZCFvwU1O15akXbRY63ACKlo8HRdxLEXH-hijTEQb-qxhlDpICH-_pwqPYE')",
-                }}
-                aria-label="Strategy Illustration"
-              ></div>
-
-            </div>
-
-            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-3">
-              Strategy: Transitioning Challengers
-            </span>
-
-            <h3 className="text-primary text-2xl lg:text-3xl font-medium mb-4">
-              Emerging Leaders Portfolio
-            </h3>
-
-            <p className="text-primary/70 text-base leading-relaxed mb-8 flex-grow">
-              We identify businesses at an inflection point. These are transitioning
-              challengers poised for market leadership through innovation,
-              operational scaling, and sector tailwinds.
-            </p>
-
-            <div className="flex items-center">
-              <a
-                className="text-primary text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-                href="offerings.html#emerging-leaders"
-              >
-                Know More
-                <span className="material-symbols-outlined !text-lg">
-                  arrow_forward
-                </span>
-              </a>
-            </div>
-
-          </div>
-
-          {/* Card 2 */}
           <div className="group flex flex-col bg-white border border-primary/5 rounded p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
             
             <div className="h-64 w-full mb-8 overflow-hidden rounded bg-background-light">
@@ -77,7 +35,7 @@ const StrategicOfferings = () => {
               Strategy: Competitive Moats
             </span>
 
-            <h3 className="text-primary text-2xl lg:text-3xl font-medium mb-4">
+            <h3 className="text-primary text-2xl lg:text-3xl font-medium mb-4 serif-heading !font-serif">
               Edge Portfolio
             </h3>
 
@@ -91,6 +49,50 @@ const StrategicOfferings = () => {
               <a
                 className="text-primary text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
                 href="offerings.html#edge"
+              >
+                Know More
+                <span className="material-symbols-outlined !text-lg">
+                  arrow_forward
+                </span>
+              </a>
+            </div>
+
+          </div>
+
+          {/* Card 2 */}
+          <div className="group flex flex-col bg-white border border-primary/5 rounded p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            
+            <div className="h-64 w-full mb-8 overflow-hidden rounded bg-background-light">
+              
+              <div
+                className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+                style={{
+                  backgroundImage:
+                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB5jLObQATwX75ko7nV7epkkXPvDqX1GdKbaLWQZUtvtl7UyNGOGsPpQJPxAdH0qMxND9oyv_jtMjUfIQqDOBcuCmHHloDPM9PaEJaEBu2maOyVu9F9FKaMc55eAzrp0XFgAruWXZadeT89PpP0ML8Z6ai5PHBuTgZ4DxHadC1wspjemU4E7rycB7TZkDIJT-_pjZ7HewS14kZzKK69ZCFvwU1O15akXbRY63ACKlo8HRdxLEXH-hijTEQb-qxhlDpICH-_pwqPYE')",
+                }}
+                aria-label="Strategy Illustration"
+              ></div>
+
+            </div>
+
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-3">
+              Strategy: Transitioning Challengers
+            </span>
+
+            <h3 className="text-primary text-2xl lg:text-3xl font-medium mb-4 serif-heading !font-serif">
+              Emerging Leaders Portfolio
+            </h3>
+
+            <p className="text-primary/70 text-base leading-relaxed mb-8 flex-grow">
+              We identify businesses at an inflection point. These are transitioning
+              challengers poised for market leadership through innovation,
+              operational scaling, and sector tailwinds.
+            </p>
+
+            <div className="flex items-center">
+              <a
+                className="text-primary text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+                href="offerings.html#emerging-leaders"
               >
                 Know More
                 <span className="material-symbols-outlined !text-lg">

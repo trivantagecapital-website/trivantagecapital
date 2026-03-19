@@ -5,7 +5,7 @@ const CTASection = () => {
     <section className="bg-primary/5 py-32 border-t border-primary/5">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 flex flex-col items-center text-center">
         
-        <h3 className="serif-heading text-4xl md:text-5xl text-primary mb-8">
+        <h3 className="serif-heading text-4xl md:text-5xl text-primary mb-8 !font-serif">
           Ready to experience our approach?
         </h3>
 

@@ -7,7 +7,7 @@ const Page = () => {
 
       {/* Hero Section */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
           Our Advisors
         </h1>
 
@@ -41,7 +41,7 @@ const Page = () => {
             <div className="lg:col-span-8 space-y-8">
 
               <div>
-                <h2 className="serif-heading text-4xl text-primary mb-2">
+                <h2 className="serif-heading text-4xl text-primary mb-2 !font-serif">
                   Brijesh Mehra
                 </h2>
 

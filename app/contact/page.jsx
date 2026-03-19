@@ -7,7 +7,7 @@ const Page = () => {
       {/* Hero Section */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
 
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
           Contact Us
         </h1>
 
@@ -46,12 +46,12 @@ const Page = () => {
       {/* Contact Sections */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
 
           {/* Invest */}
-          <div className="bg-white p-8 border border-primary/5 rounded">
+          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4">
+            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Invest With Us
             </h3>
 
@@ -61,32 +61,34 @@ const Page = () => {
               investment journey:
             </p>
 
-            <a
-              href="mailto:monalisa.shilov@trivantagecapital.com"
-              className="text-primary font-bold hover:underline block mb-4"
-            >
-              monalisa.shilov@trivantagecapital.com
-            </a>
-
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary/60">
-                call
-              </span>
-
+            <div className="mt-auto">
               <a
-                href="tel:+912249034409"
-                className="text-primary font-bold hover:underline"
+                href="mailto:monalisa.shilov@trivantagecapital.com"
+                className="text-primary font-bold hover:underline block mb-4"
               >
-                +91-22-4903 4409
+                monalisa.shilov@trivantagecapital.com
               </a>
+
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary/60">
+                  call
+                </span>
+
+                <a
+                  href="tel:+912249034409"
+                  className="text-primary font-bold hover:underline"
+                >
+                  +91-22-4903 4409
+                </a>
+              </div>
             </div>
 
           </div>
 
           {/* Partner */}
-          <div className="bg-white p-8 border border-primary/5 rounded">
+          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4">
+            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Partner With Us
             </h3>
 
@@ -96,19 +98,23 @@ const Page = () => {
               To explore partnership opportunities:
             </p>
 
-            <a
-              href="mailto:monalisa.shilov@trivantagecapital.com"
-              className="text-primary font-bold hover:underline block"
-            >
-              monalisa.shilov@trivantagecapital.com
-            </a>
+            <div className="mt-auto">
+              <a
+                href="mailto:monalisa.shilov@trivantagecapital.com"
+                className="text-primary font-bold hover:underline block"
+              >
+                monalisa.shilov@trivantagecapital.com
+              </a>
+
+              <div className="mt-4 h-6" aria-hidden="true"></div>
+            </div>
 
           </div>
 
           {/* Existing Clients */}
-          <div className="bg-white p-8 border border-primary/5 rounded">
+          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4">
+            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Existing Clients
             </h3>
 
@@ -116,12 +122,16 @@ const Page = () => {
               For queries or clarifications, you may write to us at:
             </p>
 
-            <a
-              href="mailto:ops@trivantagecapital.com"
-              className="text-primary font-bold hover:underline block"
-            >
-              ops@trivantagecapital.com
-            </a>
+            <div className="mt-auto">
+              <a
+                href="mailto:ops@trivantagecapital.com"
+                className="text-primary font-bold hover:underline block"
+              >
+                ops@trivantagecapital.com
+              </a>
+
+              <div className="mt-4 h-6" aria-hidden="true"></div>
+            </div>
 
           </div>
 
@@ -130,7 +140,7 @@ const Page = () => {
         {/* Call Back Form */}
         <div className="bg-background-light p-10 lg:p-16 rounded border border-primary/10">
 
-          <h3 className="serif-heading text-3xl text-primary mb-8 text-center">
+          <h3 className="serif-heading text-3xl text-primary mb-8 text-center !font-serif">
             Request a call back
           </h3>
 
