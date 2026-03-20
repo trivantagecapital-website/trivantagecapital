@@ -12,7 +12,6 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-primary/5 pt-20 pb-10">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-
         {/* Fraud Caution Section */}
         {showCaution && !isUS && (
           <div className="mb-20 p-8 bg-red-50 border border-red-100 rounded-lg">
@@ -26,11 +25,11 @@ const Footer = () => {
                 Trivantage Capital hereby cautions all users against fraudulent
                 websites, applications, and communications falsely claiming
                 association with the company. Neither Trivantage Capital nor its
-                employees will ever solicit participation through WhatsApp groups,
-                social media accounts, or any mobile application for trading in
-                securities. Further, the company does not publish advertisements
-                promoting investments in specific stocks or inviting cash
-                transactions.
+                employees will ever solicit participation through WhatsApp
+                groups, social media accounts, or any mobile application for
+                trading in securities. Further, the company does not publish
+                advertisements promoting investments in specific stocks or
+                inviting cash transactions.
               </p>
 
               <p className="font-medium">
@@ -48,8 +47,9 @@ const Footer = () => {
           </div>
         )}
 
-        <div className={`grid grid-cols-1 ${isUS ? "md:grid-cols-2" : "md:grid-cols-3"} gap-12 mb-20`}>
-
+        <div
+          className={`grid grid-cols-1 ${isUS ? "md:grid-cols-2" : "md:grid-cols-3"} gap-12 mb-20`}
+        >
           {/* Logo Section */}
           <div className="col-span-1">
             <a href="/" className="block mb-2">
@@ -69,22 +69,37 @@ const Footer = () => {
           {/* Navigation */}
           {!isUS ? (
             <div className="col-span-1 grid grid-cols-2 gap-8">
-
               <div className="flex flex-col gap-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
                   Navigation
                 </p>
 
-                <a className="text-sm hover:text-primary/60" href="/#philosophy">
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/#philosophy"
+                >
                   Philosophy
                 </a>
 
-                <a className="text-sm hover:text-primary/60" href="/about/our-team">
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/about/our-team"
+                >
                   Investment Team
                 </a>
 
-                <a className="text-sm hover:text-primary/60" href="https://trivantage.in/webfincrm/login.jsp">
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/login"
+                >
                   Investor Portal
+                </a>
+
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/complaints"
+                >
+                  Investor Grievance
                 </a>
               </div>
 
@@ -93,12 +108,17 @@ const Footer = () => {
                   Legal
                 </p>
 
-                <a className="text-sm hover:text-primary/60" href="/privacy-policy"
-          >
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/privacy-policy"
+                >
                   Privacy Policy
                 </a>
 
-                <a className="text-sm hover:text-primary/60" href="/terms-of-service">
+                <a
+                  className="text-sm hover:text-primary/60"
+                  href="/terms-of-service"
+                >
                   Terms of Service
                 </a>
 
@@ -106,7 +126,6 @@ const Footer = () => {
                   Regulatory
                 </a>
               </div>
-
             </div>
           ) : (
             <div className="col-span-1 flex flex-col gap-4">
@@ -114,11 +133,17 @@ const Footer = () => {
                 Legal
               </p>
 
-              <a className="text-sm hover:text-primary/60" href="/privacy-policy">
+              <a
+                className="text-sm hover:text-primary/60"
+                href="/privacy-policy"
+              >
                 Privacy Policy
               </a>
 
-              <a className="text-sm hover:text-primary/60" href="/terms-of-service">
+              <a
+                className="text-sm hover:text-primary/60"
+                href="/terms-of-service"
+              >
                 Terms of Service
               </a>
 
@@ -152,7 +177,6 @@ const Footer = () => {
               </div>
             </div>
           )}
-
         </div>
 
         {/* Bottom Bar */}
@@ -161,19 +185,7 @@ const Footer = () => {
             © 2026 Trivantage Capital. All rights reserved.
           </p>
 
-          {!isUS && (
-            <div className="flex gap-6">
-              <a className="text-primary/40 hover:text-primary" href="#">
-                <span className="material-symbols-outlined !text-lg">public</span>
-              </a>
-
-              <a className="text-primary/40 hover:text-primary" href="#">
-                <span className="material-symbols-outlined !text-lg">share</span>
-              </a>
-            </div>
-          )}
         </div>
-
       </div>
     </footer>
   );

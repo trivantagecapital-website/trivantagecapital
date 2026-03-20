@@ -17,14 +17,14 @@ const CTASection = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           
           <a
-            href="contact.html"
+            href="/contact"
             className="bg-primary text-white px-10 py-4 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
           >
             Contact Our Team
           </a>
 
           <a
-            href="offerings.html"
+            href="/our-offering"
             className="border border-primary/20 text-primary px-10 py-4 rounded font-bold uppercase tracking-widest text-xs hover:bg-primary/5 transition-all"
           >
             Explore Funds
