@@ -93,16 +93,16 @@ const Footer = () => {
                   Legal
                 </p>
 
-                <a className="text-sm hover:text-primary/60" href="/legal/Privacy Policy.pdf"
-                target="_blank">
+                <a className="text-sm hover:text-primary/60" href="/privacy-policy"
+          >
                   Privacy Policy
                 </a>
 
-                <a className="text-sm hover:text-primary/60" href="/legal/Terms & Conditions.pdf" target="_blank">
+                <a className="text-sm hover:text-primary/60" href="/terms-of-service">
                   Terms of Service
                 </a>
 
-                <a className="text-sm hover:text-primary/60" href="/legal/Disclaimer.pdf" target="_blank">
+                <a className="text-sm hover:text-primary/60" href="/regulatory">
                   Regulatory
                 </a>
               </div>
