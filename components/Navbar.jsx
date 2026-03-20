@@ -130,6 +130,8 @@ const Navbar = () => {
         </div>
       </div>
 
+      
+
       {/* Mobile Sidebar */}
       <div
         className={`fixed inset-y-0 right-0 w-full sm:w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
