@@ -1,18 +1,24 @@
 import nodemailer from 'nodemailer';
+import { checkVerifiedToken } from '@/lib/otp-token';
 
 export async function POST(request) {
   try {
     const formData = await request.formData();
 
-    const name   = formData.get('name')?.trim();
-    const phone  = formData.get('phone')?.trim();
-    const email  = formData.get('email')?.trim();
-    const role   = formData.get('role')?.trim();
-    const resume = formData.get('resume');
+    const name          = formData.get('name')?.trim();
+    const phone         = formData.get('phone')?.trim();
+    const email         = formData.get('email')?.trim();
+    const role          = formData.get('role')?.trim();
+    const resume        = formData.get('resume');
+    const verifiedToken = formData.get('verifiedToken');
 
     // --- Server-side validation ---
     if (!name || !phone || !email || !role) {
       return Response.json({ error: 'All fields are required.' }, { status: 400 });
+    }
+
+    if (!verifiedToken || !checkVerifiedToken(verifiedToken, email)) {
+      return Response.json({ error: 'Email address is not verified. Please verify your email before submitting.' }, { status: 400 });
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {

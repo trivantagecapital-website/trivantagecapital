@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { checkVerifiedToken } from '@/lib/otp-token';
 
 export async function POST(request) {
   try {
@@ -11,13 +12,14 @@ export async function POST(request) {
     const state          = formData.get('state')?.trim();
     const city           = formData.get('city')?.trim();
     const mobile         = formData.get('mobile')?.trim();
+    const email          = formData.get('email')?.trim();
     const pan            = formData.get('pan')?.trim().toUpperCase();
     const clientId       = formData.get('clientId')?.trim();
     const details        = formData.get('details')?.trim();
-    const recaptchaToken = formData.get('recaptchaToken')?.trim();
+    const verifiedToken  = formData.get('verifiedToken');
 
     // --- Required field validation ---
-    if (!name || !address || !pincode || !state || !city || !mobile || !pan || !clientId || !details) {
+    if (!name || !address || !pincode || !state || !city || !mobile || !email || !pan || !clientId || !details) {
       return Response.json({ error: 'All required fields must be filled.' }, { status: 400 });
     }
 
@@ -25,23 +27,17 @@ export async function POST(request) {
       return Response.json({ error: 'Mobile number must be exactly 10 digits.' }, { status: 400 });
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return Response.json({ error: 'Enter a valid email address.' }, { status: 400 });
+    }
+
     if (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)) {
       return Response.json({ error: 'Enter a valid PAN (e.g. ABCDE1234F).' }, { status: 400 });
     }
 
-    // --- reCAPTCHA verification ---
-    if (!recaptchaToken) {
-      return Response.json({ error: 'Please complete the reCAPTCHA verification.' }, { status: 400 });
-    }
-
-    const captchaRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-    });
-    const captchaData = await captchaRes.json();
-    if (!captchaData.success) {
-      return Response.json({ error: 'reCAPTCHA verification failed. Please try again.' }, { status: 400 });
+    // --- Email verification check ---
+    if (!verifiedToken || !checkVerifiedToken(verifiedToken, email)) {
+      return Response.json({ error: 'Email address is not verified. Please verify your email before submitting.' }, { status: 400 });
     }
 
     // --- Send email ---
@@ -69,6 +65,7 @@ export async function POST(request) {
         `State/UT: ${state}`,
         `City/Location: ${city}`,
         `Mobile Number: ${mobile}`,
+        `Email Address: ${email}`,
         `PAN of Investor: ${pan}`,
         `Client ID with Trivantage Capital: ${clientId}`,
         `\nDetails of Complaint:\n${details}`,
