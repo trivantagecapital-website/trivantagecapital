@@ -91,7 +91,7 @@ const InsightsListSection = async ({ activeCategory = null }) => {
                 <div className="lg:col-span-4 pl-0 lg:pl-12 border-l border-primary/5 hidden lg:block">
                     <div className="sticky top-24">
                         {/* Categories */}
-                        <div className="mb-16">
+                        {/* <div className="mb-16">
                             <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80 mb-6 font-sans">Categories</h3>
                             <ul className="space-y-4">
                                 <li>
@@ -119,7 +119,7 @@ const InsightsListSection = async ({ activeCategory = null }) => {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </div> */}
 
                         {/* Subscribe */}
                         <div className="bg-primary/5 p-8 rounded-sm">

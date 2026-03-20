@@ -149,6 +149,26 @@ const Page = () => {
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
               <Image
+                src="/team/avadhoot-joshi.jpg"
+                alt="Harsh Bhutda - Equity Analyst"
+                fill
+                sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
+                className="object-cover object-top"
+              />
+            </div>
+
+            <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
+              Avadhoot Joshi
+            </h4>
+
+            <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
+              Equity Analyst
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center text-center group">
+            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
                 src="/team/harsh-bhutda.jpg"
                 alt="Harsh Bhutda - Equity Analyst"
                 fill
@@ -166,25 +186,7 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
-              <Image
-                src="/team/avadhoot-joshi.jpg"
-                alt="Harsh Bhutda - Equity Analyst"
-                fill
-                sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
-                className="object-cover object-top"
-              />
-            </div>
-
-            <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
-              Avadhoot Joshi
-            </h4>
-
-            <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
-              Equity Analyst
-            </p>
-          </div>
+          
 
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">

@@ -16,10 +16,10 @@ export default function ComplaintsPage() {
             {/* Hero / Title */}
             <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-12">
                 <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
-                    Complaint Data &amp; Registration
+                    Investor Grievance
                 </h1>
                 <div className="h-[1px] w-24 bg-primary/20 mb-6"></div>
-                <p className="text-base text-primary/60 font-light">Portfolio Manager</p>
+                {/* <p className="text-base text-primary/60 font-light">Portfolio Manager</p> */}
             </section>
 
             <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
