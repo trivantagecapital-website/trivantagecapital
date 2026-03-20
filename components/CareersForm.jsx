@@ -21,8 +21,27 @@ export default function CareersForm({ jobs }) {
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [serverError, setServerError] = useState('');
 
+  // Email OTP state
+  const [otpStatus, setOtpStatus] = useState('idle'); // idle | sending | sent | verifying | verified
+  const [otpToken, setOtpToken] = useState('');
+  const [otp, setOtp] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [verifiedToken, setVerifiedToken] = useState('');
+
   function set(field) {
     return (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
+  }
+
+  function handleEmailChange(e) {
+    set('email')(e);
+    // Reset verification if email changes after OTP was sent
+    if (otpStatus !== 'idle') {
+      setOtpStatus('idle');
+      setOtpToken('');
+      setOtp('');
+      setOtpError('');
+      setVerifiedToken('');
+    }
   }
 
   function validate() {
@@ -39,6 +58,8 @@ export default function CareersForm({ jobs }) {
       e.email = 'Email is required.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
       e.email = 'Enter a valid email address.';
+    } else if (otpStatus !== 'verified') {
+      e.email = 'Please verify your email address.';
     }
 
     if (!form.role) e.role = 'Please select a role.';
@@ -54,6 +75,54 @@ export default function CareersForm({ jobs }) {
     return e;
   }
 
+  async function handleSendOtp() {
+    setOtpStatus('sending');
+    setOtpError('');
+    try {
+      const res = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email.trim() }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setOtpStatus('idle');
+        setOtpError(json.error || 'Failed to send code.');
+      } else {
+        setOtpToken(json.token);
+        setOtpStatus('sent');
+      }
+    } catch {
+      setOtpStatus('idle');
+      setOtpError('Failed to send code. Please try again.');
+    }
+  }
+
+  async function handleVerifyOtp() {
+    setOtpStatus('verifying');
+    setOtpError('');
+    try {
+      const res = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: otpToken, otp }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setOtpStatus('sent');
+        setOtpError(json.error || 'Invalid code.');
+      } else {
+        setVerifiedToken(json.verifiedToken);
+        setOtpStatus('verified');
+        setOtp('');
+        setErrors((prev) => ({ ...prev, email: undefined }));
+      }
+    } catch {
+      setOtpStatus('sent');
+      setOtpError('Verification failed. Please try again.');
+    }
+  }
+
   async function handleSubmit(evt) {
     evt.preventDefault();
     const validationErrors = validate();
@@ -67,11 +136,12 @@ export default function CareersForm({ jobs }) {
     setServerError('');
 
     const data = new FormData();
-    data.append('name',   form.name.trim());
-    data.append('phone',  form.phone.trim());
-    data.append('email',  form.email.trim());
-    data.append('role',   form.role);
-    data.append('resume', resume);
+    data.append('name',          form.name.trim());
+    data.append('phone',         form.phone.trim());
+    data.append('email',         form.email.trim());
+    data.append('role',          form.role);
+    data.append('resume',        resume);
+    data.append('verifiedToken', verifiedToken);
 
     try {
       const res  = await fetch('/api/apply', { method: 'POST', body: data });
@@ -83,12 +153,17 @@ export default function CareersForm({ jobs }) {
         setStatus('success');
         setForm({ name: '', phone: '', email: '', role: '' });
         setResume(null);
+        setOtpStatus('idle');
+        setOtpToken('');
+        setVerifiedToken('');
       }
     } catch {
       setServerError('Something went wrong. Please try again.');
       setStatus('error');
     }
   }
+
+  const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim());
 
   if (status === 'success') {
     return (
@@ -140,18 +215,70 @@ export default function CareersForm({ jobs }) {
           {errors.phone && <p className={errorClass}>{errors.phone}</p>}
         </div>
 
-        {/* Email */}
+        {/* Email + OTP */}
         <div>
           <label htmlFor="email" className={labelClass}>Email</label>
-          <input
-            type="email" id="email"
-            value={form.email}
-            onChange={set('email')}
-            className={inputClass(!!errors.email)}
-            placeholder="Your Email Address"
-          />
+          <div className="flex gap-2">
+            <input
+              type="email" id="email"
+              value={form.email}
+              onChange={handleEmailChange}
+              readOnly={otpStatus === 'verified'}
+              className={`${inputClass(!!errors.email)} flex-1 ${otpStatus === 'verified' ? 'opacity-70' : ''}`}
+              placeholder="Your Email Address"
+            />
+            {otpStatus === 'verified' ? (
+              <span className="shrink-0 flex items-center px-3 text-sm font-semibold text-green-600">
+                ✓ Verified
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={handleSendOtp}
+                disabled={!emailIsValid || otpStatus === 'sending' || otpStatus === 'verifying'}
+                className="shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-widest bg-primary/10 text-primary rounded hover:bg-primary/20 transition-all disabled:opacity-40"
+              >
+                {otpStatus === 'sending'
+                  ? 'Sending...'
+                  : otpStatus === 'sent'
+                  ? 'Resend'
+                  : 'Send Code'}
+              </button>
+            )}
+          </div>
           {errors.email && <p className={errorClass}>{errors.email}</p>}
+          {otpError && otpStatus === 'idle' && <p className={errorClass}>{otpError}</p>}
         </div>
+
+        {/* OTP input — shown after code is sent */}
+        {(otpStatus === 'sent' || otpStatus === 'verifying') && (
+          <div>
+            <label className={labelClass}>Verification Code</label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                inputMode="numeric"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                className={`${inputClass(!!otpError)} flex-1 tracking-widest`}
+                placeholder="6-digit code"
+                maxLength={6}
+              />
+              <button
+                type="button"
+                onClick={handleVerifyOtp}
+                disabled={otp.length !== 6 || otpStatus === 'verifying'}
+                className="shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-widest bg-primary text-white rounded hover:opacity-90 transition-all disabled:opacity-40"
+              >
+                {otpStatus === 'verifying' ? 'Verifying...' : 'Verify'}
+              </button>
+            </div>
+            {otpError && <p className={errorClass}>{otpError}</p>}
+            <p className="mt-1 text-xs text-primary/40">
+              Check your inbox for the 6-digit code · Valid for 10 minutes
+            </p>
+          </div>
+        )}
 
         {/* Applying For */}
         <div>

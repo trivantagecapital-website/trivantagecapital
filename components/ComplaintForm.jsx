@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useState } from 'react';
 
 const inputClass = (hasError) =>
   `w-full border rounded px-4 py-2.5 text-sm text-primary placeholder-primary/30 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all ${
@@ -12,7 +11,7 @@ const errorClass = 'mt-1 text-xs text-red-500';
 
 const INITIAL = {
   name: '', lodgedBy: '', address: '', pincode: '',
-  state: '', city: '', mobile: '', pan: '', clientId: '', details: '',
+  state: '', city: '', mobile: '', email: '', pan: '', clientId: '', details: '',
 };
 
 export default function ComplaintForm() {
@@ -20,13 +19,30 @@ export default function ComplaintForm() {
   const [errors, setErrors]           = useState({});
   const [status, setStatus]           = useState('idle');
   const [serverError, setServerError] = useState('');
-  const recaptchaRef = useRef(null);
+
+  // Email OTP state
+  const [otpStatus, setOtpStatus]       = useState('idle'); // idle | sending | sent | verifying | verified
+  const [otpToken, setOtpToken]         = useState('');
+  const [otp, setOtp]                   = useState('');
+  const [otpError, setOtpError]         = useState('');
+  const [verifiedToken, setVerifiedToken] = useState('');
 
   const set = (field) => (e) =>
     setForm((f) => ({
       ...f,
       [field]: field === 'pan' ? e.target.value.toUpperCase() : e.target.value,
     }));
+
+  function handleEmailChange(e) {
+    set('email')(e);
+    if (otpStatus !== 'idle') {
+      setOtpStatus('idle');
+      setOtpToken('');
+      setOtp('');
+      setOtpError('');
+      setVerifiedToken('');
+    }
+  }
 
   function validate() {
     const e = {};
@@ -40,6 +56,13 @@ export default function ComplaintForm() {
     } else if (!/^\d{10}$/.test(form.mobile.trim())) {
       e.mobile = 'Enter a valid 10-digit mobile number.';
     }
+    if (!form.email.trim()) {
+      e.email = 'Email is required.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      e.email = 'Enter a valid email address.';
+    } else if (otpStatus !== 'verified') {
+      e.email = 'Please verify your email address.';
+    }
     if (!form.pan.trim()) {
       e.pan = 'PAN is required.';
     } else if (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(form.pan.trim())) {
@@ -50,32 +73,55 @@ export default function ComplaintForm() {
     return e;
   }
 
-  // Called by reCAPTCHA onChange once the invisible challenge resolves
-  async function doSubmit(token) {
-    const data = new FormData();
-    Object.entries(form).forEach(([k, v]) => data.append(k, v));
-    data.append('recaptchaToken', token);
-
+  async function handleSendOtp() {
+    setOtpStatus('sending');
+    setOtpError('');
     try {
-      const res  = await fetch('/api/complaint', { method: 'POST', body: data });
+      const res = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email.trim() }),
+      });
       const json = await res.json();
       if (!res.ok) {
-        setServerError(json.error || 'Something went wrong.');
-        setStatus('error');
-        recaptchaRef.current?.reset();
+        setOtpStatus('idle');
+        setOtpError(json.error || 'Failed to send code.');
       } else {
-        setStatus('success');
-        setForm(INITIAL);
-        recaptchaRef.current?.reset();
+        setOtpToken(json.token);
+        setOtpStatus('sent');
       }
     } catch {
-      setServerError('Something went wrong. Please try again.');
-      setStatus('error');
-      recaptchaRef.current?.reset();
+      setOtpStatus('idle');
+      setOtpError('Failed to send code. Please try again.');
     }
   }
 
-  function handleSubmit(evt) {
+  async function handleVerifyOtp() {
+    setOtpStatus('verifying');
+    setOtpError('');
+    try {
+      const res = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: otpToken, otp }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setOtpStatus('sent');
+        setOtpError(json.error || 'Invalid code.');
+      } else {
+        setVerifiedToken(json.verifiedToken);
+        setOtpStatus('verified');
+        setOtp('');
+        setErrors((prev) => ({ ...prev, email: undefined }));
+      }
+    } catch {
+      setOtpStatus('sent');
+      setOtpError('Verification failed. Please try again.');
+    }
+  }
+
+  async function handleSubmit(evt) {
     evt.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
@@ -83,9 +129,31 @@ export default function ComplaintForm() {
     setErrors({});
     setStatus('loading');
     setServerError('');
-    // Triggers the invisible reCAPTCHA; doSubmit fires via onChange when done
-    recaptchaRef.current?.execute();
+
+    const data = new FormData();
+    Object.entries(form).forEach(([k, v]) => data.append(k, v));
+    data.append('verifiedToken', verifiedToken);
+
+    try {
+      const res  = await fetch('/api/complaint', { method: 'POST', body: data });
+      const json = await res.json();
+      if (!res.ok) {
+        setServerError(json.error || 'Something went wrong.');
+        setStatus('error');
+      } else {
+        setStatus('success');
+        setForm(INITIAL);
+        setOtpStatus('idle');
+        setOtpToken('');
+        setVerifiedToken('');
+      }
+    } catch {
+      setServerError('Something went wrong. Please try again.');
+      setStatus('error');
+    }
   }
+
+  const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim());
 
   if (status === 'success') {
     return (
@@ -156,6 +224,69 @@ export default function ComplaintForm() {
         {errors.mobile && <p className={errorClass}>{errors.mobile}</p>}
       </div>
 
+      {/* Email + OTP verification */}
+      <div>
+        <div className="flex gap-2">
+          <input
+            type="email"
+            placeholder="Email Address*"
+            value={form.email}
+            onChange={handleEmailChange}
+            readOnly={otpStatus === 'verified'}
+            className={`${inputClass(!!errors.email)} flex-1 ${otpStatus === 'verified' ? 'opacity-70' : ''}`}
+          />
+          {otpStatus === 'verified' ? (
+            <span className="shrink-0 flex items-center px-3 text-sm font-semibold text-green-600">
+              ✓ Verified
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={handleSendOtp}
+              disabled={!emailIsValid || otpStatus === 'sending' || otpStatus === 'verifying'}
+              className="shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-widest bg-primary/10 text-primary rounded hover:bg-primary/20 transition-all disabled:opacity-40"
+            >
+              {otpStatus === 'sending'
+                ? 'Sending...'
+                : otpStatus === 'sent'
+                ? 'Resend'
+                : 'Send Code'}
+            </button>
+          )}
+        </div>
+        {errors.email && <p className={errorClass}>{errors.email}</p>}
+        {otpError && otpStatus === 'idle' && <p className={errorClass}>{otpError}</p>}
+      </div>
+
+      {/* OTP input — shown after code is sent */}
+      {(otpStatus === 'sent' || otpStatus === 'verifying') && (
+        <div>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              inputMode="numeric"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+              className={`${inputClass(!!otpError)} flex-1 tracking-widest`}
+              placeholder="6-digit verification code"
+              maxLength={6}
+            />
+            <button
+              type="button"
+              onClick={handleVerifyOtp}
+              disabled={otp.length !== 6 || otpStatus === 'verifying'}
+              className="shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-widest bg-primary text-white rounded hover:opacity-90 transition-all disabled:opacity-40"
+            >
+              {otpStatus === 'verifying' ? 'Verifying...' : 'Verify'}
+            </button>
+          </div>
+          {otpError && <p className={errorClass}>{otpError}</p>}
+          <p className="mt-1 text-xs text-primary/40">
+            Check your inbox for the 6-digit code · Valid for 10 minutes
+          </p>
+        </div>
+      )}
+
       {/* PAN */}
       <div>
         <input type="text" placeholder="PAN of Investor*" value={form.pan} onChange={set('pan')}
@@ -183,16 +314,6 @@ export default function ComplaintForm() {
       </div>
 
       {serverError && <p className="text-xs text-red-500">{serverError}</p>}
-
-      {/* Invisible reCAPTCHA — no UI rendered, fires on execute() */}
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-        size="invisible"
-        onChange={doSubmit}
-        onExpired={() => { setStatus('error'); setServerError('reCAPTCHA expired. Please try again.'); }}
-        onErrored={() => { setStatus('error'); setServerError('reCAPTCHA error. Please try again.'); }}
-      />
 
       {/* Submit */}
       <button

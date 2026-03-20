@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { stripHtml, getPostLink } from '@/lib/blogUtils';
+import SubscribeForm from './SubscribeForm';
 
 const BASE_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com';
 
@@ -127,19 +128,7 @@ const InsightsListSection = async ({ activeCategory = null }) => {
                             <p className="text-primary/60 text-sm mb-6 font-sans leading-relaxed">
                                 Receive weekly market perspectives directly to your inbox.
                             </p>
-                            <form className="flex flex-col gap-3">
-                                <input
-                                    type="email"
-                                    placeholder="Email Address"
-                                    className="px-4 py-3 bg-white border border-transparent focus:border-primary/20 focus:outline-none w-full text-sm font-sans"
-                                />
-                                <button
-                                    type="submit"
-                                    className="px-6 py-3 bg-primary/10 hover:bg-primary/20 text-primary font-bold text-xs uppercase tracking-widest transition-colors w-full font-sans"
-                                >
-                                    Join Archive
-                                </button>
-                            </form>
+                            <SubscribeForm />
                         </div>
                     </div>
                 </div>
