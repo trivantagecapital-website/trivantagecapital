@@ -32,7 +32,7 @@ const BlogsSection = async () => {
                         INSIGHTS
                     </p>
 
-                    <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 !font-serif">
+                    <h2 className="!font-display text-primary text-5xl font-bold tracking-tight mb-4">
                         VantagePoint
                     </h2>
 

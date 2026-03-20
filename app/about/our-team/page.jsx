@@ -102,7 +102,7 @@ const Page = () => {
             </h4>
 
             <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
-              Chief Business Officer
+              Chief Business Officer & Investment Specialist
             </p>
           </div>
 
@@ -122,7 +122,7 @@ const Page = () => {
             </h4>
 
             <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
-              COO & Compliance Officer
+              Chief Operating Officer
             </p>
           </div>
 
@@ -169,7 +169,27 @@ const Page = () => {
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
               <Image
-                src="/Ashish Agarwal.JPG"
+                src="/team/avadhoot-joshi.jpg"
+                alt="Harsh Bhutda - Equity Analyst"
+                fill
+                sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
+                className="object-cover object-top"
+              />
+            </div>
+
+            <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
+              Avadhoot Joshi
+            </h4>
+
+            <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
+              Equity Analyst
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center text-center group">
+            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+              <Image
+                src="/team/ashish_agarwal.jpg"
                 alt="Ashish Agarwal - AVP Operations"
                 fill
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
@@ -182,14 +202,15 @@ const Page = () => {
             </h4>
 
             <p className="text-sm font-medium text-primary/60 uppercase tracking-widest">
-              AVP - Operations
+              {/* AVP - Operations */}
+              Senior Manager - Operations
             </p>
           </div>
 
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
               <Image
-                src="/Pushkar Joshi.jpg"
+                src="/team/pushkar-joshi.JPG"
                 alt="Pushkar Joshi - Manager Operations"
                 fill
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"

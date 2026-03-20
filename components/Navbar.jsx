@@ -20,7 +20,7 @@ const Navbar = () => {
           <img
             src="/TrivantageLogo.png"
             alt="Trivantage Capital Logo"
-            className="h-14 md:h-13 w-auto"
+            className="h-20 md:h-19 w-auto"
           />
         </a>
 
