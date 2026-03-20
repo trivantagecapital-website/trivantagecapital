@@ -2,9 +2,11 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useResidency } from "@/hooks/useResidency";
 
 const Footer = () => {
   const pathname = usePathname();
+  const { isUS } = useResidency();
   const showCaution = pathname === "/" || pathname === "/invest";
 
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
 
         {/* Fraud Caution Section */}
-        {showCaution && (
+        {showCaution && !isUS && (
           <div className="mb-20 p-8 bg-red-50 border border-red-100 rounded-lg">
             <h3 className="text-red-800 font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined">warning</span>
@@ -46,7 +48,7 @@ const Footer = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        <div className={`grid grid-cols-1 ${isUS ? "md:grid-cols-2" : "md:grid-cols-3"} gap-12 mb-20`}>
 
           {/* Logo Section */}
           <div className="col-span-1">
@@ -65,27 +67,49 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="col-span-1 grid grid-cols-2 gap-8">
+          {!isUS ? (
+            <div className="col-span-1 grid grid-cols-2 gap-8">
 
-            <div className="flex flex-col gap-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
-                Navigation
-              </p>
+              <div className="flex flex-col gap-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+                  Navigation
+                </p>
 
-              <a className="text-sm hover:text-primary/60" href="/#philosophy">
-                Philosophy
-              </a>
+                <a className="text-sm hover:text-primary/60" href="/#philosophy">
+                  Philosophy
+                </a>
 
-              <a className="text-sm hover:text-primary/60" href="/about/our-team">
-                Investment Team
-              </a>
+                <a className="text-sm hover:text-primary/60" href="/about/our-team">
+                  Investment Team
+                </a>
 
-              <a className="text-sm hover:text-primary/60" href="https://trivantage.in/webfincrm/login.jsp">
-                Investor Portal
-              </a>
+                <a className="text-sm hover:text-primary/60" href="https://trivantage.in/webfincrm/login.jsp">
+                  Investor Portal
+                </a>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+                  Legal
+                </p>
+
+                <a className="text-sm hover:text-primary/60" href="/legal/Privacy Policy.pdf"
+                target="_blank">
+                  Privacy Policy
+                </a>
+
+                <a className="text-sm hover:text-primary/60" href="/legal/Terms & Conditions.pdf" target="_blank">
+                  Terms of Service
+                </a>
+
+                <a className="text-sm hover:text-primary/60" href="/legal/Disclaimer.pdf" target="_blank">
+                  Regulatory
+                </a>
+              </div>
+
             </div>
-
-            <div className="flex flex-col gap-4">
+          ) : (
+            <div className="col-span-1 flex flex-col gap-4">
               <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
                 Legal
               </p>
@@ -102,31 +126,32 @@ const Footer = () => {
                 Regulatory
               </a>
             </div>
-
-          </div>
+          )}
 
           {/* Newsletter */}
-          <div className="col-span-1 flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
-              Newsletter
-            </p>
+          {!isUS && (
+            <div className="col-span-1 flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+                Newsletter
+              </p>
 
-            <p className="text-sm text-primary/60 mb-2">
-              Subscribe to our market insights.
-            </p>
+              <p className="text-sm text-primary/60 mb-2">
+                Subscribe to our market insights.
+              </p>
 
-            <div className="flex gap-2">
-              <input
-                className="bg-primary/5 border-none rounded text-sm px-4 py-3 flex-1 focus:ring-1 focus:ring-primary/20"
-                placeholder="Email Address"
-                type="email"
-              />
+              <div className="flex gap-2">
+                <input
+                  className="bg-primary/5 border-none rounded text-sm px-4 py-3 flex-1 focus:ring-1 focus:ring-primary/20"
+                  placeholder="Email Address"
+                  type="email"
+                />
 
-              <button className="bg-primary text-white px-4 py-2 rounded text-xs font-bold">
-                JOIN
-              </button>
+                <button className="bg-primary text-white px-4 py-2 rounded text-xs font-bold">
+                  JOIN
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
         </div>
 
@@ -136,15 +161,17 @@ const Footer = () => {
             © 2026 Trivantage Capital. All rights reserved.
           </p>
 
-          <div className="flex gap-6">
-            <a className="text-primary/40 hover:text-primary" href="#">
-              <span className="material-symbols-outlined !text-lg">public</span>
-            </a>
+          {!isUS && (
+            <div className="flex gap-6">
+              <a className="text-primary/40 hover:text-primary" href="#">
+                <span className="material-symbols-outlined !text-lg">public</span>
+              </a>
 
-            <a className="text-primary/40 hover:text-primary" href="#">
-              <span className="material-symbols-outlined !text-lg">share</span>
-            </a>
-          </div>
+              <a className="text-primary/40 hover:text-primary" href="#">
+                <span className="material-symbols-outlined !text-lg">share</span>
+              </a>
+            </div>
+          )}
         </div>
 
       </div>

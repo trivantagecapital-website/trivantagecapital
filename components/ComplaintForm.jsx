@@ -20,7 +20,6 @@ export default function ComplaintForm() {
   const [errors, setErrors]           = useState({});
   const [status, setStatus]           = useState('idle');
   const [serverError, setServerError] = useState('');
-  const [captchaToken, setCaptchaToken] = useState(null);
   const recaptchaRef = useRef(null);
 
   const set = (field) => (e) =>
@@ -48,22 +47,14 @@ export default function ComplaintForm() {
     }
     if (!form.clientId.trim()) e.clientId = 'Client ID is required.';
     if (!form.details.trim())  e.details  = 'Please describe your complaint.';
-    if (!captchaToken)         e.captcha  = 'Please complete the reCAPTCHA.';
     return e;
   }
 
-  async function handleSubmit(evt) {
-    evt.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-
-    setErrors({});
-    setStatus('loading');
-    setServerError('');
-
+  // Called by reCAPTCHA onChange once the invisible challenge resolves
+  async function doSubmit(token) {
     const data = new FormData();
     Object.entries(form).forEach(([k, v]) => data.append(k, v));
-    data.append('recaptchaToken', captchaToken);
+    data.append('recaptchaToken', token);
 
     try {
       const res  = await fetch('/api/complaint', { method: 'POST', body: data });
@@ -72,17 +63,28 @@ export default function ComplaintForm() {
         setServerError(json.error || 'Something went wrong.');
         setStatus('error');
         recaptchaRef.current?.reset();
-        setCaptchaToken(null);
       } else {
         setStatus('success');
         setForm(INITIAL);
         recaptchaRef.current?.reset();
-        setCaptchaToken(null);
       }
     } catch {
       setServerError('Something went wrong. Please try again.');
       setStatus('error');
+      recaptchaRef.current?.reset();
     }
+  }
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+
+    setErrors({});
+    setStatus('loading');
+    setServerError('');
+    // Triggers the invisible reCAPTCHA; doSubmit fires via onChange when done
+    recaptchaRef.current?.execute();
   }
 
   if (status === 'success') {
@@ -180,18 +182,17 @@ export default function ComplaintForm() {
         {errors.details && <p className={errorClass}>{errors.details}</p>}
       </div>
 
-      {/* reCAPTCHA */}
-      <div>
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-          onChange={(token) => setCaptchaToken(token)}
-          onExpired={() => setCaptchaToken(null)}
-        />
-        {errors.captcha && <p className={errorClass}>{errors.captcha}</p>}
-      </div>
-
       {serverError && <p className="text-xs text-red-500">{serverError}</p>}
+
+      {/* Invisible reCAPTCHA — no UI rendered, fires on execute() */}
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        size="invisible"
+        onChange={doSubmit}
+        onExpired={() => { setStatus('error'); setServerError('reCAPTCHA expired. Please try again.'); }}
+        onErrored={() => { setStatus('error'); setServerError('reCAPTCHA error. Please try again.'); }}
+      />
 
       {/* Submit */}
       <button

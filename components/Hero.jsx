@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section className="relative w-full pt-32 pb-24 overflow-hidden">
+    <section className="relative w-full pt-16 md:pt-32 pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src="/hero-skyscraper3.jpg" alt="Modern Skyscraper Architecture"
           className="w-full h-full object-cover object-top opacity-80" />
