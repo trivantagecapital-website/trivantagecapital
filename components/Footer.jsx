@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { useResidency } from "@/hooks/useResidency";
+import SubscribeForm from "./SubscribeForm";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -164,17 +165,7 @@ const Footer = () => {
                 Subscribe to our market insights.
               </p>
 
-              <div className="flex gap-2">
-                <input
-                  className="bg-primary/5 border-none rounded text-sm px-4 py-3 flex-1 focus:ring-1 focus:ring-primary/20"
-                  placeholder="Email Address"
-                  type="email"
-                />
-
-                <button className="bg-primary text-white px-4 py-2 rounded text-xs font-bold">
-                  JOIN
-                </button>
-              </div>
+              <SubscribeForm />
             </div>
           )}
         </div>
