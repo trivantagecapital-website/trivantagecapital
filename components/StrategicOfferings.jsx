@@ -39,7 +39,7 @@ const StrategicOfferings = () => {
               Edge Portfolio
             </h3>
 
-            <p className="text-primary/70 text-base leading-relaxed mb-8 flex-grow">
+            <p className="text-primary text-base leading-relaxed mb-8 flex-grow">
               Focusing on resilience and market dominance. We invest in
               established businesses with sustainable competitive moats and
               high entry barriers.
@@ -48,7 +48,7 @@ const StrategicOfferings = () => {
             <div className="flex items-center">
               <a
                 className="text-primary text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-                href="offerings.html#edge"
+                href="/our-offering"
               >
                 Know More
                 <span className="material-symbols-outlined !text-lg">
@@ -83,7 +83,7 @@ const StrategicOfferings = () => {
               Emerging Leaders Portfolio
             </h3>
 
-            <p className="text-primary/70 text-base leading-relaxed mb-8 flex-grow">
+            <p className="text-primary text-base leading-relaxed mb-8 flex-grow">
               We identify businesses at an inflection point. These are transitioning
               challengers poised for market leadership through innovation,
               operational scaling, and sector tailwinds.
@@ -92,7 +92,7 @@ const StrategicOfferings = () => {
             <div className="flex items-center">
               <a
                 className="text-primary text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-                href="offerings.html#emerging-leaders"
+                href="/our-offering"
               >
                 Know More
                 <span className="material-symbols-outlined !text-lg">

@@ -55,7 +55,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECIPIENT,
+      to: process.env.EMAIL_RECIPIENT_COMPLAINTS,
       subject: `New Complaint Registration – ${name}`,
       text: [
         `Name: ${name}`,

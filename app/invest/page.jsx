@@ -1,5 +1,6 @@
 import React from "react";
 import InvestCallbackForm from "../../components/InvestCallbackForm";
+import ExternalLink from "../../components/ExternalLink";
 
 const Page = () => {
   return (
@@ -195,11 +196,9 @@ const Page = () => {
               </li>
 
               <li>
-                <a
+                <ExternalLink
                   href="https://smartodr.in/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
+                  className="w-full flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white cursor-pointer"
                 >
                   <span className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
@@ -212,7 +211,7 @@ const Page = () => {
                   <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
                     open_in_new
                   </span>
-                </a>
+                </ExternalLink>
               </li>
 
               <li>

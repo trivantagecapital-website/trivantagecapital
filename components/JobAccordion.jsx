@@ -20,15 +20,7 @@ function JobItem({ post, isOpen, onToggle }) {
 
       {isOpen && (
         <div
-          className="bg-white px-6 py-5 border-t border-primary/10 text-base text-primary/70 leading-relaxed
-            [&_p]:mb-3 [&_p:last-child]:mb-0
-            [&_ul]:list-disc [&_ul]:ml-5 [&_ul]:mb-3
-            [&_ol]:list-decimal [&_ol]:ml-5 [&_ol]:mb-3
-            [&_li]:mb-1
-            [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-primary [&_h2]:mb-2 [&_h2]:mt-4
-            [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-primary [&_h3]:mb-1 [&_h3]:mt-3
-            [&_strong]:font-semibold [&_strong]:text-primary
-            [&_a]:underline [&_a]:text-primary/80 [&_a:hover]:text-primary"
+          className="wp-content bg-white px-6 py-5 border-t border-primary/10"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       )}

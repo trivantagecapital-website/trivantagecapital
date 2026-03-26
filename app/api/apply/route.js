@@ -60,7 +60,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECIPIENT,
+      to: process.env.EMAIL_RECIPIENT_CAREERS,
       subject: `New Job Application – ${role}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nApplying For: ${role}`,
       attachments: [

@@ -112,7 +112,7 @@ export default function SubscribeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 border border-primary/40 rounded">
       {/* Email + Send OTP */}
       <div>
         <div className="flex gap-2">

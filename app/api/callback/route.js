@@ -42,7 +42,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECIPIENT,
+      to: process.env.EMAIL_RECIPIENT_INVEST,
       subject: `Callback Request – ${name}`,
       text: `Name: ${name}\nEmail: ${email || 'Not provided'}\nPhone: ${phone}`,
     });

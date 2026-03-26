@@ -16,7 +16,7 @@ const Page = () => {
           Portfolios shaped by learning, guided by quality, and built for compounding.
         </p>
 
-        <p className="text-base text-primary/70 max-w-[800px] leading-relaxed font-light">
+        <p className="text-base text-primary max-w-[800px] leading-relaxed font-light">
           Each discretionary investment approach reflects our research depth and sectoral insights,
           translating conviction into opportunity. With a clear focus on growth, governance, and
           alignment, we build portfolios that convert insight into sustainable compounding.
@@ -27,7 +27,7 @@ const Page = () => {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
 
         {/* Edge Portfolio */}
-        <section className="mb-24">
+        <section id="edge-portfolio" className="mb-24">
           <div className="group flex flex-col md:flex-row gap-8 lg:gap-16 items-start">
             
             <div className="w-full md:w-1/2 aspect-[4/3] rounded overflow-hidden bg-background-light relative">
@@ -45,7 +45,7 @@ const Page = () => {
                 Trivantage Capital Edge Portfolio
               </h2>
 
-              <div className="text-primary/70 leading-relaxed font-light space-y-4">
+              <div className="text-primary leading-relaxed font-light space-y-4">
                 <p>
                   Focuses on identifying businesses with strong competitive moats,
                   scalable business models, and robust governance standards.
@@ -71,7 +71,7 @@ const Page = () => {
         </section>
 
         {/* Emerging Leaders Portfolio */}
-        <section>
+        <section id="emerging-leaders">
           <div className="group flex flex-col md:flex-row-reverse gap-8 lg:gap-16 items-start">
             
             <div className="w-full md:w-1/2 aspect-[4/3] rounded overflow-hidden bg-background-light relative">
@@ -89,7 +89,7 @@ const Page = () => {
                 Trivantage Capital Emerging Leaders Portfolio
               </h2>
 
-              <div className="text-primary/70 leading-relaxed font-light space-y-4">
+              <div className="text-primary leading-relaxed font-light space-y-4">
                 <p>
                   Crafted to spot companies at an inflection point—businesses
                   transitioning from promising challengers into future industry

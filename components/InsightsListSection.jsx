@@ -63,7 +63,7 @@ const InsightsListSection = async ({ activeCategory = null }) => {
     );
 
     return (
-        <section className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
+        <section className="max-w-320 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
 
                 {/* Posts Column */}

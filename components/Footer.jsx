@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { useResidency } from "@/hooks/useResidency";
+import { resetResidency } from "@/lib/resetResidency";
 import SubscribeForm from "./SubscribeForm";
 
 const Footer = () => {
@@ -171,11 +172,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-primary/5">
-          <p className="text-primary/40 text-xs font-medium">
+        <div className="relative flex items-center justify-center pt-10 border-t border-primary/5">
+          <button
+            onClick={resetResidency}
+            className="md:absolute md:left-0 text-primary hover:text-primary/60 text-xs font-medium underline transition-colors"
+          >
+            Change Region
+          </button>
+
+          <p className="text-primary text-xs font-medium hidden md:block">
             © 2026 Trivantage Capital. All rights reserved.
           </p>
-
         </div>
       </div>
     </footer>

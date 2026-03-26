@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DisclaimerModal from "../components/DisclaimerModal";
 import USRedirectGuard from "../components/USRedirectGuard";
+import USInfoBanner from "../components/USInfoBanner";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         className={`${manrope.variable} ${libre_baskerville.variable} antialiased`}
       >
         <Navbar />
+        <USInfoBanner />
         <USRedirectGuard>{children}</USRedirectGuard>
         <Footer />
         <DisclaimerModal />

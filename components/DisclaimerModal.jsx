@@ -13,9 +13,16 @@ const DisclaimerModal = () => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && !localStorage.getItem(STORAGE_KEY)) {
-      setIsOpen(true);
-    }
+    const check = () => {
+      if (typeof window !== "undefined" && !localStorage.getItem(STORAGE_KEY)) {
+        setIsOpen(true);
+        setStep(1);
+        setSelectedValue(null);
+      }
+    };
+    check();
+    window.addEventListener("storage", check);
+    return () => window.removeEventListener("storage", check);
   }, []);
 
   const handleProceed = () => {
@@ -60,10 +67,25 @@ const DisclaimerModal = () => {
               >
                 Caution Against Fraudulent Activities
               </h2>
+
+              <div className="bg-primary/5 border border-primary/10 rounded p-3 sm:p-4 mb-5 sm:mb-6 text-sm sm:text-base text-primary/80 text-center">
+                {selectedValue === "us" ? (
+                  <p>You have declared that you <strong className="text-primary">ARE</strong> a resident of the United States of America.</p>
+                ) : (
+                  <p>You have declared that you are <strong className="text-primary">NOT</strong> a resident of the United States of America.</p>
+                )}
+              </div>
+
               <p className="text-primary/80 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
                 {CAUTION_TEXT}
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={() => setStep(1)}
+                  className="border border-primary/20 text-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded font-bold uppercase tracking-widest text-xs hover:bg-primary/5 transition-all"
+                >
+                  Go Back
+                </button>
                 <button
                   onClick={handleCautionOk}
                   className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
