@@ -26,14 +26,6 @@ export default function ComplaintDataPopup() {
   const [error, setError]       = useState(false);
 
   useEffect(() => {
-    // Open automatically only on first visit per session
-    if (!localStorage.getItem('complaintPopupSeen')) {
-      setIsOpen(true);
-      localStorage.setItem('complaintPopupSeen', 'true');
-    }
-  }, []);
-
-  useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
