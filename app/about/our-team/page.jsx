@@ -26,7 +26,7 @@ const Page = () => {
             <div className="lg:col-span-4">
               <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
                 <Image
-                  src="/Nikhil Johri.jpg"
+                  src="/team/nikhil_johri.jpg"
                   alt="Nikhil Johri - Founder & Chief Investment Officer"
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
@@ -89,7 +89,7 @@ const Page = () => {
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
               <Image
-                src="/Monalisa Shilov.png"
+                src="/team/monalisa_shilov.jpg"
                 alt="Monalisa Shilov - Chief Business Officer"
                 fill
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
@@ -109,7 +109,7 @@ const Page = () => {
           <div className="flex flex-col items-center text-center group">
             <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
               <Image
-                src="/Shridhar Iyer.png"
+                src="/team/shridhar_iyer.jpg"
                 alt="Shridhar Iyer - COO & Compliance Officer"
                 fill
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
