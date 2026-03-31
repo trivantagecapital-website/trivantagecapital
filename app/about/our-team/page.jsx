@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
   return (
@@ -24,7 +25,7 @@ const Page = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
             <div className="lg:col-span-4">
-              <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
+              <Link href="/nikhil" className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0 block">
                 <Image
                   src="/Nikhil Johri.jpg"
                   alt="Nikhil Johri - Founder & Chief Investment Officer"
@@ -33,7 +34,7 @@ const Page = () => {
                   className="object-cover object-top"
                   priority
                 />
-              </div>
+              </Link>
             </div>
 
             <div className="lg:col-span-8 space-y-8">
@@ -87,7 +88,7 @@ const Page = () => {
 
           {/* Team Member */}
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/monalisa" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/Monalisa Shilov.png"
                 alt="Monalisa Shilov - Chief Business Officer"
@@ -95,7 +96,7 @@ const Page = () => {
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Monalisa Shilov
@@ -107,7 +108,7 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/shridhar" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/Shridhar Iyer.png"
                 alt="Shridhar Iyer - COO & Compliance Officer"
@@ -115,7 +116,7 @@ const Page = () => {
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Shridhar Iyer
@@ -147,15 +148,15 @@ const Page = () => {
           </div> */}
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/avadhoot" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/team/avadhoot-joshi.jpg"
-                alt="Harsh Bhutda - Equity Analyst"
+                alt="Avadhoot Joshi - Equity Analyst"
                 fill
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Avadhoot Joshi
@@ -167,7 +168,7 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/harsh" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/team/harsh-bhutda.jpg"
                 alt="Harsh Bhutda - Equity Analyst"
@@ -175,7 +176,7 @@ const Page = () => {
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Harsh Bhutda
@@ -189,7 +190,7 @@ const Page = () => {
           
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/aashish" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/team/ashish_agarwal.jpg"
                 alt="Ashish Agarwal - AVP Operations"
@@ -197,7 +198,7 @@ const Page = () => {
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Ashish Agarwal
@@ -210,7 +211,7 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col items-center text-center group">
-            <div className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0">
+            <Link href="/pushkar" className="w-44 h-36 sm:w-48 sm:h-40 md:w-52 md:h-44 rounded-lg overflow-hidden mb-6 border border-primary/10 bg-background-light relative shrink-0 block">
               <Image
                 src="/team/pushkar-joshi.JPG"
                 alt="Pushkar Joshi - Manager Operations"
@@ -218,7 +219,7 @@ const Page = () => {
                 sizes="(max-width: 639px) 176px, (max-width: 767px) 192px, 208px"
                 className="object-cover object-top"
               />
-            </div>
+            </Link>
 
             <h4 className="text-xl font-bold text-primary mb-2 !font-serif">
               Pushkar Joshi
