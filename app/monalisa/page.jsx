@@ -25,7 +25,7 @@ const Page = () => {
             <div className="lg:col-span-4">
               <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
                 <Image
-                  src="/team/monalisa_shilov.jpg"
+                  src="/photos/monalisa.png"
                   alt="Monalisa Shilov - Chief Business Officer & Investment Specialist"
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
@@ -47,9 +47,9 @@ const Page = () => {
 
               <div className="text-primary/80 leading-relaxed font-light max-w-none space-y-6">
 
-              <p>Monalisa is the Chief Business Officer at Trivantage Capital, with over 17 years of experience in the asset management industry. Prior to joining Trivantage Capital, she served as Head – Sales and Marketing at BNP Paribas Asset Management, India.
+              <p>Monalisa is the Chief Business Officer at Trivantage Capital, with over 17 years of experience in the asset management industry. Prior to joining Trivantage Capital, she served as Head - Sales and Marketing at BNP Paribas Asset Management, India.
 
-In her previous roles, she led business development and strategy execution across the firm’s Mutual Fund and Portfolio Management Services businesses, and was closely involved in product development and validation. She also worked extensively as an investment specialist, partnering with investment teams to clearly articulate investment philosophy, portfolio positioning, and performance drivers to distributors and large investors. During her tenure at BNP Paribas Asset Management, she built strong relationships with key distribution houses and played a pivotal role in scaling assets across both debt and equity strategies.
+In her previous roles, she led business development and strategy execution across the firm's Mutual Fund and Portfolio Management Services businesses, and was closely involved in product development and validation. She also worked extensively as an investment specialist, partnering with investment teams to clearly articulate investment philosophy, portfolio positioning, and performance drivers to distributors and large investors. During her tenure at BNP Paribas Asset Management, she built strong relationships with key distribution houses and played a pivotal role in scaling assets across both debt and equity strategies.
 
 Monalisa has deep expertise in the HNI distribution ecosystem and a strong track record of launching and scaling differentiated investment concepts, including those new to the market. Earlier in her career, she held senior sales, distribution, and investment-facing roles across several leading asset management firms in India, giving her a well-rounded perspective that bridges investments, products, and client needs.
 </p>

@@ -25,7 +25,7 @@ const Page = () => {
             <div className="lg:col-span-4">
               <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0">
                 <Image
-                  src="/team/shridhar_iyer.jpg"
+                  src="/photos/shridhar.png"
                   alt="Shridhar Iyer - Chief Operating Officer"
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"

@@ -6,19 +6,19 @@ const TEAM_MEMBERS = [
     name: "Nikhil Johri",
     title: "Founder & Chief Investment Officer",
     href: "/nikhil",
-    img: "/Nikhil Johri.jpg",
+    img: "/photos/nikhil.jpg",
   },
   {
     name: "Monalisa Shilov",
     title: "Chief Business Officer & Investment Specialist",
     href: "/monalisa",
-    img: "/team/monalisa_shilov.jpg",
+    img: "/photos/monalisa.png",
   },
   {
     name: "Shridhar Iyer",
     title: "Chief Operating Officer",
     href: "/shridhar",
-    img: "/team/shridhar_iyer.jpg",
+    img: "/Photos/shridhar.png",
   },
   {
     name: "Avadhoot Joshi",
@@ -36,13 +36,13 @@ const TEAM_MEMBERS = [
     name: "Ashish Agarwal",
     title: "Senior Manager - Operations",
     href: "/aashish",
-    img: "/team/ashish_agarwal.jpg",
+    img: "/photos/ashish.JPG",
   },
   {
     name: "Pushkar Joshi",
     title: "Manager - Operations",
     href: "/pushkar",
-    img: "/team/pushkar-joshi.JPG",
+    img: "/photos/pushkar.JPG",
   },
 ];
 
