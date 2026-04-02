@@ -4,14 +4,22 @@ import Image from 'next/image';
 import { stripHtml, getPostLink } from '@/lib/blogUtils';
 import SubscribeForm from './SubscribeForm';
 
-const BASE_URL = 'https://public-api.wordpress.com/rest/v1.1/sites/vantagepoint37.wordpress.com';
+const BASE_URL = process.env.WP_BASE_URL || 'https://public-api.wordpress.com/rest/v1.1/sites/trivantagecapital.wordpress.com';
 
 async function getPosts() {
     try {
-        const res = await fetch(`${BASE_URL}/posts?number=40`, { next: { revalidate: 3600 } });
-        const data = await res.json();
-        const posts = data.posts || [];
-        return posts.filter(post =>
+        let allPosts = [];
+        let page = 1;
+        while (true) {
+            const res = await fetch(`${BASE_URL}/posts?number=100&page=${page}`, { next: { revalidate: 3600 } });
+            const data = await res.json();
+            const posts = data.posts || [];
+            if (posts.length === 0) break;
+            allPosts = allPosts.concat(posts);
+            if (allPosts.length >= (data.found || 0)) break;
+            page++;
+        }
+        return allPosts.filter(post =>
             !Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'careers')
         );
     } catch (error) {
@@ -20,29 +28,12 @@ async function getPosts() {
     }
 }
 
-async function getCategories() {
-    try {
-        const res = await fetch(`${BASE_URL}/categories`, { next: { revalidate: 3600 } });
-        const data = await res.json();
-        return data.categories || [];
-    } catch (error) {
-        console.error("Error fetching categories:", error);
-        return [];
-    }
-}
+
 
 const EXCLUDED_CATEGORY_SLUGS = ['careers', 'uncategorized'];
 
-const InsightsListSection = async ({ activeCategory = null }) => {
+const InsightsListSection = async () => {
     let posts = await getPosts();
-    const categories = await getCategories();
-
-    // Filter posts by active category (match against slug in category value objects)
-    if (activeCategory) {
-        posts = posts.filter(post =>
-            Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === activeCategory.toLowerCase())
-        );
-    }
 
     // Group posts by Month Year
     const groupArray = [];
@@ -57,10 +48,6 @@ const InsightsListSection = async ({ activeCategory = null }) => {
         }
         group.posts.push(post);
     });
-
-    const filteredCategories = categories.filter(
-        cat => !EXCLUDED_CATEGORY_SLUGS.includes(cat.slug?.toLowerCase())
-    );
 
     return (
         <section className="max-w-320 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">

@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDate} from "@/lib/blogUtils";
+import { formatDate } from "@/lib/blogUtils";
+import { getDesignationByWpAuthor } from "@/lib/teamConfig";
 
 
 const WP_API_URL = process.env.WP_API_URL;
@@ -77,7 +78,7 @@ export default async function BlogPost({ params }) {
                                 </div>
                             )}
                             <div>
-                                <p className="text-md font-bold text-white">{post.author?.name || 'Unknown Author'} <span className='font-normal'>, Senior Analyst</span></p>
+                                <p className="text-md font-bold text-white">{post.author?.name || 'Unknown Author'} {getDesignationByWpAuthor(post.author?.name) && <span className='font-normal'>| {getDesignationByWpAuthor(post.author?.name)}</span>}</p>
                             </div>
                         </div>
                     </div>

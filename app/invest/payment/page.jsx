@@ -32,30 +32,28 @@ const Page = () => {
             <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-4">
               Kotak Mahindra Bank
             </p>
-            <div className="relative w-full max-w-[260px] aspect-square border border-primary/10 rounded bg-white overflow-hidden shadow-sm">
-              <Image
-                src="/invest/QR%20-%20Kotak%20Mahindra%20Bank.jpg"
+            <Image
+                src="/invest/QRKotakMahindraBank-crop.jpg"
                 alt="Kotak Mahindra Bank QR Code"
-                fill
-                sizes="260px"
-                className="object-cover"
+                height={260}
+                width={260}
+                className="mx-auto"
               />
-            </div>
+           
           </div>
 
           <div className="bg-background-light border border-primary/10 rounded-xl p-6">
             <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-4">
               IndusInd Bank
             </p>
-            <div className="relative w-full max-w-[260px] aspect-square border border-primary/10 rounded bg-white overflow-hidden shadow-sm">
-              <Image
-                src="/invest/QR%20-%20IndusInd%20Bank.jpg"
+            <Image
+                src="/invest/QRIndusIndBank-crop.jpg"
                 alt="IndusInd Bank QR Code"
-                fill
-                sizes="260px"
-                className="object-cover"
+                height={260}
+                width={260}
+                className="mx-auto"
               />
-            </div>
+           
           </div>
 
         </div>

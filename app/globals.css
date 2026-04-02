@@ -67,6 +67,18 @@ h4 {
   font-weight: 700;
 }
 
+.blog-content ul, li {
+  margin-bottom: 1.5em;
+  color: black;
+  list-style: disc;
+}
+
+.blog-content ol, li {
+  margin-bottom: 1.5em;
+  color: black;
+  list-style: decimal;
+}
+
 /* ──────────────────────────────────────────────
    WordPress Content Styling (.wp-content)
    Handles all common WP block-editor output

@@ -4,7 +4,7 @@ const PhilosophySection = () => {
   return (
     <section
       id="philosophy"
-      className=" py-24 md:py-32 scroll-mt-24"
+      className=" py-24 md:py-24 scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         

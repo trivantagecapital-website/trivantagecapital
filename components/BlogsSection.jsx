@@ -25,7 +25,7 @@ const BlogsSection = async () => {
     const posts = await getPosts();
 
     return (
-        <section id="blogs" className="py-24 md:py-32 scroll-mt-24">
+        <section id="blogs" className="py-24 md:py-24 scroll-mt-24">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
                 <div className="max-w-[800px] mb-15 text-center md:text-left">
                     <p className="text-primary/60 text-xs font-bold uppercase tracking-[0.3em] mb-4">

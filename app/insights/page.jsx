@@ -23,16 +23,11 @@ async function getPosts() {
   }
 }
 
-async function getFeaturedPost() {
-  const posts = await getPosts();
-  return posts.find(post =>
-    Object.values(post.categories || {}).some(c => c.slug?.toLowerCase() === 'featured')
-  ) || null;
-}
 
 const Page = async ({ searchParams }) => {
-  const activeCategory = (await searchParams)?.category || null;
-  const featuredPost = await getFeaturedPost();
+ 
+  const posts = await getPosts();
+  const featuredPost = posts[0] || null;
   const categories = Object.keys(featuredPost?.categories || {}).filter(
     (cat) => cat.toLowerCase() !== 'featured'
   );
@@ -78,10 +73,10 @@ const Page = async ({ searchParams }) => {
                   <Link href={getPostLink(featuredPost, featuredPost.categories)} className="block overflow-hidden mb-5">
                     <div className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 rounded-sm">
                       <Image
-                        src={featuredPost.featured_image || '/hero-skyscraper.png'}
+                        src={featuredPost.featured_image || '/hero-skyscraper3.jpg'}
                         alt={featuredPost.title}
                         fill // Fills the container
-                        className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+                        className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
@@ -129,7 +124,7 @@ const Page = async ({ searchParams }) => {
       </section>
 
       {/* Insights List Section */}
-      <InsightsListSection activeCategory={activeCategory} />
+      <InsightsListSection />
 
     </main>
   );

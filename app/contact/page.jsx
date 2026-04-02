@@ -1,5 +1,5 @@
 import React from "react";
-import CallbackForm from "@/components/CallbackForm";
+import InvestCallbackForm from "@/components/InvestCallbackForm";
 
 const Page = () => {
   return (
@@ -139,13 +139,13 @@ const Page = () => {
         </div>
 
         {/* Call Back Form */}
-        <div className="bg-background-light p-10 lg:p-16 rounded border border-primary/10">
+        <div className="bg-white p-10 lg:p-16 rounded border border-primary/10">
 
           <h3 className="serif-heading text-3xl text-primary mb-8 text-center !font-serif">
             Request a call back
           </h3>
 
-          <CallbackForm />
+          <InvestCallbackForm />
 
         </div>
 

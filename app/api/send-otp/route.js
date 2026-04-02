@@ -45,6 +45,7 @@ export async function POST(request) {
     return Response.json({ token });
   } catch (err) {
     console.error('OTP send error:', err);
-    return Response.json({ error: 'Failed to send verification code. Please try again.' }, { status: 500 });
+    const detail = process.env.NODE_ENV === 'development' ? ` [${err.code || err.message}]` : '';
+    return Response.json({ error: `Failed to send verification code. Please try again.${detail}` }, { status: 500 });
   }
 }

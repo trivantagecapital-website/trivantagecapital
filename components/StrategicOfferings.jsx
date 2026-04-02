@@ -1,6 +1,12 @@
+"use client";
 import React from "react";
+import { useResidency } from "@/hooks/useResidency";
 
 const StrategicOfferings = () => {
+  const { isUS, isLoaded } = useResidency();
+
+  if (!isLoaded || isUS) return null;
+
   return (
     <section className="bg-primary/5 py-32">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">

@@ -1,6 +1,12 @@
+"use client";
 import React from "react";
+import { useResidency } from "@/hooks/useResidency";
 
 const CTASection = () => {
+  const { isUS, isLoaded } = useResidency();
+
+  if (!isLoaded || isUS) return null;
+
   return (
     <section className="bg-primary/5 py-32 border-t border-primary/5">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 flex flex-col items-center text-center">
