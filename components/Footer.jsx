@@ -94,7 +94,7 @@ const Footer = () => {
                   className="text-sm hover:text-primary/60"
                   href="/login"
                 >
-                  Investor Portal
+                  Client Login
                 </a>
 
                 <a
