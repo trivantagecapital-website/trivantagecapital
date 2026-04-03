@@ -287,7 +287,7 @@ export default function CareersForm({ jobs }) {
             id="role"
             value={form.role}
             onChange={set('role')}
-            className={`${inputClass(!!errors.role)} ${!form.role ? 'text-primary/50' : 'text-primary'}`}
+            className={`${inputClass(!!errors.role)} ${!form.role ? 'text-primary/70' : 'text-primary'}`}
           >
             <option value="" disabled>Select a Role</option>
             {jobs.map((job) => (
