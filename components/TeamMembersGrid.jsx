@@ -33,7 +33,7 @@ const TeamMembersGrid = ({ currentSlug }) => {
               </Link>
             </h4>
 
-            <p className="text-xs font-medium text-primary/60 uppercase tracking-widest leading-relaxed">
+            <p className="text-xs font-medium text-primary/70 uppercase tracking-widest leading-relaxed">
               {member.designation.split('&').map((part, i, arr) => (
                 <span key={i} className="block">
                   {part.trim()}{i < arr.length - 1 ? ' &' : ''}

@@ -112,14 +112,14 @@ export default function PrivacyPolicyPage() {
 
       {/* Hero */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-12">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-6">
           Legal
         </p>
         <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
           Privacy Statement
         </h1>
         <div className="h-[1px] w-24 bg-primary/20 mb-6"></div>
-        <p className="text-base text-primary/60 font-light">
+        <p className="text-base text-primary/70 font-light">
           Trivantage Capital Management India Private Limited
         </p>
       </section>
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
 
-          <p className="text-sm text-primary/60 italic leading-relaxed mb-12">
+          <p className="text-sm text-primary/70 italic leading-relaxed mb-12">
             By using the website or submitting information through it, users acknowledge that they
             have read and understood this Privacy Statement.
           </p>
@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
                   key={i}
                   className="flex flex-col sm:flex-row border-b border-dashed border-primary/10 last:border-b-0"
                 >
-                  <span className="sm:w-32 shrink-0 px-5 py-4 text-xs font-bold uppercase tracking-widest text-primary/40 bg-primary/[0.02]">
+                  <span className="sm:w-32 shrink-0 px-5 py-4 text-xs font-bold uppercase tracking-widest text-primary/70 bg-primary/[0.02]">
                     {row.label}
                   </span>
                   <span className="px-5 py-4 text-sm text-primary/70">

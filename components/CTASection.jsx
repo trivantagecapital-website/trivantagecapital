@@ -15,7 +15,7 @@ const CTASection = () => {
           Ready to experience our approach?
         </h3>
 
-        <p className="text-primary/60 max-w-[600px] mb-12 font-light text-lg">
+        <p className="text-primary/70 max-w-[600px] mb-12 font-light text-lg">
           Discover how our disciplined investment philosophy translates into
           meaningful results for your portfolio.
         </p>

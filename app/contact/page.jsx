@@ -17,7 +17,7 @@ const Page = () => {
         <div className="flex flex-col md:flex-row gap-8 items-start">
 
           <div className="flex-1">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-2">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">
               Find Us
             </p>
 

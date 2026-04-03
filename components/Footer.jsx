@@ -40,7 +40,7 @@ const Footer = () => {
                 us immediately at{" "}
                 <a
                   href="mailto:info@trivantagecapital.com"
-                  className="text-primary hover:underline"
+                  className="text-primary underline"
                 >
                   info@trivantagecapital.com
                 </a>
@@ -62,7 +62,7 @@ const Footer = () => {
               />
             </a>
 
-            <p className="text-primary/60 text-sm leading-relaxed max-w-[240px]">
+            <p className="text-primary/70 text-sm leading-relaxed max-w-[240px]">
               A boutique investment firm focused on structural growth and
               high-conviction strategies.
             </p>
@@ -72,7 +72,7 @@ const Footer = () => {
           {!isUS ? (
             <div className="col-span-1 grid grid-cols-2 gap-8">
               <div className="flex flex-col gap-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/70">
                   Navigation
                 </p>
 
@@ -106,7 +106,7 @@ const Footer = () => {
               </div>
 
               <div className="flex flex-col gap-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/70">
                   Legal
                 </p>
 
@@ -158,11 +158,11 @@ const Footer = () => {
           {/* Newsletter */}
           {!isUS && (
             <div className="col-span-1 flex flex-col gap-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary/70">
                 Newsletter
               </p>
 
-              <p className="text-sm text-primary/60 mb-2">
+              <p className="text-sm text-primary/70 mb-2">
                 Subscribe to our market insights.
               </p>
 

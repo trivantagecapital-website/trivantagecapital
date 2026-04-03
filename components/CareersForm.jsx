@@ -5,12 +5,12 @@ import { useState } from 'react';
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 const inputClass = (hasError) =>
-  `w-full bg-background-light border rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-primary placeholder-primary/30 ${
+  `w-full bg-background-light border rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-primary placeholder-primary/50 ${
     hasError ? 'border-red-400' : 'border-primary/10'
   }`;
 
 const labelClass =
-  'block text-xs font-bold uppercase tracking-widest text-primary/60 mb-2';
+  'block text-xs font-bold uppercase tracking-widest text-primary/70 mb-2';
 
 const errorClass = 'mt-1 text-xs text-red-500';
 
@@ -170,7 +170,7 @@ export default function CareersForm({ jobs }) {
       <div className="bg-white p-8 rounded-lg border border-primary/5 flex flex-col items-center justify-center text-center min-h-[360px]">
         <span className="material-symbols-outlined text-5xl text-primary mb-4">check_circle</span>
         <h3 className="serif-heading text-2xl text-primary mb-3">Application Submitted</h3>
-        <p className="text-primary/60 text-sm leading-relaxed max-w-xs">
+        <p className="text-primary/70 text-sm leading-relaxed max-w-xs">
           Your application has been submitted successfully. We'll be in touch soon.
         </p>
         <button
@@ -274,7 +274,7 @@ export default function CareersForm({ jobs }) {
               </button>
             </div>
             {otpError && <p className={errorClass}>{otpError}</p>}
-            <p className="mt-1 text-xs text-primary/40">
+            <p className="mt-1 text-xs text-primary/70">
               Check your inbox for the 6-digit code · Valid for 10 minutes
             </p>
           </div>
@@ -287,7 +287,7 @@ export default function CareersForm({ jobs }) {
             id="role"
             value={form.role}
             onChange={set('role')}
-            className={`${inputClass(!!errors.role)} ${!form.role ? 'text-primary/30' : 'text-primary'}`}
+            className={`${inputClass(!!errors.role)} ${!form.role ? 'text-primary/50' : 'text-primary'}`}
           >
             <option value="" disabled>Select a Role</option>
             {jobs.map((job) => (
@@ -308,7 +308,7 @@ export default function CareersForm({ jobs }) {
           />
           {errors.resume
             ? <p className={errorClass}>{errors.resume}</p>
-            : <p className="mt-1 text-xs text-primary/40">PDF only · Max 5MB</p>
+            : <p className="mt-1 text-xs text-primary/70">PDF only · Max 5MB</p>
           }
         </div>
 

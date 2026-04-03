@@ -28,7 +28,7 @@ const BlogsSection = async () => {
         <section id="blogs" className="py-24 md:py-24 scroll-mt-24">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
                 <div className="max-w-[800px] mb-15 text-center md:text-left">
-                    <p className="text-primary/60 text-xs font-bold uppercase tracking-[0.3em] mb-4">
+                    <p className="text-primary/70 text-xs font-bold uppercase tracking-[0.3em] mb-4">
                         INSIGHTS
                     </p>
 

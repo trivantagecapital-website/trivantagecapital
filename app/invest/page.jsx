@@ -42,7 +42,7 @@ const Page = () => {
                     <h4 className="font-semibold text-primary">
                       Document Verification
                     </h4>
-                    <p className="text-sm text-primary/60">
+                    <p className="text-sm text-primary/70">
                       Seamless KYC process and automated verification of financial proofs through secure gateways.
                     </p>
                   </div>
@@ -56,7 +56,7 @@ const Page = () => {
                     <h4 className="font-semibold text-primary">
                       Preparation
                     </h4>
-                    <p className="text-sm text-primary/60">
+                    <p className="text-sm text-primary/70">
                       Personalized account setup and digital execution of investment management agreements.
                     </p>
                   </div>
@@ -70,7 +70,7 @@ const Page = () => {
                     <h4 className="font-semibold text-primary">
                       Processing
                     </h4>
-                    <p className="text-sm text-primary/60">
+                    <p className="text-sm text-primary/70">
                       Final compliance approval and immediate capital deployment into your chosen strategy.
                     </p>
                   </div>
@@ -88,7 +88,7 @@ const Page = () => {
               Request a Callback
             </h3>
 
-            <p className="text-sm text-primary/60 mb-6">
+            <p className="text-sm text-primary/70 mb-6">
               Our advisors will contact you within 24 hours.
             </p>
 
@@ -302,7 +302,7 @@ const Page = () => {
               </div>
 
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-1">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-1">
                   Call Us
                 </p>
 

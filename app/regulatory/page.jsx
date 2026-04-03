@@ -92,14 +92,14 @@ export default function RegulatoryPage() {
 
       {/* Hero */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-12">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-6">
           Legal
         </p>
         <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
           Website Disclaimer
         </h1>
         <div className="h-[1px] w-24 bg-primary/20 mb-6"></div>
-        <p className="text-base text-primary/60 font-light">
+        <p className="text-base text-primary/70 font-light">
           Trivantage Capital
         </p>
       </section>
@@ -127,7 +127,7 @@ export default function RegulatoryPage() {
               <a
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-primary/60 border border-primary/15 rounded px-3 py-1.5 hover:text-primary hover:border-primary/30 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-primary/70 border border-primary/15 rounded px-3 py-1.5 hover:text-primary hover:border-primary/30 transition-colors"
               >
                 <span className="material-symbols-outlined !text-sm">arrow_forward</span>
                 {link.label}
@@ -156,13 +156,13 @@ export default function RegulatoryPage() {
 
           {/* Contact box */}
           <div className="border border-primary/10 bg-primary/[0.02] rounded-sm px-6 py-5">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-3">
               Official Contact
             </p>
             <p className="text-sm font-medium text-primary mb-1">
               Trivantage Capital Management India Private Limited
             </p>
-            <p className="text-sm text-primary/60 mb-3">
+            <p className="text-sm text-primary/70 mb-3">
               508, Arcadia, NCPA Marg, Nariman Point, Mumbai – 400 021
             </p>
             <div className="flex flex-col sm:flex-row gap-3">

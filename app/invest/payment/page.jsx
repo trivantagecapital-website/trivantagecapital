@@ -9,7 +9,7 @@ const Page = () => {
 
         <Link
           href="/invest"
-          className="inline-flex items-center gap-2 text-sm text-primary/50 hover:text-primary transition-colors mb-10"
+          className="inline-flex items-center gap-2 text-sm text-primary/70 hover:text-primary transition-colors mb-10"
         >
           <span className="material-symbols-outlined text-base">arrow_back</span>
           Back to Invest With Us
@@ -29,7 +29,7 @@ const Page = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
 
           <div className="bg-background-light border border-primary/10 rounded-xl p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-4">
               Kotak Mahindra Bank
             </p>
             <Image
@@ -43,7 +43,7 @@ const Page = () => {
           </div>
 
           <div className="bg-background-light border border-primary/10 rounded-xl p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-4">
               IndusInd Bank
             </p>
             <Image

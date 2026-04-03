@@ -32,7 +32,7 @@ const StrategicOfferings = () => {
                   backgroundImage:
                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrp5105VKpD3fY8oS6ZMr3VDILMxiFzcmBHJgWv5TWRUs_2USgnOOPoqQT3LalOD56Ryu7MgG0cO2eRUlWVe0_Rmk9f9y_453YLPPO75RtuYPnpD80LPPVsHIM_ebCXYmIV_wBFpnZygUzDzgvq1BWBoJr4hT0CTppxWaziAUj-YipTwa_3wcC2j39urWSYyjBeWFqMHHqSAzU5fpOyAHd0G_uqjbMWPr6sNzSg2BNPV5N2Ouq_xax_8ZSOWyQr2VlTIqS-BtGm3U')",
                 }}
-                aria-label="Strategy Illustration"
+                role="img" aria-label="Strategy Illustration"
               ></div>
 
             </div>
@@ -76,7 +76,7 @@ const StrategicOfferings = () => {
                   backgroundImage:
                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB5jLObQATwX75ko7nV7epkkXPvDqX1GdKbaLWQZUtvtl7UyNGOGsPpQJPxAdH0qMxND9oyv_jtMjUfIQqDOBcuCmHHloDPM9PaEJaEBu2maOyVu9F9FKaMc55eAzrp0XFgAruWXZadeT89PpP0ML8Z6ai5PHBuTgZ4DxHadC1wspjemU4E7rycB7TZkDIJT-_pjZ7HewS14kZzKK69ZCFvwU1O15akXbRY63ACKlo8HRdxLEXH-hijTEQb-qxhlDpICH-_pwqPYE')",
                 }}
-                aria-label="Strategy Illustration"
+                role="img" aria-label="Strategy Illustration"
               ></div>
 
             </div>

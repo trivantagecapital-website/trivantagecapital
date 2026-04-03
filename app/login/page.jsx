@@ -32,26 +32,28 @@ export default function Login() {
           <h1 className="serif-heading text-3xl mb-2 text-center !font-serif">
             Client Login
           </h1>
-          <p className="text-primary/60 text-sm text-center mb-8">
+          <p className="text-primary/70 text-sm text-center mb-8">
             Access your investment dashboard
           </p>
 
           <form className="space-y-6">
             <div>
-              <label className="text-xs font-bold uppercase text-primary/60 mb-2 block">
+              <label htmlFor="login-email" className="text-xs font-bold uppercase text-primary/70 mb-2 block">
                 Username / Email
               </label>
               <input
+                id="login-email"
                 type="text"
                 className="w-full bg-background-light border border-primary/10 rounded px-4 py-3"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase text-primary/60 mb-2 block">
+              <label htmlFor="login-password" className="text-xs font-bold uppercase text-primary/70 mb-2 block">
                 Password
               </label>
               <input
+                id="login-password"
                 type="password"
                 className="w-full bg-background-light border border-primary/10 rounded px-4 py-3"
               />

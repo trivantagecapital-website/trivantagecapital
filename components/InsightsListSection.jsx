@@ -112,7 +112,7 @@ const InsightsListSection = async () => {
                         {/* Subscribe */}
                         <div className="bg-primary/5 p-8 rounded-sm">
                             <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80 mb-4 font-sans">Subscribe</h3>
-                            <p className="text-primary/60 text-sm mb-6 font-sans leading-relaxed">
+                            <p className="text-primary/70 text-sm mb-6 font-sans leading-relaxed">
                                 Receive weekly market perspectives directly to your inbox.
                             </p>
                             <SubscribeForm />
@@ -148,7 +148,7 @@ const PostItem = ({ post }) => {
                 </Link>
     
             <div className="flex-1 flex flex-col items-start">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-2 sm:mb-3 block font-sans">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/70 mb-2 sm:mb-3 block font-sans">
                     {categoryName}
                 </span>
                 <Link href={getPostLink(post, categoryName)} className="block mb-3">
@@ -157,7 +157,7 @@ const PostItem = ({ post }) => {
                     </h3>
                 </Link>
 
-                <p className="text-primary/60 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 line-clamp-3 font-sans">
+                <p className="text-primary/70 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 line-clamp-3 font-sans">
                     {cleanExcerpt}
                 </p>
 

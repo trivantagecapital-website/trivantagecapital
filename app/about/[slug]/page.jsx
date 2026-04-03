@@ -66,7 +66,7 @@ export default async function PersonPage({ params }) {
                 <h2 className="serif-heading text-4xl text-primary mb-2 font-serif!">
                   {person.name}
                 </h2>
-                <p className="text-primary/60 font-bold uppercase tracking-widest text-sm">
+                <p className="text-primary/70 font-bold uppercase tracking-widest text-sm">
                   {person.designation}
                 </p>
               </div>

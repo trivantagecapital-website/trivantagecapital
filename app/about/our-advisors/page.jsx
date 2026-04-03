@@ -48,7 +48,7 @@ const Page = () => {
                     {advisor.name}
                   </h2>
 
-                  <p className="text-primary/60 font-bold uppercase tracking-widest text-sm">
+                  <p className="text-primary/70 font-bold uppercase tracking-widest text-sm">
                     {advisor.designation}
                   </p>
                 </div>

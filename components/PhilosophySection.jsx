@@ -10,7 +10,7 @@ const PhilosophySection = () => {
         
         {/* Philosophy Header */}
         <div className="max-w-[900px] mb-20 text-center md:text-left">
-          <p className="text-primary/60 text-xs font-bold uppercase tracking-[0.3em] mb-4">
+          <p className="text-primary/70 text-xs font-bold uppercase tracking-[0.3em] mb-4">
             Investment Philosophy
           </p>
 
@@ -33,7 +33,7 @@ const PhilosophySection = () => {
           {/* Pillar 1 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-40">
+              <span className="material-symbols-outlined text-primary opacity-60">
                 auto_stories
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -58,7 +58,7 @@ const PhilosophySection = () => {
           {/* Pillar 2 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-40">
+              <span className="material-symbols-outlined text-primary opacity-60">
                 trending_up
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -83,7 +83,7 @@ const PhilosophySection = () => {
           {/* Pillar 3 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-40">
+              <span className="material-symbols-outlined text-primary opacity-60">
                 handshake
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -109,7 +109,7 @@ const PhilosophySection = () => {
           {/* Pillar 4 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-40">
+              <span className="material-symbols-outlined text-primary opacity-60">
                 verified_user
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>

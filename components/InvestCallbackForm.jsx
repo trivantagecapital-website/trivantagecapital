@@ -256,7 +256,7 @@ export default function InvestCallbackForm() {
         {status === 'loading' ? 'Submitting...' : 'Submit Request'}
       </button>
 
-      <p className="text-[11px] text-primary/50 text-center">
+      <p className="text-[11px] text-primary/70 text-center">
         By clicking submit, you agree to our Privacy Policy &amp; Terms of Engagement.
       </p>
 

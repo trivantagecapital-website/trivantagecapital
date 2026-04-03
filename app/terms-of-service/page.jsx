@@ -176,14 +176,14 @@ export default function TermsOfServicePage() {
 
       {/* Hero */}
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-12">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-6">
           Legal
         </p>
         <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
           Terms and Conditions
         </h1>
         <div className="h-[1px] w-24 bg-primary/20 mb-6"></div>
-        <p className="text-base text-primary/60 font-light">
+        <p className="text-base text-primary/70 font-light">
           Trivantage Capital Management India Private Limited
         </p>
       </section>
@@ -243,7 +243,7 @@ export default function TermsOfServicePage() {
                   key={i}
                   className="flex flex-col sm:flex-row border-b border-dashed border-primary/10 last:border-b-0"
                 >
-                  <span className="sm:w-32 shrink-0 px-5 py-4 text-xs font-bold uppercase tracking-widest text-primary/40 bg-primary/[0.02]">
+                  <span className="sm:w-32 shrink-0 px-5 py-4 text-xs font-bold uppercase tracking-widest text-primary/70 bg-primary/[0.02]">
                     {row.label}
                   </span>
                   <span className="px-5 py-4 text-sm text-primary/70">
@@ -265,13 +265,13 @@ export default function TermsOfServicePage() {
 
           {/* Cookie Notice */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-4">
               Appended
             </p>
             <h2 className="serif-heading text-primary text-3xl md:text-4xl leading-[1.1] mb-3 font-normal">
               Cookie Notice
             </h2>
-            <p className="text-sm text-primary/60 italic mb-8">
+            <p className="text-sm text-primary/70 italic mb-8">
               To be read together with the website Privacy Statement
             </p>
             <p className="text-sm text-primary/70 leading-relaxed mb-10">

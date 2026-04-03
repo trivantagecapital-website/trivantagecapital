@@ -95,7 +95,7 @@ export default function ComplaintDataPopup() {
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close"
-            className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary/50 hover:text-primary transition-colors"
+            className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary/70 hover:text-primary transition-colors"
           >
             <span className="material-symbols-outlined text-xl leading-none">
               expand_more
@@ -107,15 +107,15 @@ export default function ComplaintDataPopup() {
         {/* Scrollable table area */}
         <div className="overflow-y-auto h-[calc(100%-80px)] px-6 lg:px-10 py-4">
           {loading ? (
-            <div className="flex items-center justify-center h-full text-primary/40 text-sm font-sans">
+            <div className="flex items-center justify-center h-full text-primary/70 text-sm font-sans">
               Loading complaint data…
             </div>
           ) : error ? (
-            <div className="flex items-center justify-center h-full text-primary/40 text-sm font-sans">
+            <div className="flex items-center justify-center h-full text-primary/70 text-sm font-sans">
               Unable to load complaint data. Please try again later.
             </div>
           ) : rows.length === 0 && !totalRow ? (
-            <div className="flex items-center justify-center h-full text-primary/40 text-sm font-sans">
+            <div className="flex items-center justify-center h-full text-primary/70 text-sm font-sans">
               No data available.
             </div>
           ) : (
