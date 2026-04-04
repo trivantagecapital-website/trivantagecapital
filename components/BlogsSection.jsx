@@ -25,18 +25,18 @@ const BlogsSection = async () => {
     const posts = await getPosts();
 
     return (
-        <section id="blogs" className="py-24 md:py-24 scroll-mt-24">
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-                <div className="max-w-[800px] mb-15 text-center md:text-left">
+        <section id="blogs" className="py-16 sm:py-20 md:py-24 scroll-mt-24">
+            <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10">
+                <div className="max-w-[800px] mb-10 sm:mb-12 md:mb-16 text-center md:text-left">
                     <p className="text-primary/70 text-xs font-bold uppercase tracking-[0.3em] mb-4">
                         INSIGHTS
                     </p>
 
-                    <h2 className="!font-display text-primary text-5xl font-bold tracking-tight mb-4">
+                    <h2 className="!font-display text-primary text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
                         VantagePoint
                     </h2>
 
-                    <p className="text-xl text-primary/80 mb-8 font-light">
+                    <p className="text-lg sm:text-xl text-primary/80 mb-6 sm:mb-8 font-light">
                         A Vantage View of Indian Financial Markets
                     </p>
                 </div>
@@ -71,7 +71,7 @@ const BlogsSection = async () => {
 
                         <Link
                             href="/insights"
-                            className="mx-auto mt-15 border border-primary px-5 py-4 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display decoration-2 underline-offset-4 transition-all w-fit group"
+                            className="mx-auto mt-10 sm:mt-12 md:mt-16 border border-primary px-5 py-4 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display decoration-2 underline-offset-4 transition-all w-fit group"
                         >
                             Read More Insights
                             <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">

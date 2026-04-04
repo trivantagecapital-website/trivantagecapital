@@ -4,31 +4,31 @@ const PhilosophySection = () => {
   return (
     <section
       id="philosophy"
-      className=" py-24 md:py-24 scroll-mt-24"
+      className="py-16 sm:py-20 md:py-24 scroll-mt-24"
     >
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10">
+
         {/* Philosophy Header */}
-        <div className="max-w-[900px] mb-20 text-center md:text-left">
+        <div className="max-w-[900px] mb-12 sm:mb-16 md:mb-20 text-center md:text-left">
           <p className="text-primary/70 text-xs font-bold uppercase tracking-[0.3em] mb-4">
             Investment Philosophy
           </p>
 
-          <h2 className="serif-heading text-primary text-4xl md:text-5xl lg:text-6xl mb-6 !font-serif">
+          <h2 className="serif-heading text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 !font-serif">
             Research. Conviction. Growth.
           </h2>
 
-          <p className="text-xl text-primary/80 mb-8 font-light">
+          <p className="text-lg sm:text-xl text-primary/80 mb-6 sm:mb-8 font-light">
             Turning insights into high-conviction investments that compound over time.
           </p>
 
-          <p className="text-primary/70 max-w-[600px] leading-relaxed">
+          <p className="text-sm sm:text-base text-primary/70 max-w-[600px] leading-relaxed mx-auto md:mx-0">
             At Trivantage Capital, our investment philosophy is more than a
             framework — it is a mindset. Four principles guide everything we do:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-12 sm:gap-y-16 md:gap-y-24">
 
           {/* Pillar 1 */}
           <div className="flex flex-col gap-6">

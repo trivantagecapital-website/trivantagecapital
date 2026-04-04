@@ -7,20 +7,20 @@ const Page = () => {
     <main id="main-content" className="flex-1">
 
       {/* ================= HERO + FORM ================= */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-0">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-0">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 items-start">
 
           {/* LEFT CONTENT */}
           <div className="lg:col-span-2">
 
-            <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
+            <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-normal !font-serif">
               Invest With Us
             </h1>
 
-            <div className="h-[1px] w-24 bg-primary/20 mb-8"></div>
+            <div className="h-[1px] w-24 bg-primary/20 mb-6 sm:mb-8"></div>
 
-            <p className="text-base text-primary/70 max-w-[750px] leading-relaxed mb-10">
+            <p className="text-sm sm:text-base text-primary/70 max-w-[750px] leading-relaxed mb-8 sm:mb-10">
               Experience a bespoke investment journey tailored to your financial goals. 
               Our boutique approach ensures your capital is managed with institutional rigor and personal care.
             </p>
@@ -32,7 +32,7 @@ const Page = () => {
               </h2>
 
               {/* JOURNEY */}
-              <div className="bg-white border border-primary/10 rounded p-6 space-y-10">
+              <div className="bg-white border border-primary/10 rounded p-4 sm:p-6 space-y-6 sm:space-y-10">
 
                 <div className="flex gap-4">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
@@ -82,13 +82,13 @@ const Page = () => {
           </div>
 
           {/* RIGHT FORM */}
-          <div className="bg-white border border-primary/10 rounded-xl p-6 shadow-sm">
+          <div className="bg-white border border-primary/10 rounded-xl p-5 sm:p-6 shadow-sm">
 
-            <h3 className="text-lg font-semibold text-primary mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-primary mb-2">
               Request a Callback
             </h3>
 
-            <p className="text-sm text-primary/70 mb-6">
+            <p className="text-sm text-primary/70 mb-4 sm:mb-6">
               Our advisors will contact you within 24 hours.
             </p>
 
@@ -101,12 +101,12 @@ const Page = () => {
       </section>
 
       {/* Resources & Contact */}
-      <section className="py-14 max-w-[1200px] mx-auto px-6 lg:px-10">
+      <section className="py-10 sm:py-12 md:py-14 max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-stretch">
 
           {/* Important Links */}
-          <div className="bg-white lg:order-2 bg-background-light border border-primary/10 rounded p-8 lg:p-10 h-full">
+          <div className="bg-white lg:order-2 bg-background-light border border-primary/10 rounded p-5 sm:p-6 md:p-8 lg:p-10 h-full">
 
             <h3 className="serif-heading text-2xl text-primary mb-8">
               Important Documents & Links
@@ -178,7 +178,7 @@ const Page = () => {
 
               <li>
                 <a
-                  href="/complaints"
+                  href="/grievance"
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
@@ -278,7 +278,7 @@ const Page = () => {
           </div>
 
           {/* Contact Box */}
-          <div className="bg-white border border-primary/10 rounded p-10 lg:order-1 h-full flex flex-col justify-between min-h-[320px]">
+          <div className="bg-white border border-primary/10 rounded p-6 sm:p-8 md:p-10 lg:order-1 h-full flex flex-col justify-between min-h-[280px] sm:min-h-[320px]">
 
             <div>
               <div className="h-[1px] w-12 bg-primary/30 mb-8"></div>

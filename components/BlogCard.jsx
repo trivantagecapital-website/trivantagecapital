@@ -13,7 +13,7 @@ const BlogCard = ({
     href = "#"
 }) => {
     return (
-        <div className="group flex flex-col w-full h-full max-w-sm mx-auto sm:mx-0">
+        <div className="group flex flex-col w-full h-full max-w-sm mx-auto sm:max-w-none sm:mx-0">
 
             {/* Image Container */}
             <Link href={href} className="block overflow-hidden mb-5">

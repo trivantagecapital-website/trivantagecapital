@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full border-b border-primary/10 sticky top-0 bg-white z-50">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 h-[80px] flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 h-[80px] flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="block" aria-label="Trivantage Capital Home">
           <img

@@ -8,14 +8,14 @@ const CTASection = () => {
   if (!isLoaded || isUS) return null;
 
   return (
-    <section className="bg-primary/5 py-32 border-t border-primary/5">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 flex flex-col items-center text-center">
-        
-        <h3 className="serif-heading text-4xl md:text-5xl text-primary mb-8 !font-serif">
+    <section className="bg-primary/5 py-16 sm:py-20 md:py-32 border-t border-primary/5">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 flex flex-col items-center text-center">
+
+        <h3 className="serif-heading text-2xl sm:text-3xl md:text-5xl text-primary mb-6 sm:mb-8 !font-serif">
           Ready to experience our approach?
         </h3>
 
-        <p className="text-primary/70 max-w-[600px] mb-12 font-light text-lg">
+        <p className="text-primary/70 max-w-[600px] mb-8 sm:mb-12 font-light text-base sm:text-lg">
           Discover how our disciplined investment philosophy translates into
           meaningful results for your portfolio.
         </p>

@@ -33,19 +33,19 @@ export default async function PersonPage({ params }) {
     <main id="main-content" className="flex-1">
 
       {/* Hero Section */}
-      <section className="max-w-300 mx-auto px-6 lg:px-10 pt-24 pb-16">
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-serif!">
+      <section className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
+        <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-serif!">
           Our Team
         </h1>
-        <div className="h-px w-24 bg-primary/20 mb-8"></div>
-        <p className="text-lg md:text-xl text-primary/80 max-w-200 leading-relaxed font-light">
+        <div className="h-px w-24 bg-primary/20 mb-6 sm:mb-8"></div>
+        <p className="text-base sm:text-lg md:text-xl text-primary/80 max-w-200 leading-relaxed font-light">
           Guided by experience, conviction, and a shared commitment to long-term wealth creation.
         </p>
       </section>
 
       {/* Profile Section */}
-      <section className="bg-white py-20 border-y border-primary/5">
-        <div className="max-w-300 mx-auto px-6 lg:px-10">
+      <section className="bg-white py-12 sm:py-16 md:py-20 border-y border-primary/5">
+        <div className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
             <div className="lg:col-span-4">

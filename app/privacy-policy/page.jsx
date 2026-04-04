@@ -111,21 +111,21 @@ export default function PrivacyPolicyPage() {
     <main id="main-content" className="flex-1">
 
       {/* Hero */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-12">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-6">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12">
+        <p className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-4 sm:mb-6">
           Legal
         </p>
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal">
+        <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-normal">
           Privacy Statement
         </h1>
         <div className="h-[1px] w-24 bg-primary/20 mb-6"></div>
-        <p className="text-base text-primary/70 font-light">
+        <p className="text-sm sm:text-base text-primary/70 font-light">
           Trivantage Capital Management India Private Limited
         </p>
       </section>
 
       {/* Content */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pb-16 sm:pb-20 md:pb-24">
         <div className="max-w-[800px]">
 
           {/* Purpose box */}

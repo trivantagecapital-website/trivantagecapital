@@ -12,11 +12,11 @@ const Footer = () => {
   const showCaution = pathname === "/" || pathname === "/invest";
 
   return (
-    <footer className="bg-white border-t border-primary/5 pt-20 pb-10">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+    <footer className="bg-white border-t border-primary/5 pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10">
         {/* Fraud Caution Section */}
         {showCaution && !isUS && (
-          <div className="mb-20 p-8 bg-red-50 border border-red-100 rounded-lg">
+          <div className="mb-12 sm:mb-16 md:mb-20 p-5 sm:p-6 md:p-8 bg-red-50 border border-red-100 rounded-lg">
             <h3 className="text-red-800 font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined">warning</span>
               Caution Against Fraudulent Activities
@@ -50,7 +50,7 @@ const Footer = () => {
         )}
 
         <div
-          className={`grid grid-cols-1 ${isUS ? "md:grid-cols-2" : "md:grid-cols-3"} gap-12 mb-20`}
+          className={`grid grid-cols-1 ${isUS ? "md:grid-cols-2" : "md:grid-cols-3"} gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20`}
         >
           {/* Logo Section */}
           <div className="col-span-1">
@@ -99,7 +99,7 @@ const Footer = () => {
 
                 <a
                   className="text-sm hover:text-primary/60"
-                  href="/complaints"
+                  href="/grievance"
                 >
                   Investor Grievance
                 </a>
@@ -172,15 +172,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="relative flex items-center justify-center pt-10 border-t border-primary/5">
+        <div className="flex flex-col items-center gap-4 sm:relative sm:flex-row sm:justify-center pt-8 sm:pt-10 border-t border-primary/5">
           <button
             onClick={resetResidency}
-            className="md:absolute md:left-0 text-primary hover:text-primary/60 text-xs font-medium underline transition-colors"
+            className="sm:absolute sm:left-0 text-primary hover:text-primary/60 text-xs font-medium underline transition-colors"
           >
             Change Region
           </button>
 
-          <p className="text-primary text-xs font-medium hidden md:block">
+          <p className="text-primary text-xs font-medium text-center">
             © 2026 Trivantage Capital. All rights reserved.
           </p>
         </div>

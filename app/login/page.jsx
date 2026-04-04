@@ -28,7 +28,7 @@ export default function Login() {
         id="main-content"
         className="flex-1 flex items-center justify-center py-20"
       >
-        <div className="max-w-md w-full bg-white p-10 rounded-lg shadow-xl border border-primary/10">
+        <div className="max-w-md w-full bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-xl border border-primary/10 mx-4 sm:mx-0">
           <h1 className="serif-heading text-3xl mb-2 text-center !font-serif">
             Client Login
           </h1>

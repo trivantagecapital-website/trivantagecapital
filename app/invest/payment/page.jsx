@@ -5,7 +5,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">
-      <section className="max-w-[900px] mx-auto px-6 lg:px-10 pt-24 pb-20">
+      <section className="max-w-[900px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-14 sm:pb-16 md:pb-20">
 
         <Link
           href="/invest"
@@ -15,7 +15,7 @@ const Page = () => {
           Back to Invest With Us
         </Link>
 
-        <h1 className="serif-heading text-primary text-4xl md:text-5xl leading-[1.1] mb-4 font-normal !font-serif">
+        <h1 className="serif-heading text-primary text-2xl sm:text-3xl md:text-5xl leading-[1.1] mb-4 font-normal !font-serif">
           Payment FAQ & UPI QR Code
         </h1>
 

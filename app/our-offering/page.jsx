@@ -5,18 +5,18 @@ const Page = () => {
     <main id="main-content" className="flex-1">
       
       {/* Hero Section */}
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-24 pb-16">
-        <h1 className="serif-heading text-primary text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal !font-serif">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
+        <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-normal !font-serif">
           Curated Portfolios.<br />Disciplined Execution.
         </h1>
 
-        <div className="h-[1px] w-24 bg-primary/20 mb-8"></div>
+        <div className="h-[1px] w-24 bg-primary/20 mb-6 sm:mb-8"></div>
 
-        <p className="text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-8 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-6 sm:mb-8 font-medium">
           Portfolios shaped by learning, guided by quality, and built for compounding.
         </p>
 
-        <p className="text-base text-primary max-w-[800px] leading-relaxed font-light">
+        <p className="text-sm sm:text-base text-primary max-w-[800px] leading-relaxed font-light">
           Each discretionary investment approach reflects our research depth and sectoral insights,
           translating conviction into opportunity. With a clear focus on growth, governance, and
           alignment, we build portfolios that convert insight into sustainable compounding.
@@ -24,11 +24,11 @@ const Page = () => {
       </section>
 
       {/* Offerings Sections */}
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-24">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pb-16 sm:pb-20 md:pb-24">
 
         {/* Edge Portfolio */}
-        <section id="edge-portfolio" className="mb-24">
-          <div className="group flex flex-col md:flex-row gap-8 lg:gap-16 items-start">
+        <section id="edge-portfolio" className="mb-16 sm:mb-20 md:mb-24">
+          <div className="group flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-16 items-start">
             
             <div className="w-full md:w-1/2 aspect-[4/3] rounded overflow-hidden bg-background-light relative">
               <div
@@ -72,7 +72,7 @@ const Page = () => {
 
         {/* Emerging Leaders Portfolio */}
         <section id="emerging-leaders">
-          <div className="group flex flex-col md:flex-row-reverse gap-8 lg:gap-16 items-start">
+          <div className="group flex flex-col md:flex-row-reverse gap-6 sm:gap-8 lg:gap-16 items-start">
             
             <div className="w-full md:w-1/2 aspect-[4/3] rounded overflow-hidden bg-background-light relative">
               <div
@@ -116,7 +116,7 @@ const Page = () => {
 
          <a
               href="/invest"
-              className="bg-primary text-white px-5 py-2.5  hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest mt-[50px] flex items-center gap-2 w-fit justify-center mx-auto"
+              className="bg-primary text-white px-5 py-2.5 hover:opacity-90 transition-all text-[11px] font-semibold uppercase tracking-widest mt-10 sm:mt-12 md:mt-[50px] flex items-center gap-2 w-fit justify-center mx-auto"
             >
               Invest With Us
             </a>

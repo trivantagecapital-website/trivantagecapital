@@ -3,18 +3,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const API_URL =
-  'https://opensheet.elk.sh/1FbUadoqNsEPtlFmHJWT5ZDPLZ2pOCOAwh1BcpYijL2c/month-data';
+const API_URL = process.env.NEXT_PUBLIC_COMPLAINTS_DATA_URL;
 
 const COLUMNS = [
-  { key: 'Sr No',                              label: 'Sr No' },
-  { key: 'Received From',                      label: 'Received From' },
-  { key: 'Pending at the end of last month',   label: 'Pending Last Month' },
-  { key: 'Received',                           label: 'Received' },
-  { key: 'Resolved*',                          label: 'Resolved' },
-  { key: 'Total Pending#',                     label: 'Total Pending' },
-  { key: 'Pending complaints > 3 months',      label: 'Pending > 3 Months' },
-  { key: 'Average Resolution Time^ (in days)', label: 'Avg Resolution Time (days)' },
+  { key: 'Sr No',                              label: <>Sr No</> },
+  { key: 'Received From',                      label: <>Received From</> },
+  { key: 'Pending at the end of last month',   label: <>Pending Last Month</> },
+  { key: 'Received',                           label: <>Received</> },
+  { key: 'Resolved*',                          label: <>Resolved<sup>*</sup></> },
+  { key: 'Total Pending#',                     label: <>Total Pending<sup>#</sup></> },
+  { key: 'Pending complaints > 3 months',      label: <>Pending {'>'} 3 Months</> },
+  { key: 'Average Resolution Time^ (in days)', label: <>Avg Resolution Time<sup>^</sup> (days)</> },
 ];
 
 export default function ComplaintDataPopup() {
@@ -82,12 +81,12 @@ export default function ComplaintDataPopup() {
         </div>
 
         {/* Header */}
-        <div className="relative flex flex-col items-center px-6 lg:px-10 py-4 border-b border-primary/10">
-          <h2 className="text-xl sm:text-2xl font-bold text-primary font-sans text-center">
+        <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-10 py-3 sm:py-4 border-b border-primary/10">
+          <h2 className="text-base sm:text-xl md:text-2xl font-bold text-primary font-sans text-center pr-8 sm:pr-0">
             Complaint Data of Portfolio Manager
           </h2>
           {dateStr && (
-            <p className="text-sm sm:text-base text-primary/50 mt-1 font-sans text-center">
+            <p className="text-sm sm:text-base text-primary/70 mt-1 font-sans text-center">
               Data for the month ending {dateStr}
             </p>
           )}
@@ -105,7 +104,7 @@ export default function ComplaintDataPopup() {
         </div>
 
         {/* Scrollable table area */}
-        <div className="overflow-y-auto h-[calc(100%-80px)] px-6 lg:px-10 py-4">
+        <div className="overflow-y-auto h-[calc(100%-80px)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
           {loading ? (
             <div className="flex items-center justify-center h-full text-primary/70 text-sm font-sans">
               Loading complaint data…
@@ -122,11 +121,13 @@ export default function ComplaintDataPopup() {
             <>
               <div className="overflow-x-auto rounded-lg border border-primary/10">
                 <table className="w-full text-sm font-sans border-collapse min-w-[720px]">
+                  <caption className="sr-only">Complaint data of Portfolio Manager</caption>
                   <thead className="sticky top-0">
                     <tr className="bg-primary text-white">
                       {COLUMNS.map((col) => (
                         <th
                           key={col.key}
+                          scope="col"
                           className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-widest whitespace-nowrap"
                         >
                           {col.label}
@@ -166,7 +167,7 @@ export default function ComplaintDataPopup() {
               {/* CTA */}
               <div className="mt-5 flex justify-center">
                 <Link
-                  href="/complaints"
+                  href="/grievance/complaints-data"
                   className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
                 >
                   View PMS Complaint Data →
@@ -182,10 +183,11 @@ export default function ComplaintDataPopup() {
         <button
           onClick={() => setIsOpen(true)}
           aria-label="View complaint data"
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-full shadow-lg font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 bg-primary text-white px-3 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg font-bold uppercase tracking-widest text-[10px] sm:text-xs hover:opacity-90 transition-all"
         >
           <span className="material-symbols-outlined text-base leading-none">expand_less</span>
-          View Complaint Data
+          <span className="hidden sm:inline">View Complaint Data</span>
+          <span className="sm:hidden">Complaints</span>
         </button>
       )}
     </>

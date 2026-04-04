@@ -136,9 +136,9 @@ const PostItem = ({ post }) => {
     const cleanExcerpt = stripHtml(post.excerpt);
 
     return (
-        <article className="group flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-           
-                <Link href={getPostLink(post, categoryName)} className="w-full md:w-65 aspect-16/10 relative bg-gray-100 shrink-0 overflow-hidden rounded-sm block">
+        <article className="group flex flex-col sm:flex-row gap-5 sm:gap-6 md:gap-10 items-start">
+
+                <Link href={getPostLink(post, categoryName)} className="w-full sm:w-48 md:w-65 aspect-16/10 relative bg-gray-100 shrink-0 overflow-hidden rounded-sm block">
                     <Image
                         src={imageUrl ? imageUrl : '/hero-skyscraper3.jpg'}
                         alt={post.title}

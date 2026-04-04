@@ -6,12 +6,12 @@ const TeamMembersGrid = ({ currentSlug }) => {
   const others = teamMembers.filter((m) => m.slug !== currentSlug);
 
   return (
-    <section className="py-24 max-w-300 mx-auto px-6 lg:px-10">
-      <h3 className="serif-heading text-2xl text-primary mb-12 font-serif!">
+    <section className="py-12 sm:py-16 md:py-24 max-w-300 mx-auto px-5 sm:px-6 lg:px-10">
+      <h3 className="serif-heading text-xl sm:text-2xl text-primary mb-8 sm:mb-12 font-serif!">
         Meet the Team
       </h3>
 
-      <div className="grid grid-cols-2 md:grid-cols-3  gap-x-6 gap-y-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-8 sm:gap-y-12">
         {others.map((member) => (
           <div key={member.slug} className="flex flex-col items-center text-center group">
             <Link

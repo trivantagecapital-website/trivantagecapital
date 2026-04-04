@@ -53,15 +53,15 @@ export default async function BlogPost({ params }) {
                     </div>
                 )}
 
-                <div className='bg-primary px-6 md:px-14 py-5 md:py-10'>
+                <div className='bg-primary px-5 sm:px-6 md:px-14 py-5 md:py-10'>
                     {/* Category and Date */}
-                    <div className="text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-5 md:pb-6 ">
+                    <div className="text-xs sm:text-sm font-medium tracking-widest text-white uppercase font-display border-b border-white/50 pb-4 sm:pb-5 md:pb-6">
                         <span>{Object.keys(post.categories || {})[0] || 'Article'} | {formatDate(post.date)}</span>
                     </div>
 
                     <div>
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl font-semibold font-serif text-white leading-[1.15] tracking-tight mt-5 md:mt-10 mb-10 md:mb-20">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold font-serif text-white leading-[1.15] tracking-tight mt-4 sm:mt-5 md:mt-10 mb-6 sm:mb-10 md:mb-20">
                             {post.title}
                         </h1>
 
@@ -85,7 +85,7 @@ export default async function BlogPost({ params }) {
                 </div>
 
                 {/* Content Area */}
-                <div className='max-w-3xl mx-auto px-4 py-10'>
+                <div className='max-w-3xl mx-auto px-5 sm:px-6 py-6 sm:py-8 md:py-10'>
                     {/* Post Content */}
                     <div
                         className="blog-content"

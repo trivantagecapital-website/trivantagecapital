@@ -8,16 +8,16 @@ const StrategicOfferings = () => {
   if (!isLoaded || isUS) return null;
 
   return (
-    <section className="bg-primary/5 py-32">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        
-        <div className="border-b border-primary/10 pb-4 mb-16">
-          <h2 className="!font-display text-primary text-5xl font-bold tracking-tight">
+    <section className="bg-primary/5 py-16 sm:py-20 md:py-32">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10">
+
+        <div className="border-b border-primary/10 pb-4 mb-10 sm:mb-12 md:mb-16">
+          <h2 className="!font-display text-primary text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Our Offerings
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
 
           
 
@@ -66,10 +66,10 @@ const StrategicOfferings = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="group flex flex-col bg-white border border-primary/5 rounded p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            
-            <div className="h-64 w-full mb-8 overflow-hidden rounded bg-background-light">
-              
+          <div className="group flex flex-col bg-white border border-primary/5 rounded p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+
+            <div className="h-48 sm:h-56 md:h-64 w-full mb-6 sm:mb-8 overflow-hidden rounded bg-background-light">
+
               <div
                 className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
                 style={{
