@@ -23,7 +23,8 @@ const TeamMembersGrid = ({ currentSlug }) => {
                 alt={member.name}
                 fill
                 sizes="(max-width: 639px) 144px, 160px"
-                className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                style={{ objectPosition: member.imagePosition || "center" }}
               />
             </Link>
 

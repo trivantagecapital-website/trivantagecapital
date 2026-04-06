@@ -50,7 +50,7 @@ const Page = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12 sm:mb-16 md:mb-20">
 
           {/* Invest */}
-          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
+          <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
             <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Invest With Us
@@ -62,7 +62,7 @@ const Page = () => {
               investment journey:
             </p>
 
-            <div className="mt-auto">
+            <div className="self-start">
               <a
                 href="mailto:monalisa.shilov@trivantagecapital.com"
                 className="text-primary font-bold hover:underline block mb-4 break-all"
@@ -87,7 +87,7 @@ const Page = () => {
           </div>
 
           {/* Partner */}
-          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
+          <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
             <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Partner With Us
@@ -99,7 +99,7 @@ const Page = () => {
               To explore partnership opportunities:
             </p>
 
-            <div className="mt-auto">
+            <div className="self-start">
               <a
                 href="mailto:monalisa.shilov@trivantagecapital.com"
                 className="text-primary font-bold hover:underline block break-all"
@@ -113,7 +113,7 @@ const Page = () => {
           </div>
 
           {/* Existing Clients */}
-          <div className="bg-white p-8 border border-primary/5 rounded flex flex-col">
+          <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
             <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Existing Clients
@@ -123,7 +123,7 @@ const Page = () => {
               For queries or clarifications, you may write to us at:
             </p>
 
-            <div className="mt-auto">
+            <div className="self-start">
               <a
                 href="mailto:ops@trivantagecapital.com"
                 className="text-primary font-bold hover:underline block"

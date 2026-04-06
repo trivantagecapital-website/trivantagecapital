@@ -55,7 +55,8 @@ export default async function PersonPage({ params }) {
                   alt={`${person.name} - ${person.designation}`}
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: person.imagePosition || "top" }}
                   priority
                 />
               </div>

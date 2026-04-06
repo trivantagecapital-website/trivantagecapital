@@ -20,7 +20,7 @@ const Navbar = () => {
           <img
             src="/TrivantageLogo.png"
             alt="Trivantage Capital Logo"
-            className="h-20 md:h-19 w-auto"
+            className="h-20 md:h-18 w-auto"
           />
         </a>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                 className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
                 href="/contact"
               >
-                Contact
+                Contact Us
               </a>
             )}
           </nav>
