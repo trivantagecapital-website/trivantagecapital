@@ -14,7 +14,7 @@ const DisclaimerModal = () => {
 
   useEffect(() => {
     const check = () => {
-      if (typeof window !== "undefined" && !localStorage.getItem(STORAGE_KEY)) {
+      if (typeof window !== "undefined" && !sessionStorage.getItem(STORAGE_KEY)) {
         setIsOpen(true);
         setStep(1);
         setSelectedValue(null);
@@ -34,8 +34,8 @@ const DisclaimerModal = () => {
   const handleCautionOk = () => {
     setIsOpen(false);
     if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, "true");
-      localStorage.setItem(RESIDENCY_KEY, selectedValue);
+      sessionStorage.setItem(STORAGE_KEY, "true");
+      sessionStorage.setItem(RESIDENCY_KEY, selectedValue);
       window.dispatchEvent(new Event("storage"));
     }
   };

@@ -6,8 +6,8 @@ export function useResidency() {
 
   useEffect(() => {
     const read = () => {
-      const accepted = localStorage.getItem("disclaimerAccepted") === "true";
-      const residency = localStorage.getItem("disclaimerResidency");
+      const accepted = sessionStorage.getItem("disclaimerAccepted") === "true";
+      const residency = sessionStorage.getItem("disclaimerResidency");
       setState({ isUS: accepted && residency === "us", isLoaded: true });
     };
     read();

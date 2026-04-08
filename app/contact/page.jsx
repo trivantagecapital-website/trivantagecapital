@@ -47,7 +47,7 @@ const Page = () => {
       {/* Contact Sections */}
       <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pb-16 sm:pb-20 md:pb-24">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12 sm:mb-16 md:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 sm:mb-16 md:mb-20">
 
           {/* Invest */}
           <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
@@ -65,7 +65,7 @@ const Page = () => {
             <div className="self-start">
               <a
                 href="mailto:monalisa.shilov@trivantagecapital.com"
-                className="text-primary font-bold hover:underline block mb-4 break-all"
+                className="text-primary font-bold hover:underline block mb-4 whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm"
               >
                 monalisa.shilov@trivantagecapital.com
               </a>
@@ -102,7 +102,7 @@ const Page = () => {
             <div className="self-start">
               <a
                 href="mailto:monalisa.shilov@trivantagecapital.com"
-                className="text-primary font-bold hover:underline block break-all"
+                className="text-primary font-bold hover:underline block whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm"
               >
                 monalisa.shilov@trivantagecapital.com
               </a>
@@ -126,7 +126,7 @@ const Page = () => {
             <div className="self-start">
               <a
                 href="mailto:ops@trivantagecapital.com"
-                className="text-primary font-bold hover:underline block"
+                className="text-primary font-bold hover:underline block whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm"
               >
                 ops@trivantagecapital.com
               </a>

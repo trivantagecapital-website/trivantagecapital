@@ -70,7 +70,7 @@ const Page = async ({ searchParams }) => {
                 <div className="flex flex-col w-full max-w-sm mx-auto lg:mx-0">
 
                   {/* Image Container */}
-                  <Link href={getPostLink(featuredPost, featuredPost.categories)} className="block overflow-hidden mb-5">
+                  <Link href={getPostLink(featuredPost, category)} className="block overflow-hidden mb-5">
                     <div className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 rounded-sm">
                       <Image
                         src={featuredPost.featured_image || '/hero-skyscraper3.jpg'}
@@ -93,7 +93,7 @@ const Page = async ({ searchParams }) => {
                       </div>
 
                       {/* Title */}
-                      <Link href={getPostLink(featuredPost, featuredPost.categories)} className="block">
+                      <Link href={getPostLink(featuredPost, category)} className="block">
                         <h3 className="text-xl sm:text-2xl md:text-[1.3rem] font-semibold font-serif! text-white! leading-[1.2] hover:underline">
                           {featuredPost.title}
                         </h3>
@@ -106,7 +106,7 @@ const Page = async ({ searchParams }) => {
                     </div>
                     {/* Read More Button */}
                     <Link
-                      href={getPostLink(featuredPost, featuredPost.categories)}
+                      href={getPostLink(featuredPost, category)}
                       className="group mt-6 sm:mt-8 inline-flex items-center text-[11px] sm:text-xs font-bold tracking-widest text-white uppercase font-display decoration-2 underline-offset-4 transition-all w-fit"
                     >
                       KNOW MORE
