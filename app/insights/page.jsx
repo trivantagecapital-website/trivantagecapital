@@ -4,6 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import InsightsListSection from "@/components/InsightsListSection";
 
+const BLOG_IMAGES = [
+  '/blogs/1.jpg',
+  '/blogs/2.jpg',
+  '/blogs/3.webp',
+  '/blogs/4.jpg',
+  '/blogs/5.jpg',
+  '/blogs/6.jpg',
+  '/blogs/7.jpg',
+  '/blogs/8.jpg',
+  '/blogs/9.jpg',
+  '/blogs/10.jpg',
+];
+
 const WP_API_URL = process.env.WP_RECENT_POSTS_URL;
 
 async function getPosts() {
@@ -73,7 +86,7 @@ const Page = async ({ searchParams }) => {
                   <Link href={getPostLink(featuredPost, featuredPost.categories)} className="block overflow-hidden mb-5">
                     <div className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 rounded-sm">
                       <Image
-                        src={featuredPost.featured_image || '/hero-skyscraper3.jpg'}
+                        src={featuredPost.featured_image || BLOG_IMAGES[0]}
                         alt={featuredPost.title}
                         fill // Fills the container
                         className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
