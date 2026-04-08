@@ -2,19 +2,6 @@ import BlogCard from './BlogCard';
 import Link from 'next/link';
 import { stripHtml, formatDate, getPostLink } from "@/lib/blogUtils";
 
-const BLOG_IMAGES = [
-    '/blogs/1.jpg',
-    '/blogs/2.jpg',
-    '/blogs/3.webp',
-    '/blogs/4.jpg',
-    '/blogs/5.jpg',
-    '/blogs/6.jpg',
-    '/blogs/7.jpg',
-    '/blogs/8.jpg',
-    '/blogs/9.jpg',
-    '/blogs/10.jpg',
-];
-
 const WP_API_URL = process.env.WP_RECENT_POSTS_URL;
 
 async function getPosts() {
@@ -61,7 +48,7 @@ const BlogsSection = async () => {
                 ) : (
                     <div className="flex flex-col items-center">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                            {posts.slice(0, 3).map((post, index) => {
+                            {posts.slice(0, 3).map((post) => {
                                 const categories = Object.keys(post.categories || {}).filter(
                                     (cat) => cat.toLowerCase() !== 'featured'
                                 );
@@ -71,7 +58,7 @@ const BlogsSection = async () => {
                                 return (
                                     <BlogCard
                                         key={post.ID}
-                                        imageSrc={post.featured_image || BLOG_IMAGES[index % BLOG_IMAGES.length]}
+                                        imageSrc={post.featured_image || '/hero-skyscraper3.jpg'}
                                         category={category}
                                         date={formatDate(post.date)}
                                         title={post.title}

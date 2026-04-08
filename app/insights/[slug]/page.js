@@ -4,18 +4,6 @@ import Link from 'next/link';
 import { formatDate } from "@/lib/blogUtils";
 import { getDesignationByWpAuthor } from "@/lib/teamConfig";
 
-const BLOG_IMAGES = [
-    '/blogs/1.jpg',
-    '/blogs/2.jpg',
-    '/blogs/3.webp',
-    '/blogs/4.jpg',
-    '/blogs/5.jpg',
-    '/blogs/6.jpg',
-    '/blogs/7.jpg',
-    '/blogs/8.jpg',
-    '/blogs/9.jpg',
-    '/blogs/10.jpg',
-];
 
 const WP_API_URL = process.env.WP_API_URL;
 
@@ -52,16 +40,18 @@ export default async function BlogPost({ params }) {
         <article className="min-h-screen">
             <div className="max-w-full bg-white mx-auto pb-20">
                 {/* Featured Image */}
-                <div className="relative aspect-[16/10] md:aspect-[1540/502] h-auto w-full overflow-hidden bg-gray-100">
-                    <Image
-                        src={post.featured_image || BLOG_IMAGES[(post.ID || 0) % BLOG_IMAGES.length]}
-                        alt={post.title}
-                        fill
-                        className="object-cover object-bottom"
-                        sizes="(max-width: 800px) 100vw, 800px"
-                        priority
-                    />
-                </div>
+                {post.featured_image && (
+                    <div className="relative aspect-[16/10] md:aspect-[1540/502] h-auto w-full overflow-hidden bg-gray-100">
+                        <Image
+                            src={post.featured_image}
+                            alt={post.title}
+                            fill
+                            className="object-cover object-bottom"
+                            sizes="(max-width: 800px) 100vw, 800px"
+                            priority
+                        />
+                    </div>
+                )}
 
                 <div className='bg-primary px-5 sm:px-6 md:px-14 py-5 md:py-10'>
                     {/* Category and Date */}

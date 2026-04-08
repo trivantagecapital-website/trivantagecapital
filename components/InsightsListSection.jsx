@@ -30,19 +30,6 @@ async function getPosts() {
 
 
 
-const BLOG_IMAGES = [
-    '/blogs/1.jpg',
-    '/blogs/2.jpg',
-    '/blogs/3.webp',
-    '/blogs/4.jpg',
-    '/blogs/5.jpg',
-    '/blogs/6.jpg',
-    '/blogs/7.jpg',
-    '/blogs/8.jpg',
-    '/blogs/9.jpg',
-    '/blogs/10.jpg',
-];
-
 const EXCLUDED_CATEGORY_SLUGS = ['careers', 'uncategorized'];
 
 const InsightsListSection = async () => {
@@ -69,23 +56,20 @@ const InsightsListSection = async () => {
                 {/* Posts Column */}
                 <div className="lg:col-span-8">
                     {groupArray.length > 0 ? (
-                        (() => {
-                            let globalIndex = 0;
-                            return groupArray.map((group) => (
-                                <div key={group.monthYear} className="mb-16 last:mb-0">
-                                    <div className="border-t border-primary/10 pt-6 sm:pt-8">
-                                        <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-7 sm:mb-10 block font-sans">
-                                            {group.monthYear}
-                                        </h2>
-                                        <div className="flex flex-col gap-10 sm:gap-12">
-                                            {group.posts.map(post => (
-                                                <PostItem key={post.ID} post={post} index={globalIndex++} />
-                                            ))}
-                                        </div>
+                        groupArray.map((group) => (
+                            <div key={group.monthYear} className="mb-16 last:mb-0">
+                                <div className="border-t border-primary/10 pt-6 sm:pt-8">
+                                    <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-7 sm:mb-10 block font-sans">
+                                        {group.monthYear}
+                                    </h2>
+                                    <div className="flex flex-col gap-10 sm:gap-12">
+                                        {group.posts.map(post => (
+                                            <PostItem key={post.ID} post={post} />
+                                        ))}
                                     </div>
                                 </div>
-                            ));
-                        })()
+                            </div>
+                        ))
                     ) : (
                         <div className="py-20 text-center text-primary/60">No insights found.</div>
                     )}
@@ -141,12 +125,12 @@ const InsightsListSection = async () => {
     )
 }
 
-const PostItem = ({ post, index }) => {
+const PostItem = ({ post }) => {
     // Extract category
     const categoryName = post.categories ? Object.keys(post.categories)[0] : 'Uncategorized';
 
-    // Use featured image if available, otherwise cycle through blog images
-    const imageUrl = post.featured_image || BLOG_IMAGES[index % BLOG_IMAGES.length];
+    // Use featured image if available
+    const imageUrl = post.featured_image;
 
     // Helper to strip HTML from excerpt
     const cleanExcerpt = stripHtml(post.excerpt);
@@ -156,7 +140,7 @@ const PostItem = ({ post, index }) => {
 
                 <Link href={getPostLink(post, categoryName)} className="w-full sm:w-48 md:w-65 aspect-16/10 relative bg-gray-100 shrink-0 overflow-hidden rounded-sm block">
                     <Image
-                        src={imageUrl}
+                        src={imageUrl ? imageUrl : '/hero-skyscraper3.jpg'}
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
