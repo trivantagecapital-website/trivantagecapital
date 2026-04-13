@@ -20,7 +20,7 @@ const Navbar = () => {
           <img
             src="/TrivantageLogo.png"
             alt="Trivantage Capital Logo"
-            className="h-20 md:h-18 w-auto"
+            className="h-25 md:h-25 w-auto"
           />
         </a>
 
@@ -81,14 +81,14 @@ const Navbar = () => {
               </a>
             )}
 
-            {!isUS && (
+            {/* {!isUS && (
               <a
                 className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest"
                 href="/insights"
               >
                 Insights
               </a>
-            )}
+            )} */}
 
             {!isUS && (
               <a
@@ -191,14 +191,6 @@ const Navbar = () => {
                 >
                   Our Advisors
                 </a>
-                {!isUS && (
-                  <a
-                    href="/about/awards"
-                    className="text-primary/80 hover:text-primary font-medium"
-                  >
-                    Awards
-                  </a>
-                )}
               </div>
             </div>
 

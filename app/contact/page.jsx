@@ -28,7 +28,7 @@ const Page = () => {
             </address>
 
             <a
-              href="https://maps.google.com"
+              href="https://maps.app.goo.gl/8Lie9s1ctj7NtRRC6"
               target="_blank"
               className="text-sm font-bold uppercase tracking-widest text-primary hover:underline flex items-center gap-1"
             >
@@ -64,10 +64,10 @@ const Page = () => {
 
             <div className="self-start">
               <a
-                href="mailto:monalisa.shilov@trivantagecapital.com"
+                href="mailto:info@trivantagecapital.com"
                 className="text-primary font-bold hover:underline block mb-4 whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm"
               >
-                monalisa.shilov@trivantagecapital.com
+                info@trivantagecapital.com
               </a>
 
               <div className="flex items-center gap-2">
@@ -101,11 +101,35 @@ const Page = () => {
 
             <div className="self-start">
               <a
-                href="mailto:monalisa.shilov@trivantagecapital.com"
-                className="text-primary font-bold hover:underline block whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm"
+                href="mailto:info@trivantagecapital.com"
+                className="text-primary font-bold hover:underline block whitespace-nowrap overflow-hidden text-ellipsis text-xs sm:text-sm lg:text-sm mb-4"
               >
-                monalisa.shilov@trivantagecapital.com
+                info@trivantagecapital.com
               </a>
+              <div className="flex mb-4 items-center gap-2">
+                <span className="material-symbols-outlined text-primary/60">
+                  call
+                </span>
+
+                <a
+                  href="tel:+912249034409"
+                  className="text-primary font-bold hover:underline"
+                >
+                  +91-22-4903 4409
+                </a>
+              </div>
+               <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary/60">
+                  call
+                </span>
+
+                <a
+                  href="tel:+912249034409"
+                  className="text-primary font-bold hover:underline"
+                >
+                  +91-22-4903 4407
+                </a>
+              </div>
 
               <div className="mt-4 h-6" aria-hidden="true"></div>
             </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import InvestCallbackForm from "../../components/InvestCallbackForm";
 import ExternalLink from "../../components/ExternalLink";
 
@@ -90,7 +89,7 @@ const Page = () => {
             </h3>
 
             <p className="text-sm text-primary/70 mb-4 sm:mb-6">
-              Our advisors will contact you within 24 hours.
+              Our team will contact you within 24 hours.
             </p>
 
             <InvestCallbackForm />
@@ -293,20 +292,6 @@ const Page = () => {
                 regarding the account opening process.
               </p>
 
-              <a
-                href="https://www.youtube.com/@TrivantageCapital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mt-6 rounded overflow-hidden border border-primary/10 hover:border-primary/25 transition-colors"
-              >
-                <Image
-                  src="/youtube-ss.png"
-                  alt="Trivantage Capital YouTube Channel"
-                  width={600}
-                  height={338}
-                  className="w-full h-auto object-cover"
-                />
-              </a>
             </div>
 
             <div className="mt-6 flex flex-col gap-6">

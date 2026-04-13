@@ -13,7 +13,7 @@ const page = () => {
       <Hero/>
       <PhilosophySection/>
       <StrategicOfferings />
-      <BlogsSection/>
+      {/* <BlogsSection/> */}
       <YouTubeSection/>
       <CTASection/>
       <ComplaintDataPopup />

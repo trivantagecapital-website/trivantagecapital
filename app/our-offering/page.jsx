@@ -7,13 +7,13 @@ const Page = () => {
       {/* Hero Section */}
       <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
         <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-normal !font-serif">
-          Curated Portfolios.<br />Disciplined Execution.
+          Curated Portfolio.<br />Disciplined Execution.
         </h1>
 
         <div className="h-[1px] w-24 bg-primary/20 mb-6 sm:mb-8"></div>
 
         <p className="text-base sm:text-lg md:text-xl text-primary/80 max-w-[800px] leading-relaxed mb-6 sm:mb-8 font-medium">
-          Portfolios shaped by learning, guided by quality, and built for compounding.
+          Portfolio shaped by learning, guided by quality, and built for compounding.
         </p>
 
         <p className="text-sm sm:text-base text-primary max-w-[800px] leading-relaxed font-light">
@@ -71,7 +71,7 @@ const Page = () => {
         </section>
 
         {/* Emerging Leaders Portfolio */}
-        <section id="emerging-leaders">
+        {/* <section id="emerging-leaders">
           <div className="group flex flex-col md:flex-row-reverse gap-6 sm:gap-8 lg:gap-16 items-start">
             
             <div className="w-full md:w-1/2 aspect-[4/3] rounded overflow-hidden bg-background-light relative">
@@ -112,7 +112,7 @@ const Page = () => {
 
 
           </div>
-        </section>
+        </section> */}
 
          <a
               href="/invest"
