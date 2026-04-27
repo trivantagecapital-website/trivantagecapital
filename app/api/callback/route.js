@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer';
-import { checkVerifiedToken } from '../../../lib/otp-token';
+import { getResend, RESEND_FROM } from '@/lib/resend';
+import { checkVerifiedToken } from '@/lib/otp-token';
 
 export async function POST(request) {
   try {
@@ -18,7 +18,6 @@ export async function POST(request) {
       return Response.json({ error: 'Enter a valid phone number.' }, { status: 400 });
     }
 
-    // If email is provided, it must be verified
     if (email) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return Response.json({ error: 'Enter a valid email address.' }, { status: 400 });
@@ -28,24 +27,18 @@ export async function POST(request) {
       }
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false,
-      requireTLS: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: { rejectUnauthorized: false },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { error } = await getResend().emails.send({
+      from: RESEND_FROM,
       to: process.env.EMAIL_RECIPIENT_INVEST,
+      replyTo: email || undefined,
       subject: `Callback Request – ${name}`,
       text: `Name: ${name}\nEmail: ${email || 'Not provided'}\nPhone: ${phone}`,
     });
+
+    if (error) {
+      console.error('Callback submission error:', error);
+      return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    }
 
     return Response.json({ success: true });
   } catch (err) {

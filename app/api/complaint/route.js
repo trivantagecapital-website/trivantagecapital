@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { getResend, RESEND_FROM } from '@/lib/resend';
 import { checkVerifiedToken } from '@/lib/otp-token';
 
 export async function POST(request) {
@@ -18,7 +18,6 @@ export async function POST(request) {
     const details        = formData.get('details')?.trim();
     const verifiedToken  = formData.get('verifiedToken');
 
-    // --- Required field validation ---
     if (!name || !address || !pincode || !state || !city || !mobile || !email || !pan || !clientId || !details) {
       return Response.json({ error: 'All required fields must be filled.' }, { status: 400 });
     }
@@ -35,27 +34,14 @@ export async function POST(request) {
       return Response.json({ error: 'Enter a valid PAN (e.g. ABCDE1234F).' }, { status: 400 });
     }
 
-    // --- Email verification check ---
     if (!verifiedToken || !checkVerifiedToken(verifiedToken, email)) {
       return Response.json({ error: 'Email address is not verified. Please verify your email before submitting.' }, { status: 400 });
     }
 
-    // --- Send email ---
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false,
-      requireTLS: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: { rejectUnauthorized: false },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { error } = await getResend().emails.send({
+      from: RESEND_FROM,
       to: process.env.EMAIL_RECIPIENT_COMPLAINTS,
+      replyTo: email,
       subject: `New Complaint Registration – ${name}`,
       text: [
         `Name: ${name}`,
@@ -71,6 +57,11 @@ export async function POST(request) {
         `\nDetails of Complaint:\n${details}`,
       ].join('\n'),
     });
+
+    if (error) {
+      console.error('Complaint submission error:', error);
+      return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    }
 
     return Response.json({ success: true });
   } catch (err) {

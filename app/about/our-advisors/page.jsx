@@ -35,7 +35,8 @@ const Page = () => {
                     alt={`${advisor.name} - ${advisor.designation}`}
                     fill
                     sizes="(max-width: 1023px) 100vw, 420px"
-                    className="object-cover object-top"
+                    className="object-cover"
+                    style={{ objectPosition: advisor.imagePosition || "center top" }}
                     priority
                   />
                 </div>

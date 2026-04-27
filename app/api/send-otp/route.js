@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { getResend, RESEND_FROM } from '@/lib/resend';
 import { createOtpToken } from '@/lib/otp-token';
 
 function generateOtp() {
@@ -16,31 +16,25 @@ export async function POST(request) {
     const otp = generateOtp();
     const token = createOtpToken(email.trim(), otp);
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false,
-      requireTLS: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: { rejectUnauthorized: false },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { error } = await getResend().emails.send({
+      from: RESEND_FROM,
       to: email.trim(),
       subject: 'Your verification code – Trivantage Capital',
       text: `Your verification code is: ${otp}\n\nThis code expires in 10 minutes. If you did not request this, please ignore this email.`,
       html: `
         <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px;">
-          <p style="color:#555;margin-bottom:8px;">Your verification code for the Trivantage Capital job application is:</p>
+          <p style="color:#555;margin-bottom:8px;">Your verification code for Trivantage Capital is:</p>
           <h1 style="letter-spacing:12px;font-size:40px;color:#1a1a1a;margin:16px 0;">${otp}</h1>
           <p style="color:#888;font-size:13px;">This code expires in <strong>10 minutes</strong>.<br>If you did not request this, you can safely ignore this email.</p>
         </div>
       `,
     });
+
+    if (error) {
+      console.error('OTP send error:', error);
+      const detail = process.env.NODE_ENV === 'development' ? ` [${error.name || error.message}]` : '';
+      return Response.json({ error: `Failed to send verification code. Please try again.${detail}` }, { status: 500 });
+    }
 
     return Response.json({ token });
   } catch (err) {

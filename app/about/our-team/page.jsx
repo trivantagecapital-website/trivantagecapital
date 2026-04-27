@@ -35,7 +35,8 @@ const Page = () => {
                   alt={`${founder.name} - ${founder.designation}`}
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: founder.imagePosition || "center top" }}
                   priority
                 />
               </div>

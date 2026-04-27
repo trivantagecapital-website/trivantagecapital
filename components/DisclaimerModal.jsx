@@ -36,7 +36,13 @@ const DisclaimerModal = () => {
     if (typeof window !== "undefined") {
       sessionStorage.setItem(STORAGE_KEY, "true");
       sessionStorage.setItem(RESIDENCY_KEY, selectedValue);
+      const shouldRedirect = sessionStorage.getItem("disclaimerRedirectHome") === "true";
+      sessionStorage.removeItem("disclaimerRedirectHome");
       window.dispatchEvent(new Event("storage"));
+      if (shouldRedirect) {
+        window.scrollTo(0, 0);
+        window.location.href = "/";
+      }
     }
   };
 

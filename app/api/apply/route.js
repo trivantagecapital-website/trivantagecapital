@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { getResend, RESEND_FROM } from '@/lib/resend';
 import { checkVerifiedToken } from '@/lib/otp-token';
 
 export async function POST(request) {
@@ -12,7 +12,6 @@ export async function POST(request) {
     const resume        = formData.get('resume');
     const verifiedToken = formData.get('verifiedToken');
 
-    // --- Server-side validation ---
     if (!name || !phone || !email || !role) {
       return Response.json({ error: 'All fields are required.' }, { status: 400 });
     }
@@ -43,34 +42,24 @@ export async function POST(request) {
 
     const resumeBuffer = Buffer.from(await resume.arrayBuffer());
 
-    // --- Send email ---
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false,
-      requireTLS: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { error } = await getResend().emails.send({
+      from: RESEND_FROM,
       to: process.env.EMAIL_RECIPIENT_CAREERS,
+      replyTo: email,
       subject: `New Job Application – ${role}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nApplying For: ${role}`,
       attachments: [
         {
           filename: resume.name || 'resume.pdf',
-          content: resumeBuffer,
-          contentType: 'application/pdf',
+          content: resumeBuffer.toString('base64'),
         },
       ],
     });
+
+    if (error) {
+      console.error('Application submission error:', error);
+      return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    }
 
     return Response.json({ success: true });
   } catch (err) {
