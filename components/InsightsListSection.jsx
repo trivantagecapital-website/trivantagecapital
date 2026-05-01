@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { stripHtml, getPostLink } from '@/lib/blogUtils';
-import SubscribeForm from './SubscribeForm';
 
 const BASE_URL = process.env.WP_BASE_URL || 'https://public-api.wordpress.com/rest/v1.1/sites/trivantagecapital.wordpress.com';
 
@@ -50,77 +49,25 @@ const InsightsListSection = async () => {
     });
 
     return (
-        <section className="max-w-320 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-
-                {/* Posts Column */}
-                <div className="lg:col-span-8">
-                    {groupArray.length > 0 ? (
-                        groupArray.map((group) => (
-                            <div key={group.monthYear} className="mb-16 last:mb-0">
-                                <div className="border-t border-primary/10 pt-6 sm:pt-8">
-                                    <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-7 sm:mb-10 block font-sans">
-                                        {group.monthYear}
-                                    </h2>
-                                    <div className="flex flex-col gap-10 sm:gap-12">
-                                        {group.posts.map(post => (
-                                            <PostItem key={post.ID} post={post} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <div className="py-20 text-center text-primary/60">No insights found.</div>
-                    )}
-                </div>
-
-                {/* Sidebar */}
-                <div className="lg:col-span-4 pl-0 lg:pl-12 border-l border-primary/5 hidden lg:block">
-                    <div className="sticky top-24">
-                        {/* Categories */}
-                        {/* <div className="mb-16">
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80 mb-6 font-sans">Categories</h3>
-                            <ul className="space-y-4">
-                                <li>
-                                    <Link
-                                        href="/insights"
-                                        className={`transition-colors text-base font-medium font-serif block ${
-                                            !activeCategory ? 'text-primary' : 'text-primary/60 hover:text-primary'
-                                        }`}
-                                    >
-                                        All
-                                    </Link>
-                                </li>
-                                {filteredCategories.map(cat => (
-                                    <li key={cat.ID}>
-                                        <Link
-                                            href={`/insights?category=${cat.slug}`}
-                                            className={`transition-colors text-base font-medium font-serif block ${
-                                                activeCategory?.toLowerCase() === cat.slug?.toLowerCase()
-                                                    ? 'text-primary'
-                                                    : 'text-primary/60 hover:text-primary'
-                                            }`}
-                                        >
-                                            {cat.name}
-                                        </Link>
-                                    </li>
+        <section className="max-w-260 mx-auto px-5 sm:px-6 lg:px-10 py-10 sm:py-12 md:py-20 lg:py-24">
+            {groupArray.length > 0 ? (
+                groupArray.map((group) => (
+                    <div key={group.monthYear} className="mb-16 last:mb-0">
+                        <div className="border-t border-primary/10 pt-6 sm:pt-8">
+                            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-7 sm:mb-10 block font-sans">
+                                {group.monthYear}
+                            </h2>
+                            <div className="flex flex-col gap-10 sm:gap-12">
+                                {group.posts.map(post => (
+                                    <PostItem key={post.ID} post={post} />
                                 ))}
-                            </ul>
-                        </div> */}
-
-                        {/* Subscribe */}
-                        <div className="bg-primary/5 p-8 rounded-sm">
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80 mb-4 font-sans">Subscribe</h3>
-                            <p className="text-primary/70 text-sm mb-6 font-sans leading-relaxed">
-                                Receive weekly market perspectives directly to your inbox.
-                            </p>
-                            <SubscribeForm />
+                            </div>
                         </div>
                     </div>
-                </div>
-
-            </div>
+                ))
+            ) : (
+                <div className="py-20 text-center text-primary/60">No insights found.</div>
+            )}
         </section>
     )
 }

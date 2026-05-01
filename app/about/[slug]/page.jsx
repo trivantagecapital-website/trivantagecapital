@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   if (!person) return { title: "Not Found" };
   return {
     title: `${person.name} - ${person.designation} | Trivantage Capital`,
-    description: person.bio[0],
+    description: person.bio[0].replace(/<[^>]+>/g, ""),
   };
 }
 
@@ -72,7 +72,7 @@ export default async function PersonPage({ params }) {
                 </p>
               </div>
 
-              <div className="text-primary/80 leading-relaxed font-light max-w-none space-y-6">
+              <div className="text-primary/80 leading-relaxed font-light max-w-none space-y-6 [&_strong]:font-semibold [&_strong]:text-primary">
                 {person.bio.map((paragraph, i) => (
                   <p
                     key={i}
@@ -81,9 +81,8 @@ export default async function PersonPage({ params }) {
                         ? "font-medium"
                         : undefined
                     }
-                  >
-                    {paragraph}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
                 ))}
               </div>
             </div>

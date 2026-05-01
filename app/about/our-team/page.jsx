@@ -54,7 +54,7 @@ const Page = () => {
                 </p>
               </div>
 
-              <div className="text-primary/80 leading-relaxed font-light max-w-none space-y-6">
+              <div className="text-primary/80 leading-relaxed font-light max-w-none space-y-6 [&_strong]:font-semibold [&_strong]:text-primary">
                 {founder.bio.map((paragraph, i) => (
                   <p
                     key={i}
@@ -63,9 +63,8 @@ const Page = () => {
                         ? "font-medium"
                         : undefined
                     }
-                  >
-                    {paragraph}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
                 ))}
               </div>
             </div>
