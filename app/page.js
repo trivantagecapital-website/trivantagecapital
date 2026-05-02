@@ -9,7 +9,7 @@ import ComplaintDataPopup from '../components/ComplaintDataPopup'
 
 const page = () => {
   return (
-    <div>
+    <main id="main-content" tabIndex={-1} className="flex-1">
       <Hero/>
       <PhilosophySection/>
       <StrategicOfferings />
@@ -17,7 +17,7 @@ const page = () => {
       <YouTubeSection/>
       <CTASection/>
       <ComplaintDataPopup />
-    </div>
+    </main>
   )
 }
 

@@ -3,6 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { advisors } from "@/lib/advisorConfig";
 
+export const metadata = {
+  title: "Our Advisors | Trivantage Capital",
+  description:
+    "Trivantage Capital's advisors — independent voices guiding our investment philosophy.",
+};
+
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">

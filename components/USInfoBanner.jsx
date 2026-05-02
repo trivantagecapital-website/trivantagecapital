@@ -38,7 +38,7 @@ export default function USInfoBanner() {
         className="absolute right-3 top-1/2 -translate-y-1/2 text-primary/70 hover:text-primary transition-colors p-1"
         aria-label="Dismiss banner"
       >
-        <span className="material-symbols-outlined text-[18px]">close</span>
+        <span className="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
       </button>
     </div>
   );

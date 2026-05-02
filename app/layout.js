@@ -36,6 +36,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${manrope.variable} ${libre_baskerville.variable} antialiased`}
       >
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Navbar />
         <USInfoBanner />
         <USRedirectGuard>{children}</USRedirectGuard>

@@ -4,6 +4,12 @@ import Image from "next/image";
 import { teamMembers } from "@/lib/teamConfig";
 import TeamMembersGrid from "@/components/TeamMembersGrid";
 
+export const metadata = {
+  title: "Our Team | Trivantage Capital",
+  description:
+    "Meet the leadership and research team behind Trivantage Capital.",
+};
+
 const founder = teamMembers[0];
 
 const Page = () => {

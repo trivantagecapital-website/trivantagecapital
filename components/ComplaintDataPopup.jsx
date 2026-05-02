@@ -96,7 +96,7 @@ export default function ComplaintDataPopup() {
             aria-label="Close"
             className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary/70 hover:text-primary transition-colors"
           >
-            <span className="material-symbols-outlined text-xl leading-none">
+            <span className="material-symbols-outlined text-xl leading-none" aria-hidden="true">
               expand_more
             </span>
             <span className="hidden sm:inline">Close</span>
@@ -185,7 +185,7 @@ export default function ComplaintDataPopup() {
           aria-label="View complaint data"
           className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 bg-primary text-white px-3 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg font-bold uppercase tracking-widest text-[10px] sm:text-xs hover:opacity-90 transition-all"
         >
-          <span className="material-symbols-outlined text-base leading-none">expand_less</span>
+          <span className="material-symbols-outlined text-base leading-none" aria-hidden="true">expand_less</span>
           <span className="hidden sm:inline">View Complaint Data</span>
           <span className="sm:hidden">Complaints</span>
         </button>

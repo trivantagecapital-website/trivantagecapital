@@ -17,7 +17,7 @@ const Footer = () => {
         {showCaution && !isUS && (
           <div className="mb-12 sm:mb-16 md:mb-20 p-5 sm:p-6 md:p-8 bg-red-50 border border-red-100 rounded-lg">
             <h3 className="text-red-800 font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-              <span className="material-symbols-outlined">warning</span>
+              <span className="material-symbols-outlined" aria-hidden="true">warning</span>
               Caution Against Fraudulent Activities
             </h3>
 
@@ -53,10 +53,14 @@ const Footer = () => {
         >
           {/* Logo Section */}
           <div className="col-span-1">
-            <a href="/" className="block mb-2">
+            <a
+              href="/"
+              className="block mb-2"
+              aria-label="Trivantage Capital Home"
+            >
               <img
                 src="/TrivantageLogo.png"
-                alt="Trivantage Capital"
+                alt=""
                 className="h-25 w-auto"
               />
             </a>

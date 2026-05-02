@@ -34,9 +34,15 @@ export default async function PersonPage({ params }) {
 
       {/* Hero Section */}
       <section className="max-w-300 mx-auto px-5 sm:px-6 lg:px-10 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
-        <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-serif!">
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70 mb-4">
           Our Team
+        </p>
+        <h1 className="serif-heading text-primary text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-3 sm:mb-4 font-serif!">
+          {person.name}
         </h1>
+        <p className="text-primary/80 font-bold uppercase tracking-widest text-sm sm:text-base mb-6">
+          {person.designation}
+        </p>
         <div className="h-px w-24 bg-primary/20 mb-6 sm:mb-8"></div>
         <p className="text-base sm:text-lg md:text-xl text-primary/80 max-w-200 leading-relaxed font-light">
           Guided by experience, conviction, and a shared commitment to long-term wealth creation.
@@ -64,9 +70,9 @@ export default async function PersonPage({ params }) {
 
             <div className="lg:col-span-8 space-y-8">
               <div>
-                <h2 className="serif-heading text-4xl text-primary mb-2 font-serif!">
+                <p className="serif-heading text-4xl text-primary mb-2 font-serif!">
                   {person.name}
-                </h2>
+                </p>
                 <p className="text-primary/70 font-bold uppercase tracking-widest text-sm">
                   {person.designation}
                 </p>

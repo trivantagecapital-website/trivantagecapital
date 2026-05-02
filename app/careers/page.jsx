@@ -2,6 +2,12 @@ import React from "react";
 import JobAccordion from "@/components/JobAccordion";
 import CareersForm from "@/components/CareersForm";
 
+export const metadata = {
+  title: "Careers | Trivantage Capital",
+  description:
+    "Open roles at Trivantage Capital. Apply to join our research and investment team.",
+};
+
 async function getCareersJobs() {
   try {
     const res = await fetch(process.env.WP_CAREERS_URL, {

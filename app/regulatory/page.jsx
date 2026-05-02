@@ -129,7 +129,7 @@ export default function RegulatoryPage() {
                 href={link.href}
                 className="inline-flex items-center gap-1.5 text-xs font-medium text-primary/70 border border-primary/15 rounded px-3 py-1.5 hover:text-primary hover:border-primary/30 transition-colors"
               >
-                <span className="material-symbols-outlined !text-sm">arrow_forward</span>
+                <span className="material-symbols-outlined !text-sm" aria-hidden="true">arrow_forward</span>
                 {link.label}
               </a>
             ))}

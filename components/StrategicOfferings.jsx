@@ -36,7 +36,7 @@ const StrategicOfferings = () => {
 
             {/* Content */}
             <div className="w-full md:w-1/2 p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
-              <span className="text-primary/60 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              <span className="text-primary/80 text-xs font-bold tracking-[0.2em] uppercase mb-4">
                 Strategy: Competitive Moats
               </span>
 
@@ -58,7 +58,7 @@ const StrategicOfferings = () => {
                   href="/our-offering"
                 >
                   Know More
-                  <span className="material-symbols-outlined !text-base">
+                  <span className="material-symbols-outlined !text-base" aria-hidden="true">
                     arrow_forward
                   </span>
                 </a>

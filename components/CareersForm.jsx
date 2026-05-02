@@ -167,13 +167,14 @@ export default function CareersForm({ jobs }) {
 
   if (status === 'success') {
     return (
-      <div className="bg-white p-8 rounded-lg border border-primary/5 flex flex-col items-center justify-center text-center min-h-[360px]">
-        <span className="material-symbols-outlined text-5xl text-primary mb-4">check_circle</span>
+      <div role="status" aria-live="polite" className="bg-white p-8 rounded-lg border border-primary/5 flex flex-col items-center justify-center text-center min-h-[360px]">
+        <span className="material-symbols-outlined text-5xl text-primary mb-4" aria-hidden="true">check_circle</span>
         <h3 className="serif-heading text-2xl text-primary mb-3">Application Submitted</h3>
         <p className="text-primary/70 text-sm leading-relaxed max-w-xs">
           Your application has been submitted successfully. We'll be in touch soon.
         </p>
         <button
+          type="button"
           onClick={() => setStatus('idle')}
           className="mt-8 text-xs font-bold uppercase tracking-widest text-primary/40 underline hover:text-primary transition-colors"
         >
@@ -191,45 +192,66 @@ export default function CareersForm({ jobs }) {
 
         {/* Name */}
         <div>
-          <label htmlFor="name" className={labelClass}>Name</label>
+          <label htmlFor="name" className={labelClass}>
+            Name <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <input
-            type="text" id="name"
+            type="text" id="name" name="name"
+            autoComplete="name"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? 'name-error' : undefined}
             value={form.name}
             onChange={set('name')}
             className={inputClass(!!errors.name)}
-            placeholder="Your Full Name"
+            placeholder="Your full name"
           />
-          {errors.name && <p className={errorClass}>{errors.name}</p>}
+          {errors.name && <p id="name-error" className={errorClass}>{errors.name}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className={labelClass}>Phone</label>
+          <label htmlFor="phone" className={labelClass}>
+            Phone <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <input
-            type="tel" id="phone"
+            type="tel" id="phone" name="phone"
+            autoComplete="tel"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? 'phone-error' : undefined}
             value={form.phone}
             onChange={set('phone')}
             className={inputClass(!!errors.phone)}
-            placeholder="Your Phone Number"
+            placeholder="Your phone number"
           />
-          {errors.phone && <p className={errorClass}>{errors.phone}</p>}
+          {errors.phone && <p id="phone-error" className={errorClass}>{errors.phone}</p>}
         </div>
 
         {/* Email + OTP */}
         <div>
-          <label htmlFor="email" className={labelClass}>Email</label>
+          <label htmlFor="email" className={labelClass}>
+            Email <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <div className="flex gap-2">
             <input
-              type="email" id="email"
+              type="email" id="email" name="email"
+              autoComplete="email"
+              required
+              aria-required="true"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               value={form.email}
               onChange={handleEmailChange}
               readOnly={otpStatus === 'verified'}
               className={`${inputClass(!!errors.email)} flex-1 ${otpStatus === 'verified' ? 'opacity-70' : ''}`}
-              placeholder="Your Email Address"
+              placeholder="you@example.com"
             />
             {otpStatus === 'verified' ? (
               <span className="shrink-0 flex items-center px-3 text-sm font-semibold text-green-600">
-                ✓ Verified
+                <span aria-hidden="true">✓ </span>Verified
               </span>
             ) : (
               <button
@@ -246,18 +268,25 @@ export default function CareersForm({ jobs }) {
               </button>
             )}
           </div>
-          {errors.email && <p className={errorClass}>{errors.email}</p>}
+          {errors.email && <p id="email-error" className={errorClass}>{errors.email}</p>}
           {otpError && otpStatus === 'idle' && <p className={errorClass}>{otpError}</p>}
         </div>
 
         {/* OTP input — shown after code is sent */}
         {(otpStatus === 'sent' || otpStatus === 'verifying') && (
           <div>
-            <label className={labelClass}>Verification Code</label>
+            <label htmlFor="careers-otp" className={labelClass}>
+              Verification Code <span className="text-red-500" aria-hidden="true">*</span>
+            </label>
             <div className="flex gap-2">
               <input
+                id="careers-otp"
+                name="otp"
                 type="text"
                 inputMode="numeric"
+                autoComplete="one-time-code"
+                aria-invalid={!!otpError}
+                aria-describedby="careers-otp-help"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                 className={`${inputClass(!!otpError)} flex-1 tracking-widest`}
@@ -274,7 +303,7 @@ export default function CareersForm({ jobs }) {
               </button>
             </div>
             {otpError && <p className={errorClass}>{otpError}</p>}
-            <p className="mt-1 text-xs text-primary/70">
+            <p id="careers-otp-help" className="mt-1 text-xs text-primary/70">
               Check your inbox for the 6-digit code · Valid for 10 minutes
             </p>
           </div>
@@ -282,9 +311,16 @@ export default function CareersForm({ jobs }) {
 
         {/* Applying For */}
         <div>
-          <label htmlFor="role" className={labelClass}>Applying For</label>
+          <label htmlFor="role" className={labelClass}>
+            Applying For <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <select
             id="role"
+            name="role"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.role}
+            aria-describedby={errors.role ? 'role-error' : undefined}
             value={form.role}
             onChange={set('role')}
             className={`${inputClass(!!errors.role)} ${!form.role ? 'text-primary/70' : 'text-primary'}`}
@@ -294,26 +330,32 @@ export default function CareersForm({ jobs }) {
               <option key={job.ID} value={job.title}>{job.title}</option>
             ))}
           </select>
-          {errors.role && <p className={errorClass}>{errors.role}</p>}
+          {errors.role && <p id="role-error" className={errorClass}>{errors.role}</p>}
         </div>
 
         {/* Resume */}
         <div>
-          <label htmlFor="resume" className={labelClass}>Resume</label>
+          <label htmlFor="resume" className={labelClass}>
+            Resume <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <input
-            type="file" id="resume"
+            type="file" id="resume" name="resume"
             accept=".pdf"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.resume}
+            aria-describedby={errors.resume ? 'resume-error' : 'resume-help'}
             onChange={(e) => setResume(e.target.files?.[0] || null)}
             className="w-full text-sm text-primary/70 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all"
           />
           {errors.resume
-            ? <p className={errorClass}>{errors.resume}</p>
-            : <p className="mt-1 text-xs text-primary/70">PDF only · Max 5MB</p>
+            ? <p id="resume-error" className={errorClass}>{errors.resume}</p>
+            : <p id="resume-help" className="mt-1 text-xs text-primary/70">PDF only · Max 5MB</p>
           }
         </div>
 
         {serverError && (
-          <p className="text-xs text-red-500">{serverError}</p>
+          <p role="alert" className="text-xs text-red-500">{serverError}</p>
         )}
 
         <button

@@ -33,7 +33,7 @@ const PhilosophySection = () => {
           {/* Pillar 1 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-60">
+              <span className="material-symbols-outlined text-primary opacity-60" aria-hidden="true">
                 auto_stories
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -58,7 +58,7 @@ const PhilosophySection = () => {
           {/* Pillar 2 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-60">
+              <span className="material-symbols-outlined text-primary opacity-60" aria-hidden="true">
                 trending_up
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -83,7 +83,7 @@ const PhilosophySection = () => {
           {/* Pillar 3 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-60">
+              <span className="material-symbols-outlined text-primary opacity-60" aria-hidden="true">
                 handshake
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>
@@ -109,7 +109,7 @@ const PhilosophySection = () => {
           {/* Pillar 4 */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-primary opacity-60">
+              <span className="material-symbols-outlined text-primary opacity-60" aria-hidden="true">
                 verified_user
               </span>
               <div className="h-[1px] flex-1 bg-primary/10"></div>

@@ -13,6 +13,7 @@ function JobItem({ post, isOpen, onToggle }) {
         <span className="text-lg font-bold text-primary pr-4">{post.title}</span>
         <span
           className={`material-symbols-outlined text-primary shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          aria-hidden="true"
         >
           expand_more
         </span>

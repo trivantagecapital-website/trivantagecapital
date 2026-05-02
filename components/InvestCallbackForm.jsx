@@ -7,6 +7,9 @@ const inputClass = (hasError) =>
     hasError ? 'border-red-400 bg-red-50' : ''
   }`;
 
+const labelClass =
+  'block text-xs font-bold uppercase tracking-widest text-primary/70 mb-2';
+
 const errorClass = 'mt-1 text-xs text-red-500';
 
 export default function InvestCallbackForm() {
@@ -141,11 +144,12 @@ export default function InvestCallbackForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center text-center py-8 gap-3">
-        <span className="material-symbols-outlined text-4xl text-primary">check_circle</span>
+      <div role="status" aria-live="polite" className="flex flex-col items-center justify-center text-center py-8 gap-3">
+        <span className="material-symbols-outlined text-4xl text-primary" aria-hidden="true">check_circle</span>
         <p className="text-primary font-semibold">Request Submitted</p>
         <p className="text-primary/60 text-sm">Our advisors will contact you within 24 hours.</p>
         <button
+          type="button"
           onClick={() => setStatus('idle')}
           className="mt-2 text-xs font-bold uppercase tracking-widest text-primary/40 underline hover:text-primary transition-colors"
         >
@@ -160,22 +164,44 @@ export default function InvestCallbackForm() {
 
       {/* Name */}
       <div>
+        <label htmlFor="callback-name" className={labelClass}>
+          Full Name <span className="text-red-500" aria-hidden="true">*</span>
+        </label>
         <input
+          id="callback-name"
+          name="name"
           type="text"
-          placeholder="Full Name"
+          autoComplete="name"
+          required
+          aria-required="true"
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'callback-name-error' : undefined}
+          placeholder="Your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className={inputClass(!!errors.name)}
         />
-        {errors.name && <p className={errorClass}>{errors.name}</p>}
+        {errors.name && (
+          <p id="callback-name-error" className={errorClass}>{errors.name}</p>
+        )}
       </div>
 
       {/* Email + OTP */}
       <div>
+        <label htmlFor="callback-email" className={labelClass}>
+          Email Address <span className="text-red-500" aria-hidden="true">*</span>
+        </label>
         <div className="flex gap-2">
           <input
+            id="callback-email"
+            name="email"
             type="email"
-            placeholder="Email Address"
+            autoComplete="email"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? 'callback-email-error' : undefined}
+            placeholder="you@example.com"
             value={email}
             onChange={handleEmailChange}
             readOnly={otpStatus === 'verified'}
@@ -183,7 +209,7 @@ export default function InvestCallbackForm() {
           />
           {otpStatus === 'verified' ? (
             <span className="shrink-0 flex items-center px-3 text-sm font-semibold text-green-600">
-              &#10003; Verified
+              <span aria-hidden="true">&#10003; </span>Verified
             </span>
           ) : (
             <button
@@ -200,17 +226,27 @@ export default function InvestCallbackForm() {
             </button>
           )}
         </div>
-        {errors.email && <p className={errorClass}>{errors.email}</p>}
+        {errors.email && (
+          <p id="callback-email-error" className={errorClass}>{errors.email}</p>
+        )}
         {otpError && otpStatus === 'idle' && <p className={errorClass}>{otpError}</p>}
       </div>
 
       {/* OTP input */}
       {(otpStatus === 'sent' || otpStatus === 'verifying') && (
         <div>
+          <label htmlFor="callback-otp" className={labelClass}>
+            Verification Code <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
           <div className="flex gap-2">
             <input
+              id="callback-otp"
+              name="otp"
               type="text"
               inputMode="numeric"
+              autoComplete="one-time-code"
+              aria-invalid={!!otpError}
+              aria-describedby="callback-otp-help"
               value={otp}
               onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
               className={`${inputClass(!!otpError)} flex-1 tracking-widest`}
@@ -227,7 +263,7 @@ export default function InvestCallbackForm() {
             </button>
           </div>
           {otpError && <p className={errorClass}>{otpError}</p>}
-          <p className="mt-1 text-xs text-primary/40">
+          <p id="callback-otp-help" className="mt-1 text-xs text-primary/60">
             Check your inbox for the 6-digit code &middot; Valid for 10 minutes
           </p>
         </div>
@@ -235,17 +271,31 @@ export default function InvestCallbackForm() {
 
       {/* Phone */}
       <div>
+        <label htmlFor="callback-phone" className={labelClass}>
+          Phone Number <span className="text-red-500" aria-hidden="true">*</span>
+        </label>
         <input
+          id="callback-phone"
+          name="phone"
           type="tel"
-          placeholder="Phone Number"
+          autoComplete="tel"
+          required
+          aria-required="true"
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? 'callback-phone-error' : undefined}
+          placeholder="Your phone number"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           className={inputClass(!!errors.phone)}
         />
-        {errors.phone && <p className={errorClass}>{errors.phone}</p>}
+        {errors.phone && (
+          <p id="callback-phone-error" className={errorClass}>{errors.phone}</p>
+        )}
       </div>
 
-      {serverError && <p className="text-xs text-red-500">{serverError}</p>}
+      {serverError && (
+        <p role="alert" className="text-xs text-red-500">{serverError}</p>
+      )}
 
       {/* Submit */}
       <button

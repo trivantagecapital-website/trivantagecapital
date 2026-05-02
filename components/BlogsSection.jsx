@@ -69,15 +69,6 @@ const BlogsSection = async () => {
                             })}
                         </div>
 
-                        <Link
-                            href="/insights"
-                            className="mx-auto mt-10 sm:mt-12 md:mt-16 border border-primary px-5 py-4 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase font-display decoration-2 underline-offset-4 transition-all w-fit group"
-                        >
-                            Read More Insights
-                            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                                →
-                            </span>
-                        </Link>
                     </div>
                 )}
             </div>

@@ -2,6 +2,12 @@ import React from "react";
 import InvestCallbackForm from "../../components/InvestCallbackForm";
 import ExternalLink from "../../components/ExternalLink";
 
+export const metadata = {
+  title: "Invest With Us | Trivantage Capital",
+  description:
+    "Begin a bespoke investment journey with Trivantage Capital — onboarding, key documents, and a callback request form.",
+};
+
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">
@@ -39,9 +45,9 @@ const Page = () => {
                     1
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary">
+                    <h3 className="font-semibold text-primary">
                       Document Verification
-                    </h4>
+                    </h3>
                     <p className="text-sm text-primary/70">
                       Seamless KYC process and automated verification of financial proofs through secure gateways.
                     </p>
@@ -53,9 +59,9 @@ const Page = () => {
                     2
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary">
+                    <h3 className="font-semibold text-primary">
                       Preparation
-                    </h4>
+                    </h3>
                     <p className="text-sm text-primary/70">
                       Personalized account setup and digital execution of investment management agreements.
                     </p>
@@ -67,9 +73,9 @@ const Page = () => {
                     3
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary">
+                    <h3 className="font-semibold text-primary">
                       Processing
-                    </h4>
+                    </h3>
                     <p className="text-sm text-primary/70">
                       Final compliance approval and immediate capital deployment into your chosen strategy.
                     </p>
@@ -122,14 +128,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       description
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Disclosure Document
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     open_in_new
                   </span>
                 </a>
@@ -142,14 +148,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       table_chart
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Fee Calculation Tool
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     download
                   </span>
                 </a>
@@ -163,14 +169,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       description
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Investor Charter
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     open_in_new
                   </span>
                 </a>
@@ -182,14 +188,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       inbox
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Complaints Data
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     arrow_forward
                   </span>
                 </a>
@@ -201,14 +207,14 @@ const Page = () => {
                   className="w-full flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white cursor-pointer"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       link
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Link to ODR Portal
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     open_in_new
                   </span>
                 </ExternalLink>
@@ -220,14 +226,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       qr_code_2
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Payment FAQ & UPI QR Code
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     arrow_forward
                   </span>
                 </a>
@@ -241,14 +247,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       policy
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Grievance Redressal Policy
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     open_in_new
                   </span>
                 </a>
@@ -260,14 +266,14 @@ const Page = () => {
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100">
+                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
                       gavel
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Code of Conduct
                     </span>
                   </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100">
+                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
                     open_in_new
                   </span>
                 </a>
@@ -298,7 +304,7 @@ const Page = () => {
 
               <div className="flex items-center gap-5">
                 <div className="w-12 h-12 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center flex-shrink-0">
-                  <span className="material-symbols-outlined text-xl text-primary">
+                  <span className="material-symbols-outlined text-xl text-primary" aria-hidden="true">
                     call
                   </span>
                 </div>

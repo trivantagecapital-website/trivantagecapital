@@ -1,6 +1,12 @@
 import React from "react";
 import InvestCallbackForm from "@/components/InvestCallbackForm";
 
+export const metadata = {
+  title: "Contact Us | Trivantage Capital",
+  description:
+    "Get in touch with Trivantage Capital. Reach out to invest, partner, or for client servicing queries.",
+};
+
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">
@@ -33,7 +39,7 @@ const Page = () => {
               className="text-sm font-bold uppercase tracking-widest text-primary hover:underline flex items-center gap-1"
             >
               Get Directions
-              <span className="material-symbols-outlined text-sm">
+              <span className="material-symbols-outlined text-sm" aria-hidden="true">
                 open_in_new
               </span>
             </a>
@@ -52,9 +58,9 @@ const Page = () => {
           {/* Invest */}
           <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
+            <h2 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Invest With Us
-            </h3>
+            </h2>
 
             <p className="text-primary/70 text-sm leading-relaxed mb-6">
               Leverage our experience and expertise to grow and protect your
@@ -71,7 +77,7 @@ const Page = () => {
               </a>
 
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary/60">
+                <span className="material-symbols-outlined text-primary/60" aria-hidden="true">
                   call
                 </span>
 
@@ -89,9 +95,9 @@ const Page = () => {
           {/* Partner */}
           <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
+            <h2 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Partner With Us
-            </h3>
+            </h2>
 
             <p className="text-primary/70 text-sm leading-relaxed mb-6">
               At Trivantage Capital, we collaborate with partners who aim to
@@ -107,7 +113,7 @@ const Page = () => {
                 info@trivantagecapital.com
               </a>
               <div className="flex mb-4 items-center gap-2">
-                <span className="material-symbols-outlined text-primary/60">
+                <span className="material-symbols-outlined text-primary/60" aria-hidden="true">
                   call
                 </span>
 
@@ -119,7 +125,7 @@ const Page = () => {
                 </a>
               </div>
                <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary/60">
+                <span className="material-symbols-outlined text-primary/60" aria-hidden="true">
                   call
                 </span>
 
@@ -139,9 +145,9 @@ const Page = () => {
           {/* Existing Clients */}
           <div className="bg-white p-8 border border-primary/5 rounded grid grid-rows-subgrid row-span-3">
 
-            <h3 className="serif-heading text-2xl text-primary mb-4 !font-serif">
+            <h2 className="serif-heading text-2xl text-primary mb-4 !font-serif">
               Existing Clients
-            </h3>
+            </h2>
 
             <p className="text-primary/70 text-sm leading-relaxed mb-6">
               For queries or clarifications, you may write to us at:
@@ -165,9 +171,9 @@ const Page = () => {
         {/* Call Back Form */}
         <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-16 rounded border border-primary/10">
 
-          <h3 className="serif-heading text-2xl sm:text-3xl text-primary mb-6 sm:mb-8 text-center !font-serif">
+          <h2 className="serif-heading text-2xl sm:text-3xl text-primary mb-6 sm:mb-8 text-center !font-serif">
             Request a call back
-          </h3>
+          </h2>
 
           <InvestCallbackForm />
 

@@ -1,5 +1,11 @@
 import React from "react";
 
+export const metadata = {
+  title: "Our Offering | Trivantage Capital",
+  description:
+    "Curated portfolios and disciplined execution — explore Trivantage Capital's investment offerings.",
+};
+
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">

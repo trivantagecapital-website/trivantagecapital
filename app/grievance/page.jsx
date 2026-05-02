@@ -1,6 +1,12 @@
 import React from 'react';
 import ComplaintForm from '@/components/ComplaintForm';
 
+export const metadata = {
+    title: "Investor Grievance | Trivantage Capital",
+    description:
+        "Register an investor complaint, view our grievance redressal mechanism, and access SCORES & ODR portals.",
+};
+
 const SIDEBAR_LINKS = [
     { label: "Grievance Redressal Policy", href: "/complaints/Trivantage Capital - Grievance Redressal Mechanism.pdf", external: true },
     { label: "Complaints Data", href: "/grievance/complaints-data", external: false },
@@ -26,7 +32,7 @@ export default function ComplaintsPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,480px)_1fr] gap-8 sm:gap-10 lg:gap-16 items-start">
 
                     {/* ── Left Sidebar ── */}
-                    <aside>
+                    <aside aria-label="Related grievance resources">
                         <div className="border border-primary/10 rounded-sm overflow-hidden">
                             {SIDEBAR_LINKS.map((link, i) => (
                                 <a
@@ -36,7 +42,7 @@ export default function ComplaintsPage() {
                                     {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                                 >
                                     {link.label}
-                                    <span className="material-symbols-outlined text-base opacity-50">
+                                    <span className="material-symbols-outlined text-base opacity-50" aria-hidden="true">
                                         {link.external ? 'open_in_new' : 'arrow_forward'}
                                     </span>
                                 </a>
@@ -46,9 +52,9 @@ export default function ComplaintsPage() {
 
                     {/* ── Right: Form ── */}
                     <div>
-                        <h1 className="serif-heading text-2xl sm:text-3xl md:text-4xl text-primary font-normal mb-6 sm:mb-8">
-                            Complaint Registration form
-                        </h1>
+                        <h2 className="serif-heading text-2xl sm:text-3xl md:text-4xl text-primary font-normal mb-6 sm:mb-8">
+                            Complaint Registration Form
+                        </h2>
                         <ComplaintForm />
                     </div>
 

@@ -7,9 +7,9 @@ const TeamMembersGrid = ({ currentSlug }) => {
 
   return (
     <section className="py-12 sm:py-16 md:py-24 max-w-300 mx-auto px-5 sm:px-6 lg:px-10">
-      <h3 className="serif-heading text-xl sm:text-2xl text-primary mb-8 sm:mb-12 font-serif!">
+      <h2 className="serif-heading text-xl sm:text-2xl text-primary mb-8 sm:mb-12 font-serif!">
         Meet the Team
-      </h3>
+      </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-8 sm:gap-y-12">
         {others.map((member) => (
@@ -27,11 +27,11 @@ const TeamMembersGrid = ({ currentSlug }) => {
               />
             </Link>
 
-            <h4 className="text-base font-bold text-primary mb-1 font-serif!">
+            <h3 className="text-base font-bold text-primary mb-1 font-serif!">
               <Link href={`/about/${member.slug}`} className="hover:underline">
                 {member.name}
               </Link>
-            </h4>
+            </h3>
 
             <p className="text-xs font-medium text-primary/70 uppercase tracking-widest leading-relaxed">
               {member.designation.split('&').map((part, i, arr) => (

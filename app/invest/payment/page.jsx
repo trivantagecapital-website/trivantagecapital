@@ -2,6 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Make a Payment | Trivantage Capital",
+  description:
+    "Scan the UPI QR codes for Kotak Mahindra Bank or IndusInd Bank to pay Trivantage Capital directly.",
+};
+
 const Page = () => {
   return (
     <main id="main-content" className="flex-1">
@@ -11,7 +17,7 @@ const Page = () => {
           href="/invest"
           className="inline-flex items-center gap-2 text-sm text-primary/70 hover:text-primary transition-colors mb-10"
         >
-          <span className="material-symbols-outlined text-base">arrow_back</span>
+          <span className="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
           Back to Invest With Us
         </Link>
 
