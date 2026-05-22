@@ -119,7 +119,12 @@ export default function ComplaintDataPopup() {
             </div>
           ) : (
             <>
-              <div className="overflow-x-auto rounded-lg border border-primary/10">
+              <div
+                className="overflow-x-auto rounded-lg border border-primary/10"
+                tabIndex={0}
+                role="region"
+                aria-label="Complaint data of Portfolio Manager (scrollable)"
+              >
                 <table className="w-full text-sm font-sans border-collapse min-w-[720px]">
                   <caption className="sr-only">Complaint data of Portfolio Manager</caption>
                   <thead className="sticky top-0">

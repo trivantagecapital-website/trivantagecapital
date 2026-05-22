@@ -51,7 +51,7 @@ const Navbar = () => {
                 type="button"
                 aria-expanded={isAboutOpen}
                 aria-haspopup="true"
-                aria-controls="about-menu"
+                aria-controls={isAboutOpen ? "about-menu" : undefined}
                 onClick={() => setIsAboutOpen((v) => !v)}
                 className="text-primary/80 hover:text-primary text-[13px] font-semibold transition-colors uppercase tracking-widest flex items-center gap-1.5"
               >

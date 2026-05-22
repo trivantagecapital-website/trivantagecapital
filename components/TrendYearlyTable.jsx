@@ -61,7 +61,12 @@ export default function TrendYearlyTable() {
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-primary/10">
+    <div
+      className="overflow-x-auto rounded-lg border border-primary/10"
+      tabIndex={0}
+      role="region"
+      aria-label="Trend of annual disposal of complaints (scrollable)"
+    >
       <table className="w-full text-sm font-sans border-collapse min-w-[600px]">
         <caption className="sr-only">Trend of annual disposal of complaints</caption>
         <thead className="sticky top-0">
