@@ -133,7 +133,7 @@ const Footer = () => {
                 </a>
                 <a
                   className="text-sm hover:text-primary/60"
-                  href="/invest/Trivantage%20Capital%20-%20Disclosure%20Document%20-%20April%202025.pdf"
+                  href="/invest/Trivantage%20Capital%20-%20Disclosure%20Document%20-%20April%202025%20(Accessible).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

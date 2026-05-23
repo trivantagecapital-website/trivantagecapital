@@ -122,7 +122,7 @@ const Page = () => {
 
               <li>
                 <a
-                  href="/invest/Trivantage%20Capital%20-%20Disclosure%20Document%20-%20April%202025.pdf"
+                  href="/invest/Trivantage%20Capital%20-%20Disclosure%20Document%20-%20April%202025%20(Accessible).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
