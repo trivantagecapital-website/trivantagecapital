@@ -132,8 +132,9 @@ const Navbar = () => {
             )}
 
             <a
-              href="/login"
-              aria-current={ariaCurrent("/login")}
+              href="https://trivantage.in/webfincrm/login.jsp"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary text-[11px] font-semibold uppercase tracking-widest border border-primary/20 px-5 py-2.5  hover:bg-primary/5 transition-all"
             >
               Client Login
