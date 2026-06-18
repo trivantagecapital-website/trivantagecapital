@@ -8,11 +8,11 @@ export const metadata = {
 };
 
 const SIDEBAR_LINKS = [
-    { label: "Grievance Redressal Policy", href: "/complaints/Trivantage Capital - Grievance Redressal Mechanism.pdf", external: true },
+    { label: "Grievance Redressal Policy", href: "/complaints/Trivantage Capital - Grievance Redressal Mechanism.pdf", external: true, note: "PDF, 48 KB, opens in new tab" },
     { label: "Complaints Data", href: "/grievance/complaints-data", external: false },
-    { label: "Link to SCORES Website", href: "https://scores.sebi.gov.in", external: true },
-    { label: "SEBI’s Master Circular on Online Dispute Resolution (ODR)", href: "/complaints/SEBI Master Circular on ODRs - 4 Aug 2023.pdf", external: true },
-    { label: "Link to ODR Portal", href: "https://smartodr.in/login", external: true },
+    { label: "Link to SCORES Website", href: "https://scores.sebi.gov.in", external: true, note: "opens in new tab" },
+    { label: "SEBI’s Master Circular on Online Dispute Resolution (ODR)", href: "/complaints/SEBI Master Circular on ODRs - 4 Aug 2023.pdf", external: true, note: "PDF, 848 KB, opens in new tab" },
+    { label: "Link to ODR Portal", href: "https://smartodr.in/login", external: true, note: "opens in new tab" },
 ];
 
 export default function ComplaintsPage() {
@@ -42,6 +42,7 @@ export default function ComplaintsPage() {
                                     {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                                 >
                                     {link.label}
+                                    {link.note && <span className="sr-only"> ({link.note})</span>}
                                     <span className="material-symbols-outlined text-base opacity-50" aria-hidden="true">
                                         {link.external ? 'open_in_new' : 'arrow_forward'}
                                     </span>

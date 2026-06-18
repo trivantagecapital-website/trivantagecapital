@@ -239,7 +239,7 @@ const Navbar = () => {
                 aria-current={ariaCurrent("/contact")}
                 className="text-primary/80 hover:text-primary font-semibold text-lg"
               >
-                Contact
+                Contact Us
               </a>
             )}
 

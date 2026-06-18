@@ -138,6 +138,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                 >
                   Disclosure Document
+                  <span className="sr-only"> (PDF, 489 KB, opens in new tab)</span>
                 </a>
                 <a className="text-sm hover:text-primary/60" href="/grievance">
                   Investor Grievance

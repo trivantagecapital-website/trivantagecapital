@@ -133,6 +133,7 @@ const Page = () => {
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Disclosure Document
+                      <span className="sr-only"> (PDF, 489 KB, opens in new tab)</span>
                     </span>
                   </span>
                   <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
@@ -153,6 +154,7 @@ const Page = () => {
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Fee Calculation Tool
+                      <span className="sr-only"> (XLSX spreadsheet, 98 KB, downloads file)</span>
                     </span>
                   </span>
                   <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
@@ -174,6 +176,7 @@ const Page = () => {
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Investor Charter
+                      <span className="sr-only"> (PDF, 100 KB, opens in new tab)</span>
                     </span>
                   </span>
                   <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
@@ -252,6 +255,7 @@ const Page = () => {
                     </span>
                     <span className="border-b border-transparent group-hover:border-primary/20">
                       Grievance Redressal Policy
+                      <span className="sr-only"> (PDF, 156 KB, opens in new tab)</span>
                     </span>
                   </span>
                   <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">

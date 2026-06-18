@@ -101,8 +101,8 @@ const Page = () => {
 
             <p className="text-primary/70 text-sm leading-relaxed mb-6">
               At Trivantage Capital, we collaborate with partners who aim to
-              meet their client's evolving and sophisticated financial needs.
-              To explore partnership opportunities:
+              meet their clients' evolving needs. To explore partnership
+              opportunities:
             </p>
 
             <div className="self-start">
