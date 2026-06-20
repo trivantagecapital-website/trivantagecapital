@@ -144,8 +144,8 @@ const Page = () => {
 
               <li>
                 <a
-                  href="/invest/Fee-Calculation-Tool.xlsx"
-                  download="Fee-Calculation-Tool.xlsx"
+                  href="/invest/Fee-Calculation-Tool-2.xlsx"
+                  download="Fee-Calculation-Tool-2.xlsx"
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
@@ -263,26 +263,6 @@ const Page = () => {
                   </span>
                 </a>
               </li>
-
-              <li>
-                <a
-                  href=""
-                  className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
-                >
-                  <span className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-xl opacity-60 group-hover:opacity-100" aria-hidden="true">
-                      gavel
-                    </span>
-                    <span className="border-b border-transparent group-hover:border-primary/20">
-                      Code of Conduct
-                    </span>
-                  </span>
-                  <span className="material-symbols-outlined text-base opacity-50 group-hover:opacity-100" aria-hidden="true">
-                    open_in_new
-                  </span>
-                </a>
-              </li>
-
             </ul>
 
           </div>
@@ -322,7 +302,7 @@ const Page = () => {
                     href="tel:+912249034408"
                     className="text-xl font-serif font-semibold text-primary hover:text-primary transition-colors"
                   >
-                    +91-22-4903 4408
+                    +91-22-4903 4407
                   </a>
                 </div>
               </div>
