@@ -47,14 +47,20 @@ const Page = () => {
             </div>
 
             <div className="w-full md:w-1/2 pt-4">
-              <h2 className="serif-heading text-3xl font-bold text-primary mb-6 !font-serif">
+              <h2 className="serif-heading text-3xl font-bold text-primary mb-2 !font-serif">
                 Trivantage Capital Edge Portfolio
               </h2>
+
+              <p className="serif-heading text-xl font-bold mb-6 !font-serif" style={{ color: '#a17a2e' }}>
+                Anchored Boldness
+              </p>
 
               <div className="text-primary leading-relaxed font-light space-y-4">
                 <p>
                   Focuses on identifying businesses with strong competitive moats,
-                  scalable business models, and robust governance standards.
+                  scalable business models, and robust governance standards, thus
+                  anchoring the portfolio in quality while leaving room for bold,
+                  high-conviction ideas.
                 </p>
 
                 <p>
@@ -65,10 +71,11 @@ const Page = () => {
                 </p>
 
                 <p>
-                  By emphasizing quality and durability of business models, the
-                  portfolio is positioned to generate superior risk-adjusted
-                  returns and participate meaningfully in India's long-term
-                  growth story.
+                  By emphasizing quality and durability of business models, while
+                  remaining bold enough to back asymmetric opportunities with
+                  discipline, the portfolio is positioned to generate superior
+                  risk-adjusted returns and participate meaningfully in India's
+                  long-term growth story.
                 </p>
               </div>
             </div>
