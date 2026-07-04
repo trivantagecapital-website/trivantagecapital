@@ -46,7 +46,7 @@ const Page = () => {
               ></div>
             </div>
 
-            <div className="w-full md:w-1/2 pt-4">
+            <div className="w-full md:w-1/2">
               <h2 className="serif-heading text-3xl font-bold text-primary mb-2 !font-serif">
                 Trivantage Capital Edge Portfolio
               </h2>
@@ -58,9 +58,10 @@ const Page = () => {
               <div className="text-primary leading-relaxed font-light space-y-4">
                 <p>
                   Focuses on identifying businesses with strong competitive moats,
-                  scalable business models, and robust governance standards, thus
-                  anchoring the portfolio in quality while leaving room for bold,
-                  high-conviction ideas.
+                  scalable business models, and robust governance standards, thus{" "}
+                  <strong className="font-semibold text-primary">anchoring the portfolio in quality</strong>{" "}
+                  while leaving{" "}
+                  <strong className="font-semibold text-primary">room for bold, high-conviction ideas</strong>.
                 </p>
 
                 <p>
