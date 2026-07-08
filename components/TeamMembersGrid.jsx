@@ -16,11 +16,12 @@ const TeamMembersGrid = ({ currentSlug }) => {
           <div key={member.slug} className="flex flex-col items-center text-center group">
             <Link
               href={`/about/${member.slug}`}
+              aria-label={member.name}
               className="w-36 h-32 sm:w-40 sm:h-36 md:w-60 md:h-52 rounded-lg overflow-hidden mb-4 border border-primary/10 bg-background-light relative shrink-0 block"
             >
               <Image
                 src={member.image}
-                alt={member.name}
+                alt=""
                 fill
                 sizes="(max-width: 639px) 144px, 160px"
                 style={{ objectPosition: member.gridImagePosition || "top" }}

@@ -57,7 +57,7 @@ const StrategicOfferings = () => {
                   className="inline-flex items-center gap-2 bg-primary text-white text-xs font-semibold uppercase tracking-widest px-6 py-3 hover:opacity-90 transition-opacity"
                   href="/our-offering"
                 >
-                  Know More
+                  Our Offering
                   <span className="material-symbols-outlined !text-base" aria-hidden="true">
                     arrow_forward
                   </span>

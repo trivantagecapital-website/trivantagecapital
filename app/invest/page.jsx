@@ -112,7 +112,7 @@ const Page = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-stretch">
 
           {/* Important Links */}
-          <div className="bg-white lg:order-2 bg-background-light border border-primary/10 rounded p-5 sm:p-6 md:p-8 lg:p-10 h-full">
+          <div className="bg-white lg:order-1 bg-background-light border border-primary/10 rounded p-5 sm:p-6 md:p-8 lg:p-10 h-full">
 
             <h3 className="serif-heading text-2xl text-primary mb-8">
               Important Documents & Links
@@ -187,7 +187,7 @@ const Page = () => {
 
               <li>
                 <a
-                  href="/grievance"
+                  href="/grievance/complaints-data"
                   className="flex items-center justify-between gap-3 text-primary hover:text-primary transition-colors group border border-primary/10 rounded px-4 py-3 bg-white"
                 >
                   <span className="flex items-center gap-3">
@@ -268,7 +268,7 @@ const Page = () => {
           </div>
 
           {/* Contact Box */}
-          <div className="bg-white border border-primary/10 rounded p-6 sm:p-8 md:p-10 lg:order-1 h-full flex flex-col justify-between min-h-[280px] sm:min-h-[320px]">
+          <div className="bg-white border border-primary/10 rounded p-6 sm:p-8 md:p-10 lg:order-2 h-full flex flex-col justify-between min-h-[280px] sm:min-h-[320px]">
 
             <div>
               <div className="h-[1px] w-12 bg-primary/30 mb-8"></div>

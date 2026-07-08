@@ -121,8 +121,8 @@ export default function RegulatoryPage() {
           {/* Cross-links */}
           <div className="flex flex-wrap gap-3 mb-12">
             {[
-              { label: "Privacy Statement", href: "/privacy-policy" },
-              { label: "Terms and Conditions", href: "/terms-of-service" },
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
             ].map((link) => (
               <a
                 key={link.href}
@@ -142,14 +142,18 @@ export default function RegulatoryPage() {
                 <h2 className="serif-heading text-xl text-primary font-normal mb-4">
                   {section.id}. {section.title}
                 </h2>
-                <ul className="space-y-3">
-                  {section.items.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-primary/70 leading-relaxed">
-                      <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-primary/40"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                {section.items.length === 1 ? (
+                  <p className="text-sm text-primary/70 leading-relaxed">{section.items[0]}</p>
+                ) : (
+                  <ul className="space-y-3">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-primary/70 leading-relaxed">
+                        <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-primary/40"></span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

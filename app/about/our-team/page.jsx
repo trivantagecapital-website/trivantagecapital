@@ -38,7 +38,7 @@ const Page = () => {
               <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-[420px] mx-auto lg:mx-0 block shadow-lg border-2 border-gray-400/50">
                 <Image
                   src={founder.image}
-                  alt={`${founder.name} - ${founder.designation}`}
+                  alt=""
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
                   className="object-cover"

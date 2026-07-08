@@ -150,14 +150,18 @@ export default function PrivacyPolicyPage() {
                 <h2 className="serif-heading text-xl text-primary font-normal mb-4">
                   {section.id}. {section.title}
                 </h2>
-                <ul className="space-y-3">
-                  {section.items.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-primary/70 leading-relaxed">
-                      <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-primary/40"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                {section.items.length === 1 ? (
+                  <p className="text-sm text-primary/70 leading-relaxed">{section.items[0]}</p>
+                ) : (
+                  <ul className="space-y-3">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-primary/70 leading-relaxed">
+                        <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-primary/40"></span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

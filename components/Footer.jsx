@@ -114,9 +114,9 @@ const Footer = () => {
           {!isUS ? (
             <div className="col-span-1 grid grid-cols-2 gap-8">
               <div className="flex flex-col gap-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary/70">
+                <h2 className="text-xs font-bold uppercase tracking-widest text-primary/70">
                   Navigation
-                </p>
+                </h2>
 
                 <a
                   className="text-sm hover:text-primary/60"
@@ -150,9 +150,9 @@ const Footer = () => {
               </div>
 
               <div className="flex flex-col gap-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary/70">
+                <h2 className="text-xs font-bold uppercase tracking-widest text-primary/70">
                   Legal
-                </p>
+                </h2>
 
                 <a
                   className="text-sm hover:text-primary/60"
@@ -175,9 +175,9 @@ const Footer = () => {
             </div>
           ) : (
             <div className="col-span-1 flex flex-col gap-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
+              <h2 className="text-xs font-bold uppercase tracking-widest text-primary/40">
                 Legal
-              </p>
+              </h2>
 
               <a
                 className="text-sm hover:text-primary/60"

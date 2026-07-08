@@ -35,7 +35,7 @@ export default function Login() {
                 autoComplete="username"
                 required
                 aria-required="true"
-                className="w-full bg-background-light border border-primary/10 rounded px-4 py-3"
+                className="w-full bg-background-light border border-primary/50 rounded px-4 py-3"
               />
             </div>
 
@@ -53,7 +53,7 @@ export default function Login() {
                 autoComplete="current-password"
                 required
                 aria-required="true"
-                className="w-full bg-background-light border border-primary/10 rounded px-4 py-3"
+                className="w-full bg-background-light border border-primary/50 rounded px-4 py-3"
               />
             </div>
 

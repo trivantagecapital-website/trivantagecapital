@@ -175,7 +175,7 @@ export default function ComplaintDataPopup() {
                   href="/grievance/complaints-data"
                   className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
                 >
-                  View PMS Complaint Data →
+                  Complaints Data
                 </Link>
               </div>
             </>

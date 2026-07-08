@@ -5,8 +5,8 @@ import { useState } from 'react';
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 const inputClass = (hasError) =>
-  `w-full bg-background-light border rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-primary placeholder-primary/50 ${
-    hasError ? 'border-red-400' : 'border-primary/10'
+  `w-full bg-background-light border rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-primary placeholder-primary/70 ${
+    hasError ? 'border-red-400' : 'border-primary/50'
   }`;
 
 const labelClass =

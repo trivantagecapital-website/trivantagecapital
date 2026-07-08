@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 const inputClass = (hasError) =>
-  `w-full border border-primary/10 rounded px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all ${
+  `w-full border border-primary/50 rounded px-4 py-3 text-sm placeholder-primary/70 focus:outline-none focus:border-primary transition-all ${
     hasError ? 'border-red-400 bg-red-50' : ''
   }`;
 

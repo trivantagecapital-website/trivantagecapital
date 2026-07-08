@@ -40,7 +40,7 @@ const Page = () => {
             </p>
             <Image
                 src="/invest/QRKotakMahindraBank-crop.jpg"
-                alt="Kotak Mahindra Bank QR Code"
+                alt="UPI QR code to pay Trivantage Capital's Kotak Mahindra Bank account"
                 height={260}
                 width={260}
                 className="mx-auto"
@@ -54,7 +54,7 @@ const Page = () => {
             </p>
             <Image
                 src="/invest/QRIndusIndBank-crop.jpg"
-                alt="IndusInd Bank QR Code"
+                alt="UPI QR code to pay Trivantage Capital's IndusInd Bank account"
                 height={260}
                 width={260}
                 className="mx-auto"

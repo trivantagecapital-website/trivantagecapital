@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const inputClass = (hasError) =>
-  `w-full border rounded px-4 py-2.5 text-sm text-primary placeholder-primary/30 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all ${
-    hasError ? 'border-red-400 bg-red-50' : 'border-primary/15 bg-white'
+  `w-full border rounded px-4 py-2.5 text-sm text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all ${
+    hasError ? 'border-red-400 bg-red-50' : 'border-primary/50 bg-white'
   }`;
 
 const labelClass =

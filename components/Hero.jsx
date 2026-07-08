@@ -4,10 +4,10 @@ const Hero = () => {
   return (
     <section className="relative w-full pt-16 sm:pt-20 md:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src="/hero-skyscraper3.jpg" alt="Modern Skyscraper Architecture"
+        <img src="/hero-skyscraper3.jpg" alt=""
           className="w-full h-full object-cover object-top opacity-80" />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent">
+          className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/45">
         </div>
       </div>
 

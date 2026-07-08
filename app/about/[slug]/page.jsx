@@ -58,7 +58,7 @@ export default async function PersonPage({ params }) {
               <div className="aspect-4/5 bg-background-light rounded-lg overflow-hidden relative w-full max-w-105 mx-auto lg:mx-0  shadow-lg border-2 border-gray-400/50">
                 <Image
                   src={person.image}
-                  alt={`${person.name} - ${person.designation}`}
+                  alt=""
                   fill
                   sizes="(max-width: 1023px) 100vw, 420px"
                   className="object-cover"
@@ -70,9 +70,9 @@ export default async function PersonPage({ params }) {
 
             <div className="lg:col-span-8 space-y-8">
               <div>
-                <p className="serif-heading text-4xl text-primary mb-2 font-serif!">
+                <h2 className="serif-heading text-4xl text-primary mb-2 font-serif!">
                   {person.name}
-                </p>
+                </h2>
                 <p className="text-primary/70 font-bold uppercase tracking-widest text-sm">
                   {person.designation}
                 </p>

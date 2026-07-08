@@ -26,14 +26,14 @@ const CTASection = () => {
             href="/contact"
             className="bg-primary text-white px-10 py-4 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all"
           >
-            Contact Our Team
+            Contact Us
           </a>
 
           <a
             href="/our-offering"
             className="border border-primary/20 text-primary px-10 py-4 rounded font-bold uppercase tracking-widest text-xs hover:bg-primary/5 transition-all"
           >
-            Explore Funds
+            Our Offering
           </a>
 
         </div>
