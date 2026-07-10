@@ -135,6 +135,11 @@ const Page = () => {
               Invest With Us
             </a>
 
+        <p className="text-sm sm:text-base text-primary leading-relaxed font-semibold text-center mx-auto mt-10 sm:mt-12 max-w-[800px]">
+          Investors have an option to invest directly in the PMS, without
+          intermediation of persons engaged in distribution services
+        </p>
+
       </div>
     </main>
   );
