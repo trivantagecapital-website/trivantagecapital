@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-widget": "node -e \"require('fs').copyFileSync('node_modules/enablestack-widget/dist/enablestack-widget.js','public/enablestack-widget.js')\""
   },
   "dependencies": {
+    "enablestack-widget": "file:../../WIDGET-NPM + WP/enablestack-widget-npm/enablestack-widget-npm",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",

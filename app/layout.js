@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Geist, Geist_Mono, Manrope, Playfair_Display, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -44,6 +45,10 @@ export default function RootLayout({ children }) {
         <USRedirectGuard>{children}</USRedirectGuard>
         <Footer />
         <DisclaimerModal />
+        <Script id="enablestack-config" strategy="beforeInteractive">
+          {`window.ENABLESTACK_CONFIG = { colors: { primary: '#141e57' } };`}
+        </Script>
+        <Script src="/enablestack-widget.js" strategy="afterInteractive" />
       </body>
     </html>
   );
