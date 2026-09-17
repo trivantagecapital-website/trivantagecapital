@@ -93,24 +93,21 @@ const DISTRIBUTORS = [
     empanelledOn: "23-Jun-23",
   },
   {
-    name: "Trufid Services Pvt. Ltd.",
-    aprn: "APRN01278",
-    address:
-      "4th Floor, 409, Kanakia Wall Street, Wing A, Mahakali Caves Road, Andheri East, Mumbai 400093",
-    phones: [
-      { label: "+91 7738987360", href: "tel:+917738987360" },
-      { label: "+91 7021729926", href: "tel:+917021729926" },
-    ],
-    emails: ["madhuri@trufid.com", "tanveermonga@gmail.com"],
-    empanelledOn: "31-Aug-26",
-  },
-  {
     name: "Wealth1",
     aprn: "APRN06193",
     address:
       "911, One Lodha Place, Senapati Bapat Marg, Delisle Road, Lower Parel, Mumbai 400013",
     phones: [{ label: "+91 9872917500", href: "tel:+919872917500" }],
     empanelledOn: "29-Jun-26",
+  },
+  {
+    name: "Trufid Services Pvt. Ltd.",
+    aprn: "APRN01278",
+    address:
+      "4th Floor, 409, Kanakia Wall Street, Wing A, Mahakali Caves Road, Andheri East, Mumbai 400093",
+    phones: [{ label: "+91 7738987360", href: "tel:+917738987360" }],
+    emails: ["madhuri@trufid.com", "tanveermonga@gmail.com"],
+    empanelledOn: "31-Aug-26",
   },
 ];
 
@@ -195,28 +192,28 @@ const Page = () => {
                     {d.address}
                   </td>
                   <td className="px-4 py-3 text-primary/70 whitespace-nowrap">
-                    <ul className="space-y-1">
+                    <div className="space-y-1">
                       {d.phones.map((p) => (
-                        <li key={p.href}>
+                        <div key={p.href}>
                           <a
                             href={p.href}
                             className="border-b border-transparent hover:border-primary/30 hover:text-primary transition-colors"
                           >
                             {p.label}
                           </a>
-                        </li>
+                        </div>
                       ))}
                       {d.emails?.map((email) => (
-                        <li key={email}>
+                        <div key={email}>
                           <a
                             href={`mailto:${email}`}
                             className="border-b border-transparent hover:border-primary/30 hover:text-primary transition-colors"
                           >
                             {email}
                           </a>
-                        </li>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </td>
                   <td className="px-4 py-3 text-primary/70 whitespace-nowrap">
                     {d.empanelledOn}
