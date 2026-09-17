@@ -12,8 +12,7 @@ const DISTRIBUTORS = [
     aprn: "APRN07347",
     address:
       "4th Floor, Unit O-438, Phase 1, Boulevard Part of Towers, Sadhuvaswani Road, Ghorpadi, Pune, 411001",
-    phone: "+91 9765555651",
-    phoneHref: "tel:+919765555651",
+    phones: [{ label: "+91 9765555651", href: "tel:+919765555651" }],
     empanelledOn: "14-Jan-26",
   },
   {
@@ -21,32 +20,28 @@ const DISTRIBUTORS = [
     aprn: "APRN02283",
     address:
       "Centrum House, CST Road, Vidyanagari Marg, Kalina, Santacruz East, Mumbai 400098",
-    phone: "+91 9619561666",
-    phoneHref: "tel:+919619561666",
+    phones: [{ label: "+91 9619561666", href: "tel:+919619561666" }],
     empanelledOn: "21-Dec-15",
   },
   {
     name: "Fermat Prime Enterprises Pvt. Ltd.",
     aprn: "APRN03493",
     address: "155, Sahyog Apartment, Mayur Vihar, Phase 1, Delhi - 110091",
-    phone: "+91 9810875858",
-    phoneHref: "tel:+919810875858",
+    phones: [{ label: "+91 9810875858", href: "tel:+919810875858" }],
     empanelledOn: "02-Jul-24",
   },
   {
     name: "Greenback Capital LLP",
     aprn: "APRN01863",
     address: "401-C, Eastern Court, Tejpal Road, Vileparle East, Mumbai - 400057",
-    phone: "022-40060087",
-    phoneHref: "tel:+912240060087",
+    phones: [{ label: "022-40060087", href: "tel:+912240060087" }],
     empanelledOn: "15-Jun-23",
   },
   {
     name: "LGT Wealth India Pvt. Ltd.",
     aprn: "APRN01500",
     address: "7th Floor, A Block, Shiv Sagar Estate, Worli, Mumbai - 400018",
-    phone: "022-50941000",
-    phoneHref: "tel:+912250941000",
+    phones: [{ label: "022-50941000", href: "tel:+912250941000" }],
     empanelledOn: "21-Dec-23",
   },
   {
@@ -54,8 +49,7 @@ const DISTRIBUTORS = [
     aprn: "APRN00292",
     address:
       "903 B Wing, 9th Floor, Marathon Futurex, Mafatlal Mills Compound, N. M. Joshi Marg, Lower Parel, Mumbai - 400013",
-    phone: "022-66423600",
-    phoneHref: "tel:+912266423600",
+    phones: [{ label: "022-66423600", href: "tel:+912266423600" }],
     empanelledOn: "09-Nov-22",
   },
   {
@@ -63,8 +57,7 @@ const DISTRIBUTORS = [
     aprn: "APRN00269",
     address:
       "903 B Wing, Marathon Futurex, Mafatlal Mills Compound, N. M. Joshi Marg, Lower Parel, Mumbai - 400013",
-    phone: "022-66423600",
-    phoneHref: "tel:+912266423600",
+    phones: [{ label: "022-66423600", href: "tel:+912266423600" }],
     empanelledOn: "08-Feb-23",
   },
   {
@@ -72,8 +65,7 @@ const DISTRIBUTORS = [
     aprn: "APRN00984",
     address:
       "8th Floor, 801-804, Wing A, Building No. 3, Inspire BKC, G Block, Bandra Kurla Complex, Bandra East, Mumbai 400050",
-    phone: "022-69223155",
-    phoneHref: "tel:+912269223155",
+    phones: [{ label: "022-69223155", href: "tel:+912269223155" }],
     empanelledOn: "19-Nov-18",
   },
   {
@@ -81,8 +73,7 @@ const DISTRIBUTORS = [
     aprn: "APRN04632",
     address:
       "804, 8th Floor, Apra Tower, Feroj Gandhi Market, Ludhiana, Punjab - 141001",
-    phone: "+91 9779945039",
-    phoneHref: "tel:+919779945039",
+    phones: [{ label: "+91 9779945039", href: "tel:+919779945039" }],
     empanelledOn: "21-Jul-25",
   },
   {
@@ -90,8 +81,7 @@ const DISTRIBUTORS = [
     aprn: "APRN03327",
     address:
       "Office No. 404, Persipolis Building, Plot No. 74, Sector 17, Vashi, Navi Mumbai - 400703",
-    phone: "022-49677421",
-    phoneHref: "tel:+912249677421",
+    phones: [{ label: "022-49677421", href: "tel:+912249677421" }],
     empanelledOn: "26-May-23",
   },
   {
@@ -99,17 +89,27 @@ const DISTRIBUTORS = [
     aprn: "APRN00662",
     address:
       "No. 1, 3rd Floor, First Crescent Park Road, Gandhi Nagar, Adyar, Chennai 600020",
-    phone: "+91 9167944394",
-    phoneHref: "tel:+919167944394",
+    phones: [{ label: "+91 9167944394", href: "tel:+919167944394" }],
     empanelledOn: "23-Jun-23",
+  },
+  {
+    name: "Trufid Services Pvt. Ltd.",
+    aprn: "APRN01278",
+    address:
+      "4th Floor, 409, Kanakia Wall Street, Wing A, Mahakali Caves Road, Andheri East, Mumbai 400093",
+    phones: [
+      { label: "+91 7738987360", href: "tel:+917738987360" },
+      { label: "+91 7021729926", href: "tel:+917021729926" },
+    ],
+    emails: ["madhuri@trufid.com", "tanveermonga@gmail.com"],
+    empanelledOn: "31-Aug-26",
   },
   {
     name: "Wealth1",
     aprn: "APRN06193",
     address:
       "911, One Lodha Place, Senapati Bapat Marg, Delisle Road, Lower Parel, Mumbai 400013",
-    phone: "+91 9872917500",
-    phoneHref: "tel:+919872917500",
+    phones: [{ label: "+91 9872917500", href: "tel:+919872917500" }],
     empanelledOn: "29-Jun-26",
   },
 ];
@@ -195,12 +195,28 @@ const Page = () => {
                     {d.address}
                   </td>
                   <td className="px-4 py-3 text-primary/70 whitespace-nowrap">
-                    <a
-                      href={d.phoneHref}
-                      className="border-b border-transparent hover:border-primary/30 hover:text-primary transition-colors"
-                    >
-                      {d.phone}
-                    </a>
+                    <ul className="space-y-1">
+                      {d.phones.map((p) => (
+                        <li key={p.href}>
+                          <a
+                            href={p.href}
+                            className="border-b border-transparent hover:border-primary/30 hover:text-primary transition-colors"
+                          >
+                            {p.label}
+                          </a>
+                        </li>
+                      ))}
+                      {d.emails?.map((email) => (
+                        <li key={email}>
+                          <a
+                            href={`mailto:${email}`}
+                            className="border-b border-transparent hover:border-primary/30 hover:text-primary transition-colors"
+                          >
+                            {email}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
                   </td>
                   <td className="px-4 py-3 text-primary/70 whitespace-nowrap">
                     {d.empanelledOn}
